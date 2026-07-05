@@ -1046,6 +1046,48 @@
     });
   }
 
+  function getTotalStars(){
+    const scores = loadScores();
+    let stars = 0;
+    Object.values(scores).forEach(s => { stars += Math.round((s.score/s.total)*3); });
+    return stars;
+  }
+
+  // Bintang asas daripada aktiviti bukan-kuiz (mis. streak harian, aktiviti lain)
+  const BASE_STARS = 45;
+
+  function updateRewardsCard(){
+    const quizStars = getTotalStars();
+    const total = BASE_STARS + quizStars;
+    // sasaran peti harta karun bertambah setiap 50 bintang
+    const goal = Math.ceil(total / 50) * 50 || 50;
+    const remaining = Math.max(0, goal - total);
+    const pct = Math.min(100, Math.round((total/goal)*100));
+
+    const numEl = document.getElementById('totalStarsNum');
+    const capEl = document.getElementById('rewardCaption');
+    const barEl = document.getElementById('rewardBarFill');
+    const barCapEl = document.getElementById('rewardBarCaption');
+    if(!numEl) return;
+
+    numEl.textContent = total;
+    barEl.style.width = pct + '%';
+    barCapEl.textContent = `${total} / ${goal}`;
+    if(remaining === 0){
+      capEl.textContent = '🎉 Peti harta karun terbuka! Teruskan kumpul lagi!';
+    } else {
+      capEl.textContent = `Kumpul ${remaining} bintang lagi untuk buka peti harta karun!`;
+    }
+
+    // jika ada kuiz yang telah dijawab, tunjukkan pecahan kecil
+    const quizCountEl = document.getElementById('quizStarsNote');
+    if(quizCountEl){
+      quizCountEl.textContent = quizStars > 0
+        ? `⭐ ${quizStars} bintang diperoleh daripada kuiz`
+        : '';
+    }
+  }
+
   // ============= QUIZ ENGINE =============
   const quizData = {
     "mengenal-huruf-a-z": {emoji:"🔤", title:"Mengenal Huruf A-Z", qs:[
