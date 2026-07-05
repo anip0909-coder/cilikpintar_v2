@@ -11,19 +11,6 @@
     --purple:#7C6FE8;
     --purple-dark:#5C4FD1;
     --purple-light:#EFEBFF;
-    --green:#2FBF8F;<!DOCTYPE html>
-<html lang="ms">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cilik Pintar - Dashboard</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --purple:#7C6FE8;
-    --purple-dark:#5C4FD1;
-    --purple-light:#EFEBFF;
     --green:#2FBF8F;
     --green-light:#E3FBF2;
     --yellow:#FFB020;
@@ -721,53 +708,40 @@
           <div class="emoji">📕</div>
         </div>
         <div class="topic-grid">
-          <div class="topic-card" onclick="openQuiz('mengenal-huruf-a-z')">
+          <div class="topic-card" onclick="openQuiz('bm-mengenal-a-z')">
             <div class="topic-top"><div class="topic-ic" style="background:var(--pink-light);">🔤</div><span class="topic-badge badge-selesai">Selesai</span></div>
-            <div class="topic-name">Mengenal Huruf A-Z</div>
-            <div class="topic-meta">8 pelajaran • 10 mata</div>
-            <div class="topic-bar"><div class="topic-bar-fill" style="width:100%;background:var(--green);"></div>
+            <div class="topic-name">Mengenal A-Z</div>
+            <div class="topic-meta">5 soalan • 10 mata</div>
+            <div class="topic-bar"><div class="topic-bar-fill" style="width:100%;background:var(--green);"></div></div>
             <button class="quiz-btn">📝 Mula Kuiz</button>
           </div>
-          </div>
-          <div class="topic-card" onclick="openQuiz('suku-kata-dan-ejaan')">
-            <div class="topic-top"><div class="topic-ic" style="background:var(--blue-light);">📝</div><span class="topic-badge badge-progress">Dalam Proses</span></div>
-            <div class="topic-name">Suku Kata & Ejaan</div>
-            <div class="topic-meta">12 pelajaran • 5 / 12 selesai</div>
-            <div class="topic-bar"><div class="topic-bar-fill" style="width:42%;background:var(--yellow);"></div>
+          <div class="topic-card" onclick="openQuiz('bm-padankan-suku-kata')">
+            <div class="topic-top"><div class="topic-ic" style="background:var(--blue-light);">🧩</div><span class="topic-badge badge-progress">Dalam Proses</span></div>
+            <div class="topic-name">Padankan Suku Kata</div>
+            <div class="topic-meta">5 soalan • Dalam proses</div>
+            <div class="topic-bar"><div class="topic-bar-fill" style="width:40%;background:var(--yellow);"></div></div>
             <button class="quiz-btn">📝 Mula Kuiz</button>
           </div>
-          </div>
-          <div class="topic-card" onclick="openQuiz('membaca-ayat-mudah')">
-            <div class="topic-top"><div class="topic-ic" style="background:var(--green-light);">📖</div><span class="topic-badge badge-baru">Baharu</span></div>
-            <div class="topic-name">Membaca Ayat Mudah</div>
-            <div class="topic-meta">10 pelajaran • Belum mula</div>
-            <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div>
+          <div class="topic-card" onclick="openQuiz('bm-membina-perkataan')">
+            <div class="topic-top"><div class="topic-ic" style="background:var(--green-light);">🧱</div><span class="topic-badge badge-baru">Baharu</span></div>
+            <div class="topic-name">Membina Perkataan Mengikut Gambar</div>
+            <div class="topic-meta">5 soalan • Belum mula</div>
+            <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div></div>
             <button class="quiz-btn">📝 Mula Kuiz</button>
           </div>
-          </div>
-          <div class="topic-card" onclick="openQuiz('tatabahasa-asas')">
+          <div class="topic-card" onclick="openQuiz('bm-isi-tempat-kosong')">
             <div class="topic-top"><div class="topic-ic" style="background:var(--purple-light);">✏️</div><span class="topic-badge badge-baru">Baharu</span></div>
-            <div class="topic-name">Tatabahasa Asas</div>
-            <div class="topic-meta">9 pelajaran • Belum mula</div>
-            <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div>
+            <div class="topic-name">Isi Tempat Kosong Ikut Gambar</div>
+            <div class="topic-meta">5 soalan • Belum mula</div>
+            <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div></div>
             <button class="quiz-btn">📝 Mula Kuiz</button>
           </div>
-          </div>
-          <div class="topic-card" onclick="openQuiz('peribahasa-dan-simpulan-bahasa')">
-            <div class="topic-top"><div class="topic-ic" style="background:var(--yellow-light);">📚</div><span class="topic-badge badge-baru">Baharu</span></div>
-            <div class="topic-name">Peribahasa & Simpulan Bahasa</div>
-            <div class="topic-meta">6 pelajaran • Belum mula</div>
-            <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div>
+          <div class="topic-card" onclick="openQuiz('bm-eja-perkataan')">
+            <div class="topic-top"><div class="topic-ic" style="background:var(--yellow-light);">🔡</div><span class="topic-badge badge-baru">Baharu</span></div>
+            <div class="topic-name">Eja Perkataan Ikut Gambar</div>
+            <div class="topic-meta">5 soalan • Belum mula</div>
+            <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div></div>
             <button class="quiz-btn">📝 Mula Kuiz</button>
-          </div>
-          </div>
-          <div class="topic-card" onclick="openQuiz('karangan-mudah')">
-            <div class="topic-top"><div class="topic-ic" style="background:var(--pink-light);">🖊️</div><span class="topic-badge badge-baru">Baharu</span></div>
-            <div class="topic-name">Karangan Mudah</div>
-            <div class="topic-meta">7 pelajaran • Belum mula</div>
-            <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div>
-            <button class="quiz-btn">📝 Mula Kuiz</button>
-          </div>
           </div>
         </div>
       </div>
@@ -786,49 +760,71 @@
             <div class="topic-top"><div class="topic-ic" style="background:var(--blue-light);">🔠</div><span class="topic-badge badge-selesai">Selesai</span></div>
             <div class="topic-name">Alphabet A-Z</div>
             <div class="topic-meta">8 pelajaran • 10 mata</div>
-            <div class="topic-bar"><div class="topic-bar-fill" style="width:100%;background:var(--green);"></div>
+            <div class="topic-bar"><div class="topic-bar-fill" style="width:100%;background:var(--green);"></div></div>
             <button class="quiz-btn">📝 Mula Kuiz</button>
-          </div>
           </div>
           <div class="topic-card" onclick="openQuiz('simple-vocabulary')">
             <div class="topic-top"><div class="topic-ic" style="background:var(--green-light);">🗣️</div><span class="topic-badge badge-progress">Dalam Proses</span></div>
             <div class="topic-name">Simple Vocabulary</div>
             <div class="topic-meta">15 pelajaran • 6 / 15 selesai</div>
-            <div class="topic-bar"><div class="topic-bar-fill" style="width:40%;background:var(--yellow);"></div>
+            <div class="topic-bar"><div class="topic-bar-fill" style="width:40%;background:var(--yellow);"></div></div>
             <button class="quiz-btn">📝 Mula Kuiz</button>
-          </div>
           </div>
           <div class="topic-card" onclick="openQuiz('reading-simple-sentences')">
             <div class="topic-top"><div class="topic-ic" style="background:var(--purple-light);">📖</div><span class="topic-badge badge-baru">Baharu</span></div>
             <div class="topic-name">Reading Simple Sentences</div>
             <div class="topic-meta">10 pelajaran • Belum mula</div>
-            <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div>
+            <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div></div>
             <button class="quiz-btn">📝 Mula Kuiz</button>
-          </div>
           </div>
           <div class="topic-card" onclick="openQuiz('basic-grammar')">
             <div class="topic-top"><div class="topic-ic" style="background:var(--yellow-light);">✏️</div><span class="topic-badge badge-baru">Baharu</span></div>
             <div class="topic-name">Basic Grammar</div>
             <div class="topic-meta">9 pelajaran • Belum mula</div>
-            <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div>
+            <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div></div>
             <button class="quiz-btn">📝 Mula Kuiz</button>
-          </div>
           </div>
           <div class="topic-card" onclick="openQuiz('nursery-rhymes')">
             <div class="topic-top"><div class="topic-ic" style="background:var(--pink-light);">🎵</div><span class="topic-badge badge-baru">Baharu</span></div>
             <div class="topic-name">Nursery Rhymes</div>
             <div class="topic-meta">5 pelajaran • Belum mula</div>
-            <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div>
+            <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div></div>
             <button class="quiz-btn">📝 Mula Kuiz</button>
-          </div>
           </div>
           <div class="topic-card" onclick="openQuiz('everyday-conversation')">
             <div class="topic-top"><div class="topic-ic" style="background:var(--blue-light);">💬</div><span class="topic-badge badge-baru">Baharu</span></div>
             <div class="topic-name">Everyday Conversation</div>
-            <div class="topic-meta">8 pelajaran • Belum mula</div>
-            <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div>
+            <div class="topic-meta">5 soalan • Belum mula</div>
+            <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div></div>
             <button class="quiz-btn">📝 Mula Kuiz</button>
           </div>
+          <div class="topic-card" onclick="openQuiz('bi-padankan-perkataan')">
+            <div class="topic-top"><div class="topic-ic" style="background:var(--pink-light);">🧩</div><span class="topic-badge badge-baru">Baharu</span></div>
+            <div class="topic-name">Padankan Perkataan Ikut Gambar</div>
+            <div class="topic-meta">5 soalan • Belum mula</div>
+            <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div></div>
+            <button class="quiz-btn">📝 Mula Kuiz</button>
+          </div>
+          <div class="topic-card" onclick="openQuiz('bi-membina-perkataan')">
+            <div class="topic-top"><div class="topic-ic" style="background:var(--green-light);">🧱</div><span class="topic-badge badge-baru">Baharu</span></div>
+            <div class="topic-name">Membina Perkataan Mengikut Gambar</div>
+            <div class="topic-meta">5 soalan • Belum mula</div>
+            <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div></div>
+            <button class="quiz-btn">📝 Mula Kuiz</button>
+          </div>
+          <div class="topic-card" onclick="openQuiz('bi-isi-tempat-kosong')">
+            <div class="topic-top"><div class="topic-ic" style="background:var(--purple-light);">✏️</div><span class="topic-badge badge-baru">Baharu</span></div>
+            <div class="topic-name">Isi Tempat Kosong Ikut Gambar</div>
+            <div class="topic-meta">5 soalan • Belum mula</div>
+            <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div></div>
+            <button class="quiz-btn">📝 Mula Kuiz</button>
+          </div>
+          <div class="topic-card" onclick="openQuiz('bi-eja-perkataan')">
+            <div class="topic-top"><div class="topic-ic" style="background:var(--yellow-light);">🔡</div><span class="topic-badge badge-baru">Baharu</span></div>
+            <div class="topic-name">Eja Perkataan Ikut Gambar</div>
+            <div class="topic-meta">5 soalan • Belum mula</div>
+            <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div></div>
+            <button class="quiz-btn">📝 Mula Kuiz</button>
           </div>
         </div>
       </div>
@@ -847,49 +843,43 @@
             <div class="topic-top"><div class="topic-ic" style="background:var(--blue-light);">🔢</div><span class="topic-badge badge-selesai">Selesai</span></div>
             <div class="topic-name">Nombor 1 hingga 10</div>
             <div class="topic-meta">8 pelajaran • 10 mata</div>
-            <div class="topic-bar"><div class="topic-bar-fill" style="width:100%;background:var(--green);"></div>
+            <div class="topic-bar"><div class="topic-bar-fill" style="width:100%;background:var(--green);"></div></div>
             <button class="quiz-btn">📝 Mula Kuiz</button>
-          </div>
           </div>
           <div class="topic-card" onclick="openQuiz('tambah-dan-tolak-asas')">
             <div class="topic-top"><div class="topic-ic" style="background:var(--green-light);">➕</div><span class="topic-badge badge-progress">Dalam Proses</span></div>
             <div class="topic-name">Tambah & Tolak Asas</div>
             <div class="topic-meta">14 pelajaran • 7 / 14 selesai</div>
-            <div class="topic-bar"><div class="topic-bar-fill" style="width:50%;background:var(--yellow);"></div>
+            <div class="topic-bar"><div class="topic-bar-fill" style="width:50%;background:var(--yellow);"></div></div>
             <button class="quiz-btn">📝 Mula Kuiz</button>
-          </div>
           </div>
           <div class="topic-card" onclick="openQuiz('bentuk-dan-saiz')">
             <div class="topic-top"><div class="topic-ic" style="background:var(--purple-light);">🔷</div><span class="topic-badge badge-baru">Baharu</span></div>
             <div class="topic-name">Bentuk & Saiz</div>
             <div class="topic-meta">6 pelajaran • Belum mula</div>
-            <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div>
+            <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div></div>
             <button class="quiz-btn">📝 Mula Kuiz</button>
-          </div>
           </div>
           <div class="topic-card" onclick="openQuiz('pendaraban-asas')">
             <div class="topic-top"><div class="topic-ic" style="background:var(--yellow-light);">✖️</div><span class="topic-badge badge-baru">Baharu</span></div>
             <div class="topic-name">Pendaraban Asas</div>
             <div class="topic-meta">10 pelajaran • Belum mula</div>
-            <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div>
+            <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div></div>
             <button class="quiz-btn">📝 Mula Kuiz</button>
-          </div>
           </div>
           <div class="topic-card" onclick="openQuiz('mengenal-masa-dan-waktu')">
             <div class="topic-top"><div class="topic-ic" style="background:var(--pink-light);">🕐</div><span class="topic-badge badge-baru">Baharu</span></div>
             <div class="topic-name">Mengenal Masa & Waktu</div>
             <div class="topic-meta">7 pelajaran • Belum mula</div>
-            <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div>
+            <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div></div>
             <button class="quiz-btn">📝 Mula Kuiz</button>
-          </div>
           </div>
           <div class="topic-card" onclick="openQuiz('mengenal-wang')">
             <div class="topic-top"><div class="topic-ic" style="background:var(--blue-light);">💰</div><span class="topic-badge badge-baru">Baharu</span></div>
             <div class="topic-name">Mengenal Wang</div>
             <div class="topic-meta">6 pelajaran • Belum mula</div>
-            <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div>
+            <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div></div>
             <button class="quiz-btn">📝 Mula Kuiz</button>
-          </div>
           </div>
         </div>
       </div>
@@ -908,49 +898,71 @@
             <div class="topic-top"><div class="topic-ic" style="background:var(--purple-light);">﷽</div><span class="topic-badge badge-selesai">Selesai</span></div>
             <div class="topic-name">Mengenal Huruf Jawi</div>
             <div class="topic-meta">10 pelajaran • 10 mata</div>
-            <div class="topic-bar"><div class="topic-bar-fill" style="width:100%;background:var(--green);"></div>
+            <div class="topic-bar"><div class="topic-bar-fill" style="width:100%;background:var(--green);"></div></div>
             <button class="quiz-btn">📝 Mula Kuiz</button>
-          </div>
           </div>
           <div class="topic-card" onclick="openQuiz('menulis-suku-kata-jawi')">
             <div class="topic-top"><div class="topic-ic" style="background:var(--pink-light);">✍️</div><span class="topic-badge badge-progress">Dalam Proses</span></div>
             <div class="topic-name">Menulis Suku Kata Jawi</div>
             <div class="topic-meta">12 pelajaran • 4 / 12 selesai</div>
-            <div class="topic-bar"><div class="topic-bar-fill" style="width:33%;background:var(--yellow);"></div>
+            <div class="topic-bar"><div class="topic-bar-fill" style="width:33%;background:var(--yellow);"></div></div>
             <button class="quiz-btn">📝 Mula Kuiz</button>
-          </div>
           </div>
           <div class="topic-card" onclick="openQuiz('membaca-perkataan-jawi')">
             <div class="topic-top"><div class="topic-ic" style="background:var(--blue-light);">📄</div><span class="topic-badge badge-baru">Baharu</span></div>
             <div class="topic-name">Membaca Perkataan Jawi</div>
             <div class="topic-meta">9 pelajaran • Belum mula</div>
-            <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div>
+            <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div></div>
             <button class="quiz-btn">📝 Mula Kuiz</button>
-          </div>
           </div>
           <div class="topic-card" onclick="openQuiz('perkataan-harian-dalam-jawi')">
             <div class="topic-top"><div class="topic-ic" style="background:var(--yellow-light);">🕌</div><span class="topic-badge badge-baru">Baharu</span></div>
             <div class="topic-name">Perkataan Harian dalam Jawi</div>
             <div class="topic-meta">8 pelajaran • Belum mula</div>
-            <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div>
+            <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div></div>
             <button class="quiz-btn">📝 Mula Kuiz</button>
-          </div>
           </div>
           <div class="topic-card" onclick="openQuiz('ayat-mudah-jawi')">
             <div class="topic-top"><div class="topic-ic" style="background:var(--green-light);">📜</div><span class="topic-badge badge-baru">Baharu</span></div>
             <div class="topic-name">Ayat Mudah Jawi</div>
             <div class="topic-meta">7 pelajaran • Belum mula</div>
-            <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div>
+            <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div></div>
             <button class="quiz-btn">📝 Mula Kuiz</button>
-          </div>
           </div>
           <div class="topic-card" onclick="openQuiz('latihan-dan-kuiz-jawi')">
             <div class="topic-top"><div class="topic-ic" style="background:var(--pink-light);">🎯</div><span class="topic-badge badge-baru">Baharu</span></div>
             <div class="topic-name">Latihan & Kuiz Jawi</div>
-            <div class="topic-meta">6 pelajaran • Belum mula</div>
-            <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div>
+            <div class="topic-meta">5 soalan • Belum mula</div>
+            <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div></div>
             <button class="quiz-btn">📝 Mula Kuiz</button>
           </div>
+          <div class="topic-card" onclick="openQuiz('jawi-padankan-perkataan')">
+            <div class="topic-top"><div class="topic-ic" style="background:var(--blue-light);">🧩</div><span class="topic-badge badge-baru">Baharu</span></div>
+            <div class="topic-name">Padankan Perkataan Ikut Gambar</div>
+            <div class="topic-meta">5 soalan • Belum mula</div>
+            <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div></div>
+            <button class="quiz-btn">📝 Mula Kuiz</button>
+          </div>
+          <div class="topic-card" onclick="openQuiz('jawi-membina-perkataan')">
+            <div class="topic-top"><div class="topic-ic" style="background:var(--green-light);">🧱</div><span class="topic-badge badge-baru">Baharu</span></div>
+            <div class="topic-name">Membina Perkataan Mengikut Gambar</div>
+            <div class="topic-meta">5 soalan • Belum mula</div>
+            <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div></div>
+            <button class="quiz-btn">📝 Mula Kuiz</button>
+          </div>
+          <div class="topic-card" onclick="openQuiz('jawi-isi-tempat-kosong')">
+            <div class="topic-top"><div class="topic-ic" style="background:var(--purple-light);">✏️</div><span class="topic-badge badge-baru">Baharu</span></div>
+            <div class="topic-name">Isi Tempat Kosong Ikut Gambar</div>
+            <div class="topic-meta">5 soalan • Belum mula</div>
+            <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div></div>
+            <button class="quiz-btn">📝 Mula Kuiz</button>
+          </div>
+          <div class="topic-card" onclick="openQuiz('jawi-eja-perkataan')">
+            <div class="topic-top"><div class="topic-ic" style="background:var(--yellow-light);">🔡</div><span class="topic-badge badge-baru">Baharu</span></div>
+            <div class="topic-name">Eja Perkataan Ikut Gambar</div>
+            <div class="topic-meta">5 soalan • Belum mula</div>
+            <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div></div>
+            <button class="quiz-btn">📝 Mula Kuiz</button>
           </div>
         </div>
       </div>
@@ -966,15 +978,12 @@
         <div class="hero-avatar" style="font-size:80px;">🎲</div>
       </div>
       <div class="topic-grid">
-        <div class="topic-card" onclick="openQuiz('teka-kata')"><div class="topic-top"><div class="topic-ic" style="background:var(--pink-light);">🧩</div><span class="topic-badge badge-baru">Baharu</span></div><div class="topic-name">Teka Kata</div><div class="topic-meta">Permainan bahasa</div><div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div>
-            <button class="quiz-btn">📝 Mula Kuiz</button>
-          </div></div>
-        <div class="topic-card" onclick="openQuiz('warna-warni')"><div class="topic-top"><div class="topic-ic" style="background:var(--blue-light);">🎨</div><span class="topic-badge badge-selesai">Selesai</span></div><div class="topic-name">Warna-Warni</div><div class="topic-meta">Selesai • 10 mata</div><div class="topic-bar"><div class="topic-bar-fill" style="width:100%;background:var(--green);"></div>
-            <button class="quiz-btn">📝 Mula Kuiz</button>
-          </div></div>
-        <div class="topic-card" onclick="openQuiz('kira-cepat')"><div class="topic-top"><div class="topic-ic" style="background:var(--green-light);">🧮</div><span class="topic-badge badge-progress">Dalam Proses</span></div><div class="topic-name">Kira Cepat</div><div class="topic-meta">Permainan matematik</div><div class="topic-bar"><div class="topic-bar-fill" style="width:60%;background:var(--yellow);"></div>
-            <button class="quiz-btn">📝 Mula Kuiz</button>
-          </div></div>
+        <div class="topic-card" onclick="openQuiz('teka-kata')"><div class="topic-top"><div class="topic-ic" style="background:var(--pink-light);">🧩</div><span class="topic-badge badge-baru">Baharu</span></div><div class="topic-name">Teka Kata</div><div class="topic-meta">5 soalan • Permainan bahasa</div><div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div></div>
+            <button class="quiz-btn">📝 Mula Kuiz</button></div>
+        <div class="topic-card" onclick="openQuiz('warna-warni')"><div class="topic-top"><div class="topic-ic" style="background:var(--blue-light);">🎨</div><span class="topic-badge badge-selesai">Selesai</span></div><div class="topic-name">Warna-Warni</div><div class="topic-meta">Selesai • 10 mata</div><div class="topic-bar"><div class="topic-bar-fill" style="width:100%;background:var(--green);"></div></div>
+            <button class="quiz-btn">📝 Mula Kuiz</button></div>
+        <div class="topic-card" onclick="openQuiz('kira-cepat')"><div class="topic-top"><div class="topic-ic" style="background:var(--green-light);">🧮</div><span class="topic-badge badge-progress">Dalam Proses</span></div><div class="topic-name">Kira Cepat</div><div class="topic-meta">5 soalan • Permainan matematik</div><div class="topic-bar"><div class="topic-bar-fill" style="width:60%;background:var(--yellow);"></div></div>
+            <button class="quiz-btn">📝 Mula Kuiz</button></div>
       </div>
     </section>
 
@@ -1260,14 +1269,16 @@
 
   // ============= SUBJECT MAPPING =============
   const SUBJECT_MAP = {
-    "mengenal-huruf-a-z":"bm", "suku-kata-dan-ejaan":"bm", "membaca-ayat-mudah":"bm",
-    "tatabahasa-asas":"bm", "peribahasa-dan-simpulan-bahasa":"bm", "karangan-mudah":"bm",
+    "bm-mengenal-a-z":"bm", "bm-padankan-suku-kata":"bm", "bm-membina-perkataan":"bm",
+    "bm-isi-tempat-kosong":"bm", "bm-eja-perkataan":"bm",
     "alphabet-a-z":"bi", "simple-vocabulary":"bi", "reading-simple-sentences":"bi",
     "basic-grammar":"bi", "nursery-rhymes":"bi", "everyday-conversation":"bi",
+    "bi-padankan-perkataan":"bi", "bi-membina-perkataan":"bi", "bi-isi-tempat-kosong":"bi", "bi-eja-perkataan":"bi",
     "nombor-1-hingga-10":"matematik", "tambah-dan-tolak-asas":"matematik", "bentuk-dan-saiz":"matematik",
     "pendaraban-asas":"matematik", "mengenal-masa-dan-waktu":"matematik", "mengenal-wang":"matematik",
     "mengenal-huruf-jawi":"jawi", "menulis-suku-kata-jawi":"jawi", "membaca-perkataan-jawi":"jawi",
     "perkataan-harian-dalam-jawi":"jawi", "ayat-mudah-jawi":"jawi", "latihan-dan-kuiz-jawi":"jawi",
+    "jawi-padankan-perkataan":"jawi", "jawi-membina-perkataan":"jawi", "jawi-isi-tempat-kosong":"jawi", "jawi-eja-perkataan":"jawi",
     "teka-kata":"aktiviti", "warna-warni":"aktiviti", "kira-cepat":"aktiviti",
   };
   const SUBJECT_INFO = {
@@ -1374,1749 +1385,247 @@
 
   // ============= QUIZ ENGINE =============
   const quizData = {
-    "mengenal-huruf-a-z": {emoji:"🔤", title:"Mengenal Huruf A-Z", qs:[
+    "bm-mengenal-a-z": {emoji:"🔤", title:"Mengenal A-Z", qs:[
       {q:"Huruf apa ini? <div style='font-size:48px;margin:10px 0;'>A</div>", opts:["A","B","O","E"], a:0},
       {q:"🍎 Epal bermula dengan huruf apa?", opts:["B","A","C","D"], a:1},
       {q:"Huruf manakah datang selepas 'B'?", opts:["A","D","C","E"], a:2},
+      {q:"Huruf apa ini? <div style='font-size:48px;margin:10px 0;'>M</div>", opts:["N","M","W","H"], a:1},
+      {q:"🐘 Gajah bermula dengan huruf apa?", opts:["G","E","A","O"], a:0},
     ]},
-    "suku-kata-dan-ejaan": {emoji:"📝", title:"Suku Kata & Ejaan", qs:[
-      {q:"Berapa suku kata dalam 'bola'?", opts:["1","2","3","4"], a:1},
-      {q:"Pilih ejaan yang betul untuk 🐱", opts:["kuching","kucing","kucin","kuceng"], a:1},
-      {q:"'ma-ta' ialah perkataan...", opts:["mata","mati","muka","mula"], a:0},
+    "bm-padankan-suku-kata": {emoji:"🧩", title:"Padankan Suku Kata", qs:[
+      {q:"🐱 Padankan gambar ini dengan suku kata pertama.", opts:["ku","sa","ma","bu"], a:0},
+      {q:"🐟 Padankan gambar ini dengan suku kata pertama.", opts:["da","i-kan » i","ba","ta"], a:1},
+      {q:"🍚 Padankan gambar ini dengan suku kata pertama.", opts:["na","ma","sa","ka"], a:0},
+      {q:"🚗 Padankan gambar ini dengan suku kata pertama.", opts:["ke","ba","re","te"], a:2},
+      {q:"🌸 Padankan gambar ini dengan suku kata pertama.", opts:["pa","bu","sa","ma"], a:1},
     ]},
-    "membaca-ayat-mudah": {emoji:"📖", title:"Membaca Ayat Mudah", qs:[
-      {q:"'Saya suka makan nasi.' Siapa yang suka makan?", opts:["Ibu","Ayah","Saya","Kucing"], a:2},
-      {q:"'Kucing itu comel.' Apa yang comel?", opts:["Anjing","Kucing","Ayam","Itik"], a:1},
-      {q:"Ayat yang betul ialah...", opts:["Makan saya nasi","Saya makan nasi","Nasi saya makan","Saya nasi makan"], a:1},
+    "bm-membina-perkataan": {emoji:"🧱", title:"Membina Perkataan Mengikut Gambar", qs:[
+      {q:"🐱 Bina perkataan untuk gambar ini.", opts:["kucing","kacang","kuning","kacau"], a:0},
+      {q:"🐕 Bina perkataan untuk gambar ini.", opts:["anjing","angin","ayam","angkat"], a:0},
+      {q:"🍌 Bina perkataan untuk gambar ini.", opts:["pisang","pasang","pusing","piring"], a:0},
+      {q:"🚌 Bina perkataan untuk gambar ini.", opts:["bahasa","bas","basi","baju"], a:1},
+      {q:"🏠 Bina perkataan untuk gambar ini.", opts:["rumah","rumput","rumah tangga","ruang"], a:0},
     ]},
-    "tatabahasa-asas": {emoji:"✏️", title:"Tatabahasa Asas", qs:[
-      {q:"'Kucing sedang ___.' Isi tempat kosong.", opts:["tidur","meja","biru","lima"], a:0},
-      {q:"Kata nama bagi haiwan ini 🐶 ialah...", opts:["Lari","Anjing","Comel","Besar"], a:1},
-      {q:"'Saya ___ ke sekolah.' Pilih kata kerja.", opts:["cantik","pergi","merah","tiga"], a:1},
+    "bm-isi-tempat-kosong": {emoji:"✏️", title:"Isi Tempat Kosong Ikut Gambar", qs:[
+      {q:"🐈 Ini seekor ku___.", opts:["ku-cing","ku-da","ku-ih","ku-ku"], a:0},
+      {q:"🐔 Ini seekor a___.", opts:["a-yam","a-nak","a-ir","a-pi"], a:0},
+      {q:"🚲 Ini sebuah ba___.", opts:["ba-si-kal","ba-ju","ba-tu","ba-lon"], a:0},
+      {q:"🍎 Ini sebiji e___.", opts:["e-pal","e-kor","e-mas","e-lok"], a:0},
+      {q:"📚 Ini sebuah bu___.", opts:["bu-ku","bu-ah","bu-nga","bu-ih"], a:0},
     ]},
-    "peribahasa-dan-simpulan-bahasa": {emoji:"📚", title:"Peribahasa & Simpulan Bahasa", qs:[
-      {q:"'Kaki ayam' bermaksud...", opts:["Berjalan tanpa kasut","Ayam betina","Kaki yang panjang","Ayam berlari"], a:0},
-      {q:"'Buah tangan' bermaksud...", opts:["Tangan buah","Hadiah/oleh-oleh","Buah di tangan","Jari"], a:1},
-      {q:"'Ringan tulang' bermaksud orang yang...", opts:["Kuat bekerja","Lemah","Berat","Malas"], a:0},
+    "bm-eja-perkataan": {emoji:"🔡", title:"Eja Perkataan Ikut Gambar", qs:[
+      {q:"🐱 Ejaan yang betul untuk gambar ini ialah...", opts:["kucing","kuceng","kucin","kusing"], a:0},
+      {q:"🌞 Ejaan yang betul untuk gambar ini ialah...", opts:["matahari","matahati","mataari","mata hari"], a:0},
+      {q:"🐟 Ejaan yang betul untuk gambar ini ialah...", opts:["ikan","ekan","iken","ikkan"], a:0},
+      {q:"🌳 Ejaan yang betul untuk gambar ini ialah...", opts:["pokok","pukuk","pokuk","pokok'"], a:0},
+      {q:"🚪 Ejaan yang betul untuk gambar ini ialah...", opts:["pintu","pintuk","pintoh","pinttu"], a:0},
     ]},
-    "karangan-mudah": {emoji:"🖊️", title:"Karangan Mudah", qs:[
-      {q:"Karangan biasanya bermula dengan...", opts:["Penutup","Pengenalan","Nombor","Gambar"], a:1},
-      {q:"Tajuk yang sesuai untuk cerita tentang haiwan ialah...", opts:["Rumah Saya","Haiwan Kesayangan Saya","Baju Baru","Kereta Ayah"], a:1},
-      {q:"Ayat penutup karangan biasanya...", opts:["Memulakan cerita baru","Merumus cerita","Tidak penting","Diletak di tengah"], a:1},
-    ]},
+
     "alphabet-a-z": {emoji:"🔠", title:"Alphabet A-Z", qs:[
       {q:"What letter is this? <div style='font-size:48px;margin:10px 0;'>B</div>", opts:["A","B","C","D"], a:1},
       {q:"🐝 Bee starts with which letter?", opts:["A","B","C","D"], a:1},
       {q:"Which letter comes after 'C'?", opts:["B","D","E","A"], a:1},
+      {q:"What letter is this? <div style='font-size:48px;margin:10px 0;'>D</div>", opts:["B","P","D","O"], a:2},
+      {q:"🐘 Elephant starts with which letter?", opts:["A","E","I","O"], a:1},
     ]},
     "simple-vocabulary": {emoji:"🗣️", title:"Simple Vocabulary", qs:[
       {q:"What do we call this? 🐶", opts:["Cat","Dog","Bird","Fish"], a:1},
       {q:"What colour is the sun? ☀️", opts:["Blue","Green","Yellow","Black"], a:2},
       {q:"What is this? 🍌", opts:["Apple","Banana","Orange","Grape"], a:1},
+      {q:"What is this? 🚗", opts:["Car","Bus","Bike","Boat"], a:0},
+      {q:"What is this? 🏠", opts:["School","House","Shop","Park"], a:1},
     ]},
     "reading-simple-sentences": {emoji:"📖", title:"Reading Simple Sentences", qs:[
       {q:"'I like my cat.' What does the child like?", opts:["Dog","Cat","Bird","Toy"], a:1},
       {q:"'The sun is hot.' What is hot?", opts:["The moon","The sun","The rain","The wind"], a:1},
       {q:"Choose the correct sentence:", opts:["Run I fast","I run fast","Fast run I","I fast run"], a:1},
+      {q:"'She has a red ball.' What colour is the ball?", opts:["Blue","Green","Red","Yellow"], a:2},
+      {q:"'We go to school.' Where do we go?", opts:["Park","Shop","School","Home"], a:2},
     ]},
     "basic-grammar": {emoji:"✏️", title:"Basic Grammar", qs:[
       {q:"'She ___ happy.' Choose the correct word.", opts:["is","are","am","be"], a:0},
       {q:"Which word is a colour?", opts:["Jump","Red","Table","Fast"], a:1},
       {q:"'I ___ to school every day.' Fill in the blank.", opts:["go","goes","going","gone"], a:0},
+      {q:"'They ___ playing.' Choose the correct word.", opts:["is","am","are","be"], a:2},
+      {q:"Which word is an action word?", opts:["Happy","Jump","Red","Table"], a:1},
     ]},
     "nursery-rhymes": {emoji:"🎵", title:"Nursery Rhymes", qs:[
       {q:"'Twinkle twinkle little ___.'", opts:["star","car","dog","cat"], a:0},
       {q:"'Old MacDonald had a ___.'", opts:["car","farm","ball","hat"], a:1},
       {q:"'Baa baa black ___.'", opts:["cat","sheep","cow","dog"], a:1},
+      {q:"'Jack and Jill went up the ___.'", opts:["hill","road","tree","river"], a:0},
+      {q:"'Row row row your ___.'", opts:["car","boat","bike","house"], a:1},
     ]},
     "everyday-conversation": {emoji:"💬", title:"Everyday Conversation", qs:[
       {q:"How do you greet someone in the morning?", opts:["Good night","Good morning","Goodbye","Sorry"], a:1},
       {q:"What do you say after receiving a gift?", opts:["Sorry","Goodbye","Thank you","Please stop"], a:2},
       {q:"What do you say when you want something politely?", opts:["Please","No","Never","Stop"], a:0},
+      {q:"What do you say when you bump into someone?", opts:["Sorry","Thanks","Hello","Bye"], a:0},
+      {q:"What do you say before you leave?", opts:["Hello","Goodbye","Thank you","Please"], a:1},
     ]},
+    "bi-padankan-perkataan": {emoji:"🧩", title:"Padankan Perkataan Ikut Gambar", qs:[
+      {q:"🐱 Match this picture with the correct word.", opts:["Dog","Cat","Bird","Cow"], a:1},
+      {q:"🍎 Match this picture with the correct word.", opts:["Apple","Orange","Grape","Mango"], a:0},
+      {q:"🚗 Match this picture with the correct word.", opts:["Bus","Car","Bike","Train"], a:1},
+      {q:"☀️ Match this picture with the correct word.", opts:["Moon","Star","Sun","Cloud"], a:2},
+      {q:"🐦 Match this picture with the correct word.", opts:["Fish","Bird","Frog","Cat"], a:1},
+    ]},
+    "bi-membina-perkataan": {emoji:"🧱", title:"Membina Perkataan Mengikut Gambar", qs:[
+      {q:"🐶 Build the word for this picture.", opts:["dog","dig","dug","dot"], a:0},
+      {q:"🌞 Build the word for this picture.", opts:["sun","son","sin","sen"], a:0},
+      {q:"🐟 Build the word for this picture.", opts:["fash","fish","fesh","fosh"], a:1},
+      {q:"🏠 Build the word for this picture.", opts:["hose","house","horse","haus"], a:1},
+      {q:"🍚 Build the word for this picture.", opts:["rise","race","rice","rich"], a:2},
+    ]},
+    "bi-isi-tempat-kosong": {emoji:"✏️", title:"Isi Tempat Kosong Ikut Gambar", qs:[
+      {q:"🐱 This is a c__.", opts:["c-a-t","c-o-t","c-u-t","c-i-t"], a:0},
+      {q:"🐕 This is a d__.", opts:["d-i-g","d-o-g","d-u-g","d-a-g"], a:1},
+      {q:"☀️ This is the s__.", opts:["s-i-n","s-u-n","s-o-n","s-a-n"], a:1},
+      {q:"🍎 This is an a__.", opts:["a-p-p-l-e","a-p-e-l","a-p-l-e","a-p-p-e-l"], a:0},
+      {q:"🚗 This is a c__.", opts:["c-o-r","c-a-r","c-e-r","c-u-r"], a:1},
+    ]},
+    "bi-eja-perkataan": {emoji:"🔡", title:"Eja Perkataan Ikut Gambar", qs:[
+      {q:"🐱 Choose the correct spelling for this picture.", opts:["cat","kat","catt","caat"], a:0},
+      {q:"🐕 Choose the correct spelling for this picture.", opts:["dogg","dog","dawg","doog"], a:1},
+      {q:"☀️ Choose the correct spelling for this picture.", opts:["san","sun","sonn","suun"], a:1},
+      {q:"🍎 Choose the correct spelling for this picture.", opts:["aple","appel","apple","appl"], a:2},
+      {q:"🏠 Choose the correct spelling for this picture.", opts:["hous","house","howse","haus"], a:1},
+    ]},
+
     "nombor-1-hingga-10": {emoji:"🔢", title:"Nombor 1 hingga 10", qs:[
       {q:"🍎🍎🍎 Berapa banyak epal?", opts:["2","3","4","5"], a:1},
       {q:"Nombor selepas 5 ialah...", opts:["4","6","7","8"], a:1},
       {q:"Pilih nombor '7'.", opts:["5","7","9","3"], a:1},
+      {q:"🐠🐠🐠🐠🐠🐠 Berapa banyak ikan?", opts:["5","6","7","8"], a:1},
+      {q:"Nombor sebelum 10 ialah...", opts:["8","9","11","7"], a:1},
     ]},
     "tambah-dan-tolak-asas": {emoji:"➕", title:"Tambah & Tolak Asas", qs:[
       {q:"2 + 3 = ?", opts:["4","5","6","7"], a:1},
       {q:"5 − 2 = ?", opts:["1","2","3","4"], a:2},
       {q:"🍬🍬🍬🍬 + 🍬 = ?", opts:["4","5","6","3"], a:1},
+      {q:"6 − 4 = ?", opts:["1","2","3","4"], a:1},
+      {q:"3 + 4 = ?", opts:["6","7","8","9"], a:1},
     ]},
     "bentuk-dan-saiz": {emoji:"🔷", title:"Bentuk & Saiz", qs:[
       {q:"Bentuk ini 🔵 dipanggil...", opts:["Segi tiga","Bulatan","Segi empat","Bintang"], a:1},
       {q:"Bentuk ini 🔺 dipanggil...", opts:["Segi tiga","Bulatan","Segi empat","Bintang"], a:0},
       {q:"Manakah objek yang lebih besar?", opts:["🐘 Gajah","🐜 Semut","🐭 Tikus","🐦 Burung"], a:0},
+      {q:"Bentuk ini 🟨 dipanggil...", opts:["Bulatan","Bintang","Segi empat","Segi tiga"], a:2},
+      {q:"Manakah objek yang lebih kecil?", opts:["🐘 Gajah","🐜 Semut","🐄 Lembu","🐴 Kuda"], a:1},
     ]},
     "pendaraban-asas": {emoji:"✖️", title:"Pendaraban Asas", qs:[
       {q:"2 × 2 = ?", opts:["2","3","4","5"], a:2},
       {q:"3 × 1 = ?", opts:["1","3","4","0"], a:1},
       {q:"2 × 3 = ?", opts:["5","6","7","8"], a:1},
+      {q:"2 × 4 = ?", opts:["6","7","8","9"], a:2},
+      {q:"3 × 2 = ?", opts:["5","6","7","4"], a:1},
     ]},
     "mengenal-masa-dan-waktu": {emoji:"🕐", title:"Mengenal Masa & Waktu", qs:[
       {q:"Kita tidur pada waktu...", opts:["Pagi","Malam","Tengahari","Petang"], a:1},
       {q:"Berapa jam dalam sehari?", opts:["12","24","7","10"], a:1},
       {q:"Kita makan sarapan pada waktu...", opts:["Malam","Pagi","Tengah malam","Petang lewat"], a:1},
+      {q:"Berapa hari dalam seminggu?", opts:["5","6","7","8"], a:2},
+      {q:"Matahari terbit pada waktu...", opts:["Pagi","Malam","Tengah malam","Lewat malam"], a:0},
     ]},
     "mengenal-wang": {emoji:"💰", title:"Mengenal Wang", qs:[
       {q:"Duit syiling RM1 + RM1 = ?", opts:["RM1","RM2","RM3","RM0"], a:1},
       {q:"Manakah wang kertas?", opts:["Syiling 10 sen","Not RM10","Duit palsu","Kunci"], a:1},
       {q:"Jika ada RM5 dan beli barang RM2, baki ialah?", opts:["RM2","RM3","RM4","RM5"], a:1},
+      {q:"50 sen + 50 sen = ?", opts:["RM1","50 sen","RM2","20 sen"], a:0},
+      {q:"Duit manakah bernilai paling tinggi?", opts:["10 sen","RM1","RM10","20 sen"], a:2},
     ]},
+
     "mengenal-huruf-jawi": {emoji:"﷽", title:"Mengenal Huruf Jawi", qs:[
       {q:"Huruf Jawi ini 'ا' menyamai huruf rumi...", opts:["A","B","C","D"], a:0},
       {q:"Huruf Jawi ini 'ب' menyamai huruf rumi...", opts:["A","B","C","D"], a:1},
       {q:"Berapa banyak huruf asas dalam tulisan Jawi?", opts:["10","20","Lebih 30","5"], a:2},
+      {q:"Huruf Jawi ini 'م' menyamai huruf rumi...", opts:["M","N","L","K"], a:0},
+      {q:"Huruf Jawi ini 'د' menyamai huruf rumi...", opts:["B","D","R","T"], a:1},
     ]},
     "menulis-suku-kata-jawi": {emoji:"✍️", title:"Menulis Suku Kata Jawi", qs:[
       {q:"Suku kata Jawi ditulis dari arah mana?", opts:["Kiri ke kanan","Kanan ke kiri","Atas ke bawah","Bawah ke atas"], a:1},
       {q:"'با' dalam Jawi berbunyi seperti...", opts:["ba","da","ka","ma"], a:0},
       {q:"Menulis Jawi memerlukan kita mengenal...", opts:["Nombor","Warna","Huruf Jawi","Bentuk"], a:2},
+      {q:"'ما' dalam Jawi berbunyi seperti...", opts:["ba","ma","sa","ta"], a:1},
+      {q:"Latihan menulis Jawi membantu kita...", opts:["Melukis lebih baik","Menulis & membaca Jawi","Bermain bola","Berenang"], a:1},
     ]},
     "membaca-perkataan-jawi": {emoji:"📄", title:"Membaca Perkataan Jawi", qs:[
       {q:"Perkataan 'ماما' dalam Jawi bermaksud...", opts:["Papa","Mama","Kakak","Adik"], a:1},
       {q:"Tulisan Jawi banyak digunakan dalam bahasa...", opts:["Melayu","Cina","Tamil","Jepun"], a:0},
       {q:"Untuk membaca Jawi dengan baik, kita perlu...", opts:["Berlari","Berlatih kerap","Tidur","Bermain"], a:1},
+      {q:"Perkataan 'بابا' dalam Jawi bermaksud...", opts:["Mama","Papa","Adik","Kakak"], a:1},
+      {q:"Membaca Jawi membantu kita mengenal...", opts:["Warisan bangsa","Sukan","Sains","Muzik"], a:0},
     ]},
     "perkataan-harian-dalam-jawi": {emoji:"🕌", title:"Perkataan Harian dalam Jawi", qs:[
       {q:"Perkataan 'air' dalam Jawi ditulis sebagai...", opts:["اير","ابو","اكن","امق"], a:0},
       {q:"Kita menulis Jawi untuk perkataan harian seperti...", opts:["Rumah, air, buku","Robot, kereta","Bintang jauh","Angka besar"], a:0},
       {q:"Belajar Jawi membantu kita mengenal...", opts:["Warisan bangsa","Sains","Sukan","Muzik"], a:0},
+      {q:"Perkataan 'buku' sering digunakan dalam ayat...", opts:["Harian","Sains","Sukan","Muzik"], a:0},
+      {q:"Jawi digunakan sejak zaman...", opts:["Kesultanan Melayu","Zaman moden sahaja","Luar negara","Tidak pernah"], a:0},
     ]},
     "ayat-mudah-jawi": {emoji:"📜", title:"Ayat Mudah Jawi", qs:[
       {q:"Ayat Jawi mudah biasanya pendek dan...", opts:["Susah difaham","Mudah difaham","Panjang","Berwarna"], a:1},
       {q:"'ساي' dalam Jawi menyamai perkataan rumi...", opts:["Kamu","Saya","Dia","Kita"], a:1},
       {q:"Latihan ayat Jawi membantu kita...", opts:["Melukis","Menyanyi","Menulis & membaca Jawi","Berenang"], a:2},
+      {q:"Ayat Jawi biasanya bermula dengan...", opts:["Kata nama/kata ganti","Nombor","Simbol","Warna"], a:0},
+      {q:"Membaca ayat Jawi setiap hari membantu kita...", opts:["Lebih mahir","Lupa","Malas","Lemah"], a:0},
     ]},
     "latihan-dan-kuiz-jawi": {emoji:"🎯", title:"Latihan & Kuiz Jawi", qs:[
       {q:"Latihan Jawi yang kerap membantu kita menjadi...", opts:["Lemah","Mahir","Lupa","Malas"], a:1},
       {q:"Kuiz Jawi biasanya menguji kemahiran...", opts:["Melukis","Membaca & menulis Jawi","Bermain bola","Memasak"], a:1},
       {q:"Selepas kuiz, kita patut...", opts:["Berhenti belajar","Semak jawapan & belajar lagi","Buang buku","Tidur"], a:1},
+      {q:"Kuiz membantu ibu bapa memantau...", opts:["Berat badan anak","Kemajuan pembelajaran anak","Warna kegemaran","Makanan anak"], a:1},
+      {q:"Sikap terbaik semasa menjawab kuiz ialah...", opts:["Cepat tanpa fikir","Tenang & teliti","Tergesa-gesa","Menyalin jawapan"], a:1},
     ]},
+    "jawi-padankan-perkataan": {emoji:"🧩", title:"Padankan Perkataan Ikut Gambar", qs:[
+      {q:"🐱 Padankan gambar ini dengan perkataan Jawi yang betul.", opts:["قوچيڠ","انجيڠ","ايکن","ايم"], a:0},
+      {q:"📚 Padankan gambar ini dengan perkataan Jawi yang betul.", opts:["روماه","بوکو","ايت","نصي"], a:1},
+      {q:"💧 Padankan gambar ini dengan perkataan Jawi yang betul.", opts:["اوده","اير","اڤي","اوبت"], a:1},
+      {q:"🏠 Padankan gambar ini dengan perkataan Jawi yang betul.", opts:["روماه","بوکو","کوچيڠ","ايکن"], a:0},
+      {q:"🍚 Padankan gambar ini dengan perkataan Jawi yang betul.", opts:["اير","نصي","بوکو","ايکن"], a:1},
+    ]},
+    "jawi-membina-perkataan": {emoji:"🧱", title:"Membina Perkataan Mengikut Gambar", qs:[
+      {q:"🐟 Bina perkataan Jawi untuk gambar ini.", opts:["ايکن","ايم","اوبت","اوده"], a:0},
+      {q:"🔥 Bina perkataan Jawi untuk gambar ini.", opts:["اڤي","اير","اوده","ابو"], a:0},
+      {q:"👦 Bina perkataan Jawi untuk gambar ini.", opts:["اناک","ابو","ايبو","اداء"], a:0},
+      {q:"🍞 Bina perkataan Jawi untuk gambar ini.", opts:["روتي","نصي","بوکو","اير"], a:0},
+      {q:"🌙 Bina perkataan Jawi untuk gambar ini.", opts:["بولن","ماتاهاري","بينتڠ","اوان"], a:0},
+    ]},
+    "jawi-isi-tempat-kosong": {emoji:"✏️", title:"Isi Tempat Kosong Ikut Gambar", qs:[
+      {q:"🐈 Ini seekor قو___.", opts:["چيڠ","دا","ايه","ره"], a:0},
+      {q:"📖 Ini sebuah بو___.", opts:["کو","ته","دي","سي"], a:0},
+      {q:"🏠 Ini sebuah رو___.", opts:["ماه","تن","سق","کيت"], a:0},
+      {q:"👤 Ini seorang ا___.", opts:["ناک","ير","تس","ما"], a:0},
+      {q:"💧 Ini disebut ا___.", opts:["ير","نک","تس","ڤي"], a:0},
+    ]},
+    "jawi-eja-perkataan": {emoji:"🔡", title:"Eja Perkataan Ikut Gambar", qs:[
+      {q:"🐱 Ejaan Jawi yang betul untuk gambar ini ialah...", opts:["قوچيڠ","قچيڠ","قوچن","قوچيک"], a:0},
+      {q:"📚 Ejaan Jawi yang betul untuk gambar ini ialah...", opts:["بوکو","بکو","بوکوء","بوقو"], a:0},
+      {q:"🏠 Ejaan Jawi yang betul untuk gambar ini ialah...", opts:["روماه","رومه","رماه","روما"], a:0},
+      {q:"💧 Ejaan Jawi yang betul untuk gambar ini ialah...", opts:["اير","ايير","اءير","ايره"], a:0},
+      {q:"🍚 Ejaan Jawi yang betul untuk gambar ini ialah...", opts:["نصي","ناسي","نسي","نصيء"], a:0},
+    ]},
+
     "teka-kata": {emoji:"🧩", title:"Teka Kata", qs:[
       {q:"Haiwan ini suka menyalak: 🐕", opts:["Kucing","Anjing","Ayam","Ikan"], a:1},
       {q:"Buah ini berwarna kuning: 🍌", opts:["Epal","Pisang","Tembikai","Anggur"], a:1},
       {q:"Kenderaan ini terbang di udara: ✈️", opts:["Kapal","Kereta","Kapal terbang","Basikal"], a:2},
+      {q:"Haiwan ini bersaiz besar dan hidup di Afrika: 🐘", opts:["Gajah","Semut","Kucing","Arnab"], a:0},
+      {q:"Objek ini digunakan untuk membaca waktu malam: 🌙", opts:["Bulan","Matahari","Bintang","Awan"], a:0},
     ]},
     "warna-warni": {emoji:"🎨", title:"Warna-Warni", qs:[
       {q:"Warna apa langit pada waktu siang? ☀️", opts:["Hijau","Biru","Merah","Hitam"], a:1},
       {q:"Warna apa daun pokok? 🌳", opts:["Hijau","Kuning","Ungu","Putih"], a:0},
       {q:"Campuran warna biru + kuning menjadi...", opts:["Hijau","Merah","Putih","Hitam"], a:0},
+      {q:"Warna apa pisang yang masak? 🍌", opts:["Hijau","Merah","Kuning","Ungu"], a:2},
+      {q:"Campuran warna merah + putih menjadi...", opts:["Merah jambu","Hijau","Biru","Hitam"], a:0},
     ]},
     "kira-cepat": {emoji:"🧮", title:"Kira Cepat", qs:[
       {q:"4 + 4 = ?", opts:["6","7","8","9"], a:2},
       {q:"10 − 3 = ?", opts:["6","7","8","5"], a:1},
       {q:"3 + 5 = ?", opts:["7","8","9","6"], a:1},
-    ]},
-  };
-
-  let currentQuiz = null;
-  let currentQuizId = null;
-  let currentIndex = 0;
-  let currentScore = 0;
-
-  function openQuiz(id){
-    const quiz = quizData[id];
-    if(!quiz) return;
-    currentQuiz = quiz;
-    currentQuizId = id;
-    currentIndex = 0;
-    currentScore = 0;
-    document.getElementById('quizOverlay').classList.add('open');
-    renderQuestion();
-  }
-  function closeQuiz(){
-    document.getElementById('quizOverlay').classList.remove('open');
-  }
-  document.getElementById('quizOverlay').addEventListener('click', (e)=>{
-    if(e.target.id==='quizOverlay') closeQuiz();
-  });
-
-  function renderQuestion(){
-    const body = document.getElementById('quizBody');
-    const total = currentQuiz.qs.length;
-    const q = currentQuiz.qs[currentIndex];
-    body.innerHTML = `
-      <div class="quiz-header">
-        <div class="emoji">${currentQuiz.emoji}</div>
-        <div><p class="quiz-title">${currentQuiz.title}</p></div>
-      </div>
-      <div class="quiz-progress-track"><div class="quiz-progress-fill" style="width:${(currentIndex/total)*100}%;"></div></div>
-      <div class="quiz-question">Soalan ${currentIndex+1} / ${total}<br>${q.q}</div>
-      <div class="quiz-options" id="quizOptions">
-        ${q.opts.map((opt,i)=>`<button class="quiz-opt" data-i="${i}" onclick="answerQuiz(${i})">${opt}</button>`).join('')}
-      </div>
-      <div class="quiz-feedback" id="quizFeedback"></div>
-    `;
-  }
-
-  function answerQuiz(i){
-    const q = currentQuiz.qs[currentIndex];
-    const opts = document.querySelectorAll('#quizOptions .quiz-opt');
-    opts.forEach(o=>o.classList.add('disabled'));
-    const feedback = document.getElementById('quizFeedback');
-    if(i === q.a){
-      opts[i].classList.add('correct');
-      feedback.textContent = '🎉 Betul! Bagus!';
-      feedback.className = 'quiz-feedback good';
-      currentScore++;
-      playCorrectSound();
-    } else {
-      opts[i].classList.add('wrong');
-      opts[q.a].classList.add('correct');
-      feedback.textContent = '💡 Cuba lagi lain kali!';
-      feedback.className = 'quiz-feedback bad';
-      playWrongSound();
-    }
-    const nextBtn = document.createElement('button');
-    nextBtn.className = 'quiz-next';
-    nextBtn.textContent = (currentIndex < currentQuiz.qs.length-1) ? 'Soalan Seterusnya ➡️' : 'Lihat Keputusan 🏆';
-    nextBtn.onclick = nextQuestion;
-    document.getElementById('quizBody').appendChild(nextBtn);
-  }
-
-  function nextQuestion(){
-    currentIndex++;
-    if(currentIndex < currentQuiz.qs.length){
-      renderQuestion();
-    } else {
-      renderResult();
-    }
-  }
-
-  function renderResult(){
-    const total = currentQuiz.qs.length;
-    const pct = Math.round((currentScore/total)*100);
-    let emoji = '🌟', msg = 'Cubalah sekali lagi, anda pasti boleh!';
-    if(pct === 100){ emoji='🏆'; msg='Sempurna! Anda memang bijak!'; playCelebrationSound(); }
-    else if(pct >= 60){ emoji='🎉'; msg='Bagus sekali! Teruskan usaha!'; playCelebrationSound(); }
-    const stars = '⭐'.repeat(Math.max(1, Math.round((currentScore/total)*3)));
-
-    const saved = saveScore(currentQuizId, currentScore, total);
-    const isNewBest = saved.score === currentScore && saved.total === total;
-    const bestLine = isNewBest
-      ? `<p style="color:#1a8f68;font-weight:800;">✨ Rekod terbaik baharu disimpan!</p>`
-      : `<p style="color:var(--text-soft);font-weight:700;font-size:13px;">Skor terbaik anda: ${saved.score}/${saved.total}</p>`;
-
-    document.getElementById('quizBody').innerHTML = `
-      <div class="quiz-result">
-        <div class="big-emoji">${emoji}</div>
-        <h3>${msg}</h3>
-        <p>Anda jawab ${currentScore} daripada ${total} soalan dengan betul.</p>
-        <div class="quiz-stars">${stars}</div>
-        ${bestLine}
-        <button class="quiz-next" onclick="closeQuiz()">Selesai</button>
-      </div>
-    `;
-    renderSavedScoreBadges();
-    updateRewardsCard();
-    renderSubjectBreakdown();
-    renderParentQuizLog();
-    renderWeeklyChart();
-  }
-
-  // Subject tabs inside Pembelajaran
-  renderSavedScoreBadges();
-  updateRewardsCard();
-  renderSubjectBreakdown();
-  renderParentQuizLog();
-  renderWeeklyChart();
-  document.querySelectorAll('.subject-tab').forEach(tab=>{
-    tab.addEventListener('click',()=>{
-      document.querySelectorAll('.subject-tab').forEach(t=>t.classList.remove('active'));
-      tab.classList.add('active');
-      document.querySelectorAll('.subject-panel').forEach(p=>p.classList.remove('active'));
-      document.getElementById('subject-'+tab.dataset.subject).classList.add('active');
-    });
-  });
-</script>
-
-</body>
-</html>
-    --green-light:#E3FBF2;
-    --yellow:#FFB020;
-    --yellow-light:#FFF3DE;
-    --blue:#3E8EF7;
-    --blue-light:#E7F1FF;
-    --pink:#FF6FA5;
-    --pink-light:#FFE9F1;
-    --orange:#FF8A3D;
-    --bg:#F4F6FB;
-    --card:#FFFFFF;
-    --text:#20213B;
-    --text-soft:#6B6E8D;
-    --border:#E9EBF5;
-    --radius-lg:22px;
-    --radius-md:16px;
-    --radius-sm:10px;
-    --shadow:0 8px 24px rgba(60,60,120,0.07);
-  }
-  *{box-sizing:border-box;}
-  body{
-    margin:0;
-    font-family:'Nunito',sans-serif;
-    background:var(--bg);
-    color:var(--text);
-  }
-  .display{font-family:'Baloo 2',cursive;}
-  .app{
-    display:flex;
-    min-height:100vh;
-  }
-
-  /* SIDEBAR */
-  .sidebar{
-    width:250px;
-    background:var(--card);
-    border-right:1px solid var(--border);
-    padding:24px 18px;
-    display:flex;
-    flex-direction:column;
-    position:sticky;
-    top:0;
-    height:100vh;
-    flex-shrink:0;
-  }
-  .logo{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    padding:0 6px 22px;
-    margin-bottom:10px;
-  }
-  .logo-star{
-    width:42px;height:42px;
-    background:linear-gradient(135deg,var(--yellow),var(--orange));
-    border-radius:12px;
-    display:flex;align-items:center;justify-content:center;
-    font-size:22px;
-    box-shadow:0 4px 10px rgba(255,138,61,0.35);
-  }
-  .logo-text{
-    font-family:'Baloo 2',cursive;
-    font-weight:800;
-    font-size:19px;
-    line-height:1.1;
-    background:linear-gradient(135deg,var(--purple),var(--blue));
-    -webkit-background-clip:text;
-    background-clip:text;
-    color:transparent;
-  }
-  .nav{
-    display:flex;
-    flex-direction:column;
-    gap:4px;
-    flex:1;
-  }
-  .nav-item{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    padding:12px 14px;
-    border-radius:14px;
-    cursor:pointer;
-    font-weight:700;
-    font-size:15px;
-    color:var(--text-soft);
-    transition:.15s ease;
-    border:none;
-    background:transparent;
-    text-align:left;
-    width:100%;
-  }
-  .nav-item .ic{
-    width:22px;height:22px;
-    display:flex;align-items:center;justify-content:center;
-    flex-shrink:0;
-  }
-  .nav-item:hover{
-    background:var(--purple-light);
-    color:var(--purple-dark);
-  }
-  .nav-item.active{
-    background:linear-gradient(135deg,var(--purple),var(--purple-dark));
-    color:#fff;
-    box-shadow:0 6px 14px rgba(124,111,232,0.35);
-  }
-  .offline-card{
-    margin-top:12px;
-    background:var(--purple-light);
-    border-radius:16px;
-    padding:14px;
-    font-size:13px;
-  }
-  .offline-card .t{
-    font-weight:800;
-    display:flex;align-items:center;gap:8px;
-    color:var(--purple-dark);
-    margin-bottom:4px;
-  }
-  .offline-card .s{color:var(--text-soft);font-weight:600;font-size:12.5px;}
-  .offline-card .status{
-    margin-top:8px;display:flex;align-items:center;gap:6px;
-    color:var(--green);font-weight:800;font-size:12.5px;
-  }
-
-  /* MAIN */
-  .main{
-    flex:1;
-    padding:26px 34px 50px;
-    max-width:1400px;
-  }
-
-  .page{display:none;}
-  .page.active{display:block;animation:fadeIn .35s ease;}
-  @keyframes fadeIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:none;}}
-
-  /* HERO */
-  .hero{
-    position:relative;
-    background:linear-gradient(120deg,#CFE9FF 0%, #E4F6EA 60%, #EAF7E0 100%);
-    border-radius:var(--radius-lg);
-    padding:34px 40px;
-    overflow:hidden;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    min-height:220px;
-    margin-bottom:22px;
-  }
-  .hero-text h1{
-    font-family:'Baloo 2',cursive;
-    font-size:34px;
-    margin:0 0 8px;
-    color:var(--text);
-  }
-  .hero-text p{
-    margin:0;
-    color:var(--text-soft);
-    font-weight:700;
-    font-size:15px;
-  }
-  .hero-clouds{
-    position:absolute;
-    inset:0;
-    pointer-events:none;
-  }
-  .cloud{
-    position:absolute;
-    background:rgba(255,255,255,0.75);
-    border-radius:50px;
-    filter:blur(0.3px);
-  }
-  .hero-avatar{
-    font-size:110px;
-    position:relative;
-    z-index:2;
-  }
-  .profile-pill{
-    position:absolute;
-    top:22px; right:26px;
-    background:#fff;
-    border-radius:30px;
-    padding:6px 14px 6px 6px;
-    display:flex;align-items:center;gap:8px;
-    box-shadow:var(--shadow);
-    font-weight:800;
-    z-index:3;
-  }
-  .profile-pill .av{
-    width:32px;height:32px;border-radius:50%;
-    background:var(--purple-light);
-    display:flex;align-items:center;justify-content:center;
-    font-size:17px;
-  }
-
-  /* GRID CARDS */
-  .grid2{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:20px;
-    margin-bottom:20px;
-  }
-  .grid3{
-    display:grid;
-    grid-template-columns:1.15fr 1fr 1fr;
-    gap:20px;
-  }
-  .card{
-    background:var(--card);
-    border-radius:var(--radius-lg);
-    padding:22px 24px;
-    box-shadow:var(--shadow);
-    border:1px solid var(--border);
-  }
-  .card-title{
-    display:flex;align-items:center;gap:10px;
-    font-family:'Baloo 2',cursive;
-    font-size:18px;
-    font-weight:700;
-    margin-bottom:18px;
-  }
-  .card-title .dot{
-    width:34px;height:34px;
-    border-radius:10px;
-    display:flex;align-items:center;justify-content:center;
-    font-size:17px;
-  }
-
-  /* progress ring */
-  .progress-wrap{display:flex;align-items:center;gap:22px;}
-  .ring{position:relative;width:118px;height:118px;flex-shrink:0;}
-  .ring svg{transform:rotate(-90deg);}
-  .ring-label{
-    position:absolute;inset:0;
-    display:flex;flex-direction:column;align-items:center;justify-content:center;
-  }
-  .ring-label .pct{font-family:'Baloo 2',cursive;font-size:26px;font-weight:800;color:var(--purple-dark);}
-  .ring-label .sub{font-size:11.5px;color:var(--text-soft);font-weight:700;}
-  .progress-info p{margin:0 0 12px;font-weight:700;color:var(--text-soft);font-size:14.5px;}
-  .bar-track{
-    background:var(--purple-light);
-    border-radius:20px;height:10px;overflow:hidden;margin-bottom:6px;
-  }
-  .bar-fill{
-    height:100%;border-radius:20px;
-    background:linear-gradient(90deg,var(--purple),var(--blue));
-  }
-  .bar-caption{display:flex;justify-content:space-between;font-size:12.5px;color:var(--text-soft);font-weight:700;}
-  .star-note{
-    margin-top:14px;background:var(--yellow-light);color:#8a5b00;
-    padding:8px 12px;border-radius:10px;font-weight:800;font-size:13px;
-    display:flex;align-items:center;gap:6px;
-  }
-
-  /* quick access */
-  .quick-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
-  .quick-item{
-    background:var(--bg);
-    border-radius:16px;
-    padding:18px 10px;
-    text-align:center;
-    cursor:pointer;
-    border:1px solid var(--border);
-    transition:.15s;
-    font-weight:800;
-    font-size:13.5px;
-  }
-  .quick-item:hover{transform:translateY(-3px);box-shadow:var(--shadow);}
-  .quick-ic{
-    width:46px;height:46px;border-radius:12px;
-    display:flex;align-items:center;justify-content:center;
-    margin:0 auto 10px;font-size:22px;
-  }
-
-  /* activity list */
-  .act-row{
-    display:flex;align-items:center;gap:12px;
-    padding:12px 0;
-    border-bottom:1px solid var(--border);
-  }
-  .act-row:last-of-type{border-bottom:none;}
-  .act-ic{
-    width:42px;height:42px;border-radius:12px;
-    display:flex;align-items:center;justify-content:center;font-size:19px;flex-shrink:0;
-  }
-  .act-info{flex:1;}
-  .act-info .n{font-weight:800;font-size:14.5px;}
-  .act-info .s{font-size:12.5px;color:var(--text-soft);font-weight:700;}
-  .act-when{text-align:right;font-size:12px;color:var(--text-soft);font-weight:700;}
-  .check{color:var(--green);font-weight:900;margin-left:4px;}
-  .see-all{
-    margin-top:14px;width:100%;padding:10px;border:none;border-radius:12px;
-    background:var(--purple-light);color:var(--purple-dark);font-weight:800;cursor:pointer;
-  }
-
-  /* streak */
-  .streak-num{
-    font-family:'Baloo 2',cursive;font-size:56px;font-weight:800;color:var(--orange);text-align:center;line-height:1;
-  }
-  .streak-sub{text-align:center;font-weight:800;color:var(--text-soft);font-size:14px;margin-top:2px;}
-  .streak-note{text-align:center;color:var(--text-soft);font-weight:700;font-size:13px;margin:6px 0 18px;}
-  .week-row{display:flex;justify-content:space-between;}
-  .week-day{text-align:center;font-size:11.5px;color:var(--text-soft);font-weight:800;}
-  .flame{
-    width:34px;height:34px;border-radius:50%;
-    display:flex;align-items:center;justify-content:center;
-    margin:0 auto 6px;font-size:16px;
-  }
-  .flame.on{background:var(--yellow-light);}
-  .flame.off{background:var(--bg);opacity:.5;}
-
-  /* rewards */
-  .reward-row{display:flex;align-items:center;gap:14px;}
-  .star-badge{
-    width:70px;height:70px;border-radius:16px;
-    background:var(--yellow-light);
-    display:flex;flex-direction:column;align-items:center;justify-content:center;
-    flex-shrink:0;
-  }
-  .star-badge .n{font-family:'Baloo 2',cursive;font-weight:800;font-size:22px;color:var(--orange);}
-  .star-badge .l{font-size:10.5px;color:var(--text-soft);font-weight:700;}
-  .chest-emoji{font-size:56px;margin-left:auto;}
-  .reward-caption{font-size:13px;color:var(--text-soft);font-weight:700;margin:14px 0 8px;}
-
-  /* tips */
-  .tip-card{
-    margin-top:20px;
-    background:var(--card);
-    border-radius:var(--radius-lg);
-    padding:20px 26px;
-    display:flex;align-items:center;gap:18px;
-    box-shadow:var(--shadow);
-    border:1px solid var(--border);
-  }
-  .tip-ic{font-size:44px;}
-  .tip-title{font-weight:800;font-size:15px;display:flex;align-items:center;gap:6px;margin-bottom:2px;}
-  .tip-body{color:var(--text-soft);font-weight:700;font-size:13.5px;}
-
-  /* ---- PEMBELAJARAN PAGE ---- */
-  .subject-tabs{display:flex;gap:10px;margin-bottom:24px;flex-wrap:wrap;}
-  .subject-tab{
-    padding:10px 20px;border-radius:14px;border:2px solid var(--border);
-    background:#fff;font-weight:800;cursor:pointer;font-size:14.5px;
-    display:flex;align-items:center;gap:8px;color:var(--text-soft);
-    transition:.15s;
-  }
-  .subject-tab:hover{border-color:var(--purple);}
-  .subject-tab.active{
-    background:var(--purple);color:#fff;border-color:var(--purple);
-    box-shadow:0 6px 14px rgba(124,111,232,0.3);
-  }
-  .subject-panel{display:none;}
-  .subject-panel.active{display:block;animation:fadeIn .3s ease;}
-
-  .subj-hero{
-    border-radius:var(--radius-lg);
-    padding:26px 30px;margin-bottom:20px;
-    display:flex;justify-content:space-between;align-items:center;
-  }
-  .subj-hero h2{font-family:'Baloo 2',cursive;margin:0 0 6px;font-size:26px;}
-  .subj-hero p{margin:0;font-weight:700;color:var(--text-soft);font-size:14px;}
-  .subj-hero .emoji{font-size:64px;}
-
-  .topic-grid{
-    display:grid;grid-template-columns:repeat(3,1fr);gap:18px;
-  }
-  .topic-card{
-    background:#fff;border-radius:18px;padding:20px;
-    border:1px solid var(--border);box-shadow:var(--shadow);
-    cursor:pointer;transition:.15s;
-  }
-  .topic-card:hover{transform:translateY(-3px);}
-  .quiz-btn{
-    margin-top:14px;width:100%;padding:10px;border:none;border-radius:12px;
-    background:linear-gradient(135deg,var(--purple),var(--purple-dark));
-    color:#fff;font-weight:800;font-size:13.5px;cursor:pointer;
-    display:flex;align-items:center;justify-content:center;gap:6px;
-    transition:.15s;
-  }
-  .quiz-btn:hover{transform:scale(1.03);box-shadow:0 6px 14px rgba(124,111,232,0.35);}
-
-  /* ---- QUIZ MODAL ---- */
-  .quiz-overlay{
-    position:fixed;inset:0;background:rgba(32,33,59,0.55);
-    display:none;align-items:center;justify-content:center;
-    z-index:999;padding:20px;
-  }
-  .quiz-overlay.open{display:flex;}
-  .quiz-modal{
-    background:#fff;border-radius:26px;padding:32px;max-width:560px;width:100%;
-    box-shadow:0 20px 60px rgba(0,0,0,0.25);
-    max-height:88vh;overflow-y:auto;position:relative;
-    animation:popIn .25s ease;
-  }
-  @keyframes popIn{from{opacity:0;transform:scale(.92);}to{opacity:1;transform:scale(1);}}
-  .quiz-close{
-    position:absolute;top:18px;right:18px;
-    width:34px;height:34px;border-radius:50%;border:none;
-    background:var(--bg);font-size:16px;cursor:pointer;font-weight:800;color:var(--text-soft);
-  }
-  .quiz-header{display:flex;align-items:center;gap:12px;margin-bottom:6px;}
-  .quiz-header .emoji{font-size:38px;}
-  .quiz-title{font-family:'Baloo 2',cursive;font-size:21px;font-weight:700;margin:0;}
-  .quiz-progress-track{background:var(--bg);border-radius:20px;height:10px;overflow:hidden;margin:16px 0 26px;}
-  .quiz-progress-fill{height:100%;border-radius:20px;background:linear-gradient(90deg,var(--purple),var(--blue));transition:width .3s ease;}
-  .quiz-question{font-family:'Baloo 2',cursive;font-size:19px;font-weight:700;margin-bottom:20px;text-align:center;line-height:1.4;}
-  .quiz-options{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
-  .quiz-opt{
-    background:var(--bg);border:3px solid transparent;border-radius:16px;
-    padding:18px 12px;font-size:17px;font-weight:800;cursor:pointer;text-align:center;
-    transition:.15s;
-  }
-  .quiz-opt:hover{border-color:var(--purple);background:var(--purple-light);}
-  .quiz-opt.correct{background:var(--green-light);border-color:var(--green);color:#1a8f68;}
-  .quiz-opt.wrong{background:var(--pink-light);border-color:#ff6f6f;color:#c93a3a;}
-  .quiz-opt.disabled{pointer-events:none;}
-  .quiz-feedback{
-    text-align:center;font-weight:800;font-size:15px;margin-top:18px;min-height:24px;
-  }
-  .quiz-feedback.good{color:#1a8f68;}
-  .quiz-feedback.bad{color:#c93a3a;}
-  .quiz-next{
-    display:block;margin:20px auto 0;padding:12px 30px;border:none;border-radius:14px;
-    background:linear-gradient(135deg,var(--purple),var(--purple-dark));color:#fff;
-    font-weight:800;font-size:15px;cursor:pointer;
-  }
-  .quiz-result{text-align:center;}
-  .quiz-result .big-emoji{font-size:64px;margin-bottom:10px;}
-  .quiz-result h3{font-family:'Baloo 2',cursive;font-size:24px;margin:0 0 8px;}
-  .quiz-result p{color:var(--text-soft);font-weight:700;margin:0 0 20px;}
-  .quiz-stars{font-size:34px;margin-bottom:16px;letter-spacing:4px;}
-  .score-badge{
-    margin-top:10px;display:inline-flex;align-items:center;gap:4px;
-    background:var(--yellow-light);color:#8a5b00;font-weight:800;font-size:11.5px;
-    padding:5px 10px;border-radius:10px;
-  }
-
-  /* ---- IBU BAPA: subject breakdown ---- */
-  .subject-breakdown-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
-  .subj-stat-card{
-    border-radius:16px;padding:18px 16px;text-align:center;border:1px solid var(--border);
-  }
-  .subj-stat-card .ic{font-size:30px;margin-bottom:8px;}
-  .subj-stat-card .lbl{font-weight:800;font-size:13.5px;margin-bottom:10px;}
-  .subj-stat-card .stars{font-family:'Baloo 2',cursive;font-weight:800;font-size:22px;color:var(--orange);margin-bottom:6px;}
-  .subj-stat-card .mini-bar{background:rgba(0,0,0,0.06);border-radius:20px;height:8px;overflow:hidden;margin-bottom:6px;}
-  .subj-stat-card .mini-bar-fill{height:100%;border-radius:20px;}
-  .subj-stat-card .meta{font-size:11px;color:var(--text-soft);font-weight:700;}
-
-  .qlog-row{
-    display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid var(--border);
-  }
-  .qlog-row:last-child{border-bottom:none;}
-  .qlog-ic{font-size:20px;width:34px;text-align:center;}
-  .qlog-info{flex:1;}
-  .qlog-info .n{font-weight:800;font-size:14px;}
-  .qlog-info .s{font-size:12px;color:var(--text-soft);font-weight:700;}
-  .qlog-score{font-weight:800;font-size:13.5px;padding:4px 10px;border-radius:8px;}
-  .qlog-empty{color:var(--text-soft);font-weight:700;font-size:14px;text-align:center;padding:20px 0;}
-
-  @media(max-width:900px){
-    .subject-breakdown-grid{grid-template-columns:1fr 1fr;}
-  }
-
-  /* ---- WEEKLY CHART ---- */
-  .weekly-chart{
-    display:flex;justify-content:space-between;align-items:flex-end;
-    height:150px;padding:0 4px;gap:6px;
-  }
-  .wk-col{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;flex:1;height:100%;}
-  .wk-bar-track{
-    width:100%;max-width:34px;height:110px;background:var(--bg);border-radius:10px;
-    display:flex;align-items:flex-end;overflow:hidden;
-  }
-  .wk-bar-fill{
-    width:100%;border-radius:10px 10px 0 0;
-    background:linear-gradient(180deg,var(--purple),var(--blue));
-    transition:height .4s ease;min-height:2px;
-  }
-  .wk-day{font-size:11px;font-weight:800;color:var(--text-soft);margin-top:8px;}
-  .wk-val{font-size:10.5px;font-weight:800;color:var(--purple-dark);margin-top:2px;}
-  .weekly-caption{margin-top:14px;font-size:12.5px;color:var(--text-soft);font-weight:700;text-align:center;}
-
-  /* ---- RESET BUTTON ---- */
-  .reset-btn{
-    padding:11px 22px;border:2px solid #ff6f6f;border-radius:12px;
-    background:var(--pink-light);color:#c93a3a;font-weight:800;font-size:14px;
-    cursor:pointer;white-space:nowrap;transition:.15s;
-  }
-  .reset-btn:hover{background:#ff6f6f;color:#fff;}
-
-  /* ---- CONFETTI ---- */
-  .confetti-piece{
-    position:fixed;top:-20px;z-index:1200;border-radius:2px;pointer-events:none;
-    animation:confettiFall linear forwards;
-  }
-  @keyframes confettiFall{
-    to{ transform:translateY(110vh) rotate(720deg); opacity:0.9; }
-  }
-  .topic-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;}
-  .topic-ic{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:21px;}
-  .topic-badge{
-    font-size:11px;font-weight:800;padding:4px 9px;border-radius:8px;
-  }
-  .badge-selesai{background:var(--green-light);color:#1a8f68;}
-  .badge-progress{background:var(--yellow-light);color:#8a5b00;}
-  .badge-baru{background:var(--blue-light);color:#1c5fc9;}
-  .topic-name{font-weight:800;font-size:15.5px;margin-bottom:4px;}
-  .topic-meta{font-size:12.5px;color:var(--text-soft);font-weight:700;margin-bottom:12px;}
-  .topic-bar{background:var(--bg);border-radius:20px;height:8px;overflow:hidden;}
-  .topic-bar-fill{height:100%;border-radius:20px;}
-
-  @media(max-width:1100px){
-    .grid3{grid-template-columns:1fr;}
-    .grid2{grid-template-columns:1fr;}
-    .topic-grid{grid-template-columns:1fr 1fr;}
-  }
-  @media(max-width:720px){
-    .sidebar{display:none;}
-    .main{padding:20px;}
-    .quick-grid{grid-template-columns:repeat(2,1fr);}
-    .topic-grid{grid-template-columns:1fr;}
-    .hero{flex-direction:column;text-align:center;gap:14px;padding:26px 20px;}
-    .hero-avatar{font-size:70px;}
-  }
-</style>
-</head>
-<body>
-
-<div class="app">
-
-  <!-- SIDEBAR -->
-  <aside class="sidebar">
-    <div class="logo">
-      <div class="logo-star">⭐</div>
-      <div class="logo-text">cilik<br>pintar</div>
-    </div>
-    <nav class="nav">
-      <button class="nav-item active" data-page="utama"><span class="ic">🏠</span> Utama</button>
-      <button class="nav-item" data-page="pembelajaran"><span class="ic">📖</span> Pembelajaran</button>
-      <button class="nav-item" data-page="aktiviti"><span class="ic">🎮</span> Aktiviti</button>
-      <button class="nav-item" data-page="sijil"><span class="ic">🏅</span> Sijil</button>
-      <button class="nav-item" data-page="ibubapa"><span class="ic">👤</span> Ibu Bapa</button>
-      <button class="nav-item" data-page="tetapan"><span class="ic">⚙️</span> Tetapan</button>
-    </nav>
-    <div class="offline-card">
-      <div class="t">☁️ Mod Luar Talian</div>
-      <div class="s">Kandungan tersedia</div>
-      <div class="status">✅ Aktif</div>
-    </div>
-  </aside>
-
-  <!-- MAIN -->
-  <main class="main">
-
-    <!-- ================= UTAMA ================= -->
-    <section class="page active" id="utama">
-      <div class="hero">
-        <div class="hero-clouds">
-          <div class="cloud" style="width:70px;height:26px;top:20px;left:40%;"></div>
-          <div class="cloud" style="width:50px;height:20px;top:60px;left:60%;"></div>
-        </div>
-        <div class="profile-pill"><span class="av">🙂</span> Adik <span style="font-size:11px;">▾</span></div>
-        <div class="hero-text">
-          <h1>Hai, Adik! 👋</h1>
-          <p>Teruskan belajar dan jadi versi terbaik diri anda!</p>
-        </div>
-        <div class="hero-avatar">🧒</div>
-      </div>
-
-      <div class="grid2">
-        <div class="card">
-          <div class="card-title"><span class="dot" style="background:var(--purple-light);">📊</span> Kemajuan Minggu Ini</div>
-          <div class="progress-wrap">
-            <div class="ring">
-              <svg width="118" height="118" viewBox="0 0 118 118">
-                <circle cx="59" cy="59" r="50" fill="none" stroke="#EFEBFF" stroke-width="12"/>
-                <circle cx="59" cy="59" r="50" fill="none" stroke="#7C6FE8" stroke-width="12"
-                  stroke-linecap="round" stroke-dasharray="314" stroke-dashoffset="78.5"/>
-              </svg>
-              <div class="ring-label"><span class="pct">75%</span><span class="sub">Selesai</span></div>
-            </div>
-            <div class="progress-info">
-              <p>Tahniah! Anda hampir selesai dengan misi minggu ini.</p>
-              <div class="bar-track"><div class="bar-fill" style="width:75%;"></div></div>
-              <div class="bar-caption"><span></span><span>15 / 20</span></div>
-              <div class="star-note">⭐ Kumpul 5 bintang lagi untuk ganjaran!</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-title"><span class="dot" style="background:var(--yellow-light);">⚡</span> Akses Pantas</div>
-          <div class="quick-grid">
-            <div class="quick-item" onclick="goPage('pembelajaran')">
-              <div class="quick-ic" style="background:var(--purple-light);">📘</div> Belajar
-            </div>
-            <div class="quick-item" onclick="goPage('aktiviti')">
-              <div class="quick-ic" style="background:var(--green-light);">🎮</div> Aktiviti
-            </div>
-            <div class="quick-item">
-              <div class="quick-ic" style="background:var(--yellow-light);">▶️</div> Video
-            </div>
-            <div class="quick-item">
-              <div class="quick-ic" style="background:var(--blue-light);">🎧</div> Audio
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="grid3">
-        <div class="card">
-          <div class="card-title"><span class="dot" style="background:var(--blue-light);">📋</span> Aktiviti Terkini</div>
-
-          <div class="act-row">
-            <div class="act-ic" style="background:var(--pink-light);">🔤</div>
-            <div class="act-info"><div class="n">Mengenal Huruf A-Z</div><div class="s">Selesai • 10 mata</div></div>
-            <div class="act-when">Hari ini <span class="check">✅</span></div>
-          </div>
-          <div class="act-row">
-            <div class="act-ic" style="background:var(--blue-light);">🔢</div>
-            <div class="act-info"><div class="n">Nombor 1 hingga 10</div><div class="s">Selesai • 10 mata</div></div>
-            <div class="act-when">Semalam <span class="check">✅</span></div>
-          </div>
-          <div class="act-row">
-            <div class="act-ic" style="background:var(--yellow-light);">🎨</div>
-            <div class="act-info"><div class="n">Warna-Warni</div><div class="s">Selesai • 10 mata</div></div>
-            <div class="act-when">2 hari lepas <span class="check">✅</span></div>
-          </div>
-          <button class="see-all" onclick="goPage('aktiviti')">Lihat semua aktiviti ›</button>
-        </div>
-
-        <div class="card">
-          <div class="card-title"><span class="dot" style="background:var(--orange);color:#fff;">🔥</span> Streak</div>
-          <div class="streak-num">7</div>
-          <div class="streak-sub">hari berturut-turut!</div>
-          <div class="streak-note">Wah, hebat! Teruskan usaha anda!</div>
-          <div class="week-row">
-            <div class="week-day"><div class="flame on">🔥</div>Isn</div>
-            <div class="week-day"><div class="flame on">🔥</div>Sel</div>
-            <div class="week-day"><div class="flame on">🔥</div>Rab</div>
-            <div class="week-day"><div class="flame on">🔥</div>Kha</div>
-            <div class="week-day"><div class="flame on">🔥</div>Jum</div>
-            <div class="week-day"><div class="flame off">❄️</div>Sab</div>
-            <div class="week-day"><div class="flame off">❄️</div>Aha</div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-title"><span class="dot" style="background:var(--pink-light);">🎁</span> Ganjaran Saya</div>
-          <div class="reward-row">
-            <div class="star-badge"><span class="n" id="totalStarsNum">45</span><span class="l">bintang</span></div>
-            <div class="chest-emoji">🧰</div>
-          </div>
-          <div class="reward-caption" id="rewardCaption">Kumpul 5 bintang lagi untuk buka peti harta karun!</div>
-          <div class="bar-track"><div class="bar-fill" id="rewardBarFill" style="width:90%;background:linear-gradient(90deg,var(--yellow),var(--orange));"></div></div>
-          <div class="bar-caption"><span></span><span id="rewardBarCaption">45 / 50</span></div>
-          <div id="quizStarsNote" style="margin-top:8px;font-size:11.5px;color:var(--purple-dark);font-weight:800;"></div>
-        </div>
-      </div>
-
-      <div class="tip-card">
-        <div class="tip-ic">🦉</div>
-        <div>
-          <div class="tip-title">💡 Tahukah Anda?</div>
-          <div class="tip-body">Belajar 15 minit setiap hari dapat membantu otak kita jadi lebih cerdas!</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= PEMBELAJARAN ================= -->
-    <section class="page" id="pembelajaran">
-      <div class="hero" style="min-height:150px;margin-bottom:20px;">
-        <div class="hero-text">
-          <h1 style="font-size:28px;">Pembelajaran 📖</h1>
-          <p>Pilih subjek dan mula meneroka topik seronok hari ini!</p>
-        </div>
-        <div class="hero-avatar" style="font-size:80px;">🎓</div>
-      </div>
-
-      <div class="subject-tabs">
-        <button class="subject-tab active" data-subject="bm">🇲🇾 Bahasa Melayu</button>
-        <button class="subject-tab" data-subject="bi">🇬🇧 Bahasa Inggeris</button>
-        <button class="subject-tab" data-subject="matematik">🔢 Matematik</button>
-        <button class="subject-tab" data-subject="jawi">✒️ Jawi</button>
-      </div>
-
-      <!-- BM -->
-      <div class="subject-panel active" id="subject-bm">
-        <div class="subj-hero" style="background:linear-gradient(120deg,#FFE9F1,#FFF3DE);">
-          <div>
-            <h2>Bahasa Melayu</h2>
-            <p>Kuasai bahasa ibunda melalui bacaan, ejaan dan tatabahasa.</p>
-          </div>
-          <div class="emoji">📕</div>
-        </div>
-        <div class="topic-grid">
-          <div class="topic-card" onclick="openQuiz('mengenal-huruf-a-z')">
-            <div class="topic-top"><div class="topic-ic" style="background:var(--pink-light);">🔤</div><span class="topic-badge badge-selesai">Selesai</span></div>
-            <div class="topic-name">Mengenal Huruf A-Z</div>
-            <div class="topic-meta">8 pelajaran • 10 mata</div>
-            <div class="topic-bar"><div class="topic-bar-fill" style="width:100%;background:var(--green);"></div>
-            <button class="quiz-btn">📝 Mula Kuiz</button>
-          </div>
-          </div>
-          <div class="topic-card" onclick="openQuiz('suku-kata-dan-ejaan')">
-            <div class="topic-top"><div class="topic-ic" style="background:var(--blue-light);">📝</div><span class="topic-badge badge-progress">Dalam Proses</span></div>
-            <div class="topic-name">Suku Kata & Ejaan</div>
-            <div class="topic-meta">12 pelajaran • 5 / 12 selesai</div>
-            <div class="topic-bar"><div class="topic-bar-fill" style="width:42%;background:var(--yellow);"></div>
-            <button class="quiz-btn">📝 Mula Kuiz</button>
-          </div>
-          </div>
-          <div class="topic-card" onclick="openQuiz('membaca-ayat-mudah')">
-            <div class="topic-top"><div class="topic-ic" style="background:var(--green-light);">📖</div><span class="topic-badge badge-baru">Baharu</span></div>
-            <div class="topic-name">Membaca Ayat Mudah</div>
-            <div class="topic-meta">10 pelajaran • Belum mula</div>
-            <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div>
-            <button class="quiz-btn">📝 Mula Kuiz</button>
-          </div>
-          </div>
-          <div class="topic-card" onclick="openQuiz('tatabahasa-asas')">
-            <div class="topic-top"><div class="topic-ic" style="background:var(--purple-light);">✏️</div><span class="topic-badge badge-baru">Baharu</span></div>
-            <div class="topic-name">Tatabahasa Asas</div>
-            <div class="topic-meta">9 pelajaran • Belum mula</div>
-            <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div>
-            <button class="quiz-btn">📝 Mula Kuiz</button>
-          </div>
-          </div>
-          <div class="topic-card" onclick="openQuiz('peribahasa-dan-simpulan-bahasa')">
-            <div class="topic-top"><div class="topic-ic" style="background:var(--yellow-light);">📚</div><span class="topic-badge badge-baru">Baharu</span></div>
-            <div class="topic-name">Peribahasa & Simpulan Bahasa</div>
-            <div class="topic-meta">6 pelajaran • Belum mula</div>
-            <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div>
-            <button class="quiz-btn">📝 Mula Kuiz</button>
-          </div>
-          </div>
-          <div class="topic-card" onclick="openQuiz('karangan-mudah')">
-            <div class="topic-top"><div class="topic-ic" style="background:var(--pink-light);">🖊️</div><span class="topic-badge badge-baru">Baharu</span></div>
-            <div class="topic-name">Karangan Mudah</div>
-            <div class="topic-meta">7 pelajaran • Belum mula</div>
-            <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div>
-            <button class="quiz-btn">📝 Mula Kuiz</button>
-          </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- BI -->
-      <div class="subject-panel" id="subject-bi">
-        <div class="subj-hero" style="background:linear-gradient(120deg,#E7F1FF,#E3FBF2);">
-          <div>
-            <h2>Bahasa Inggeris</h2>
-            <p>Belajar Bahasa Inggeris dengan cara yang seronok dan mudah!</p>
-          </div>
-          <div class="emoji">📗</div>
-        </div>
-        <div class="topic-grid">
-          <div class="topic-card" onclick="openQuiz('alphabet-a-z')">
-            <div class="topic-top"><div class="topic-ic" style="background:var(--blue-light);">🔠</div><span class="topic-badge badge-selesai">Selesai</span></div>
-            <div class="topic-name">Alphabet A-Z</div>
-            <div class="topic-meta">8 pelajaran • 10 mata</div>
-            <div class="topic-bar"><div class="topic-bar-fill" style="width:100%;background:var(--green);"></div>
-            <button class="quiz-btn">📝 Mula Kuiz</button>
-          </div>
-          </div>
-          <div class="topic-card" onclick="openQuiz('simple-vocabulary')">
-            <div class="topic-top"><div class="topic-ic" style="background:var(--green-light);">🗣️</div><span class="topic-badge badge-progress">Dalam Proses</span></div>
-            <div class="topic-name">Simple Vocabulary</div>
-            <div class="topic-meta">15 pelajaran • 6 / 15 selesai</div>
-            <div class="topic-bar"><div class="topic-bar-fill" style="width:40%;background:var(--yellow);"></div>
-            <button class="quiz-btn">📝 Mula Kuiz</button>
-          </div>
-          </div>
-          <div class="topic-card" onclick="openQuiz('reading-simple-sentences')">
-            <div class="topic-top"><div class="topic-ic" style="background:var(--purple-light);">📖</div><span class="topic-badge badge-baru">Baharu</span></div>
-            <div class="topic-name">Reading Simple Sentences</div>
-            <div class="topic-meta">10 pelajaran • Belum mula</div>
-            <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div>
-            <button class="quiz-btn">📝 Mula Kuiz</button>
-          </div>
-          </div>
-          <div class="topic-card" onclick="openQuiz('basic-grammar')">
-            <div class="topic-top"><div class="topic-ic" style="background:var(--yellow-light);">✏️</div><span class="topic-badge badge-baru">Baharu</span></div>
-            <div class="topic-name">Basic Grammar</div>
-            <div class="topic-meta">9 pelajaran • Belum mula</div>
-            <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div>
-            <button class="quiz-btn">📝 Mula Kuiz</button>
-          </div>
-          </div>
-          <div class="topic-card" onclick="openQuiz('nursery-rhymes')">
-            <div class="topic-top"><div class="topic-ic" style="background:var(--pink-light);">🎵</div><span class="topic-badge badge-baru">Baharu</span></div>
-            <div class="topic-name">Nursery Rhymes</div>
-            <div class="topic-meta">5 pelajaran • Belum mula</div>
-            <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div>
-            <button class="quiz-btn">📝 Mula Kuiz</button>
-          </div>
-          </div>
-          <div class="topic-card" onclick="openQuiz('everyday-conversation')">
-            <div class="topic-top"><div class="topic-ic" style="background:var(--blue-light);">💬</div><span class="topic-badge badge-baru">Baharu</span></div>
-            <div class="topic-name">Everyday Conversation</div>
-            <div class="topic-meta">8 pelajaran • Belum mula</div>
-            <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div>
-            <button class="quiz-btn">📝 Mula Kuiz</button>
-          </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- MATEMATIK -->
-      <div class="subject-panel" id="subject-matematik">
-        <div class="subj-hero" style="background:linear-gradient(120deg,#E3FBF2,#FFF3DE);">
-          <div>
-            <h2>Matematik</h2>
-            <p>Kira, selesaikan dan taklukkan dunia nombor!</p>
-          </div>
-          <div class="emoji">🔢</div>
-        </div>
-        <div class="topic-grid">
-          <div class="topic-card" onclick="openQuiz('nombor-1-hingga-10')">
-            <div class="topic-top"><div class="topic-ic" style="background:var(--blue-light);">🔢</div><span class="topic-badge badge-selesai">Selesai</span></div>
-            <div class="topic-name">Nombor 1 hingga 10</div>
-            <div class="topic-meta">8 pelajaran • 10 mata</div>
-            <div class="topic-bar"><div class="topic-bar-fill" style="width:100%;background:var(--green);"></div>
-            <button class="quiz-btn">📝 Mula Kuiz</button>
-          </div>
-          </div>
-          <div class="topic-card" onclick="openQuiz('tambah-dan-tolak-asas')">
-            <div class="topic-top"><div class="topic-ic" style="background:var(--green-light);">➕</div><span class="topic-badge badge-progress">Dalam Proses</span></div>
-            <div class="topic-name">Tambah & Tolak Asas</div>
-            <div class="topic-meta">14 pelajaran • 7 / 14 selesai</div>
-            <div class="topic-bar"><div class="topic-bar-fill" style="width:50%;background:var(--yellow);"></div>
-            <button class="quiz-btn">📝 Mula Kuiz</button>
-          </div>
-          </div>
-          <div class="topic-card" onclick="openQuiz('bentuk-dan-saiz')">
-            <div class="topic-top"><div class="topic-ic" style="background:var(--purple-light);">🔷</div><span class="topic-badge badge-baru">Baharu</span></div>
-            <div class="topic-name">Bentuk & Saiz</div>
-            <div class="topic-meta">6 pelajaran • Belum mula</div>
-            <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div>
-            <button class="quiz-btn">📝 Mula Kuiz</button>
-          </div>
-          </div>
-          <div class="topic-card" onclick="openQuiz('pendaraban-asas')">
-            <div class="topic-top"><div class="topic-ic" style="background:var(--yellow-light);">✖️</div><span class="topic-badge badge-baru">Baharu</span></div>
-            <div class="topic-name">Pendaraban Asas</div>
-            <div class="topic-meta">10 pelajaran • Belum mula</div>
-            <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div>
-            <button class="quiz-btn">📝 Mula Kuiz</button>
-          </div>
-          </div>
-          <div class="topic-card" onclick="openQuiz('mengenal-masa-dan-waktu')">
-            <div class="topic-top"><div class="topic-ic" style="background:var(--pink-light);">🕐</div><span class="topic-badge badge-baru">Baharu</span></div>
-            <div class="topic-name">Mengenal Masa & Waktu</div>
-            <div class="topic-meta">7 pelajaran • Belum mula</div>
-            <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div>
-            <button class="quiz-btn">📝 Mula Kuiz</button>
-          </div>
-          </div>
-          <div class="topic-card" onclick="openQuiz('mengenal-wang')">
-            <div class="topic-top"><div class="topic-ic" style="background:var(--blue-light);">💰</div><span class="topic-badge badge-baru">Baharu</span></div>
-            <div class="topic-name">Mengenal Wang</div>
-            <div class="topic-meta">6 pelajaran • Belum mula</div>
-            <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div>
-            <button class="quiz-btn">📝 Mula Kuiz</button>
-          </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- JAWI -->
-      <div class="subject-panel" id="subject-jawi">
-        <div class="subj-hero" style="background:linear-gradient(120deg,#EFEBFF,#FFE9F1);">
-          <div>
-            <h2>Jawi</h2>
-            <p>Kenali tulisan Jawi warisan bangsa dengan cara yang menarik.</p>
-          </div>
-          <div class="emoji">✒️</div>
-        </div>
-        <div class="topic-grid">
-          <div class="topic-card" onclick="openQuiz('mengenal-huruf-jawi')">
-            <div class="topic-top"><div class="topic-ic" style="background:var(--purple-light);">﷽</div><span class="topic-badge badge-selesai">Selesai</span></div>
-            <div class="topic-name">Mengenal Huruf Jawi</div>
-            <div class="topic-meta">10 pelajaran • 10 mata</div>
-            <div class="topic-bar"><div class="topic-bar-fill" style="width:100%;background:var(--green);"></div>
-            <button class="quiz-btn">📝 Mula Kuiz</button>
-          </div>
-          </div>
-          <div class="topic-card" onclick="openQuiz('menulis-suku-kata-jawi')">
-            <div class="topic-top"><div class="topic-ic" style="background:var(--pink-light);">✍️</div><span class="topic-badge badge-progress">Dalam Proses</span></div>
-            <div class="topic-name">Menulis Suku Kata Jawi</div>
-            <div class="topic-meta">12 pelajaran • 4 / 12 selesai</div>
-            <div class="topic-bar"><div class="topic-bar-fill" style="width:33%;background:var(--yellow);"></div>
-            <button class="quiz-btn">📝 Mula Kuiz</button>
-          </div>
-          </div>
-          <div class="topic-card" onclick="openQuiz('membaca-perkataan-jawi')">
-            <div class="topic-top"><div class="topic-ic" style="background:var(--blue-light);">📄</div><span class="topic-badge badge-baru">Baharu</span></div>
-            <div class="topic-name">Membaca Perkataan Jawi</div>
-            <div class="topic-meta">9 pelajaran • Belum mula</div>
-            <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div>
-            <button class="quiz-btn">📝 Mula Kuiz</button>
-          </div>
-          </div>
-          <div class="topic-card" onclick="openQuiz('perkataan-harian-dalam-jawi')">
-            <div class="topic-top"><div class="topic-ic" style="background:var(--yellow-light);">🕌</div><span class="topic-badge badge-baru">Baharu</span></div>
-            <div class="topic-name">Perkataan Harian dalam Jawi</div>
-            <div class="topic-meta">8 pelajaran • Belum mula</div>
-            <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div>
-            <button class="quiz-btn">📝 Mula Kuiz</button>
-          </div>
-          </div>
-          <div class="topic-card" onclick="openQuiz('ayat-mudah-jawi')">
-            <div class="topic-top"><div class="topic-ic" style="background:var(--green-light);">📜</div><span class="topic-badge badge-baru">Baharu</span></div>
-            <div class="topic-name">Ayat Mudah Jawi</div>
-            <div class="topic-meta">7 pelajaran • Belum mula</div>
-            <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div>
-            <button class="quiz-btn">📝 Mula Kuiz</button>
-          </div>
-          </div>
-          <div class="topic-card" onclick="openQuiz('latihan-dan-kuiz-jawi')">
-            <div class="topic-top"><div class="topic-ic" style="background:var(--pink-light);">🎯</div><span class="topic-badge badge-baru">Baharu</span></div>
-            <div class="topic-name">Latihan & Kuiz Jawi</div>
-            <div class="topic-meta">6 pelajaran • Belum mula</div>
-            <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div>
-            <button class="quiz-btn">📝 Mula Kuiz</button>
-          </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= AKTIVITI ================= -->
-    <section class="page" id="aktiviti">
-      <div class="hero" style="min-height:150px;">
-        <div class="hero-text">
-          <h1 style="font-size:28px;">Aktiviti 🎮</h1>
-          <p>Bermain sambil belajar - pilih aktiviti kegemaran anda!</p>
-        </div>
-        <div class="hero-avatar" style="font-size:80px;">🎲</div>
-      </div>
-      <div class="topic-grid">
-        <div class="topic-card" onclick="openQuiz('teka-kata')"><div class="topic-top"><div class="topic-ic" style="background:var(--pink-light);">🧩</div><span class="topic-badge badge-baru">Baharu</span></div><div class="topic-name">Teka Kata</div><div class="topic-meta">Permainan bahasa</div><div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div>
-            <button class="quiz-btn">📝 Mula Kuiz</button>
-          </div></div>
-        <div class="topic-card" onclick="openQuiz('warna-warni')"><div class="topic-top"><div class="topic-ic" style="background:var(--blue-light);">🎨</div><span class="topic-badge badge-selesai">Selesai</span></div><div class="topic-name">Warna-Warni</div><div class="topic-meta">Selesai • 10 mata</div><div class="topic-bar"><div class="topic-bar-fill" style="width:100%;background:var(--green);"></div>
-            <button class="quiz-btn">📝 Mula Kuiz</button>
-          </div></div>
-        <div class="topic-card" onclick="openQuiz('kira-cepat')"><div class="topic-top"><div class="topic-ic" style="background:var(--green-light);">🧮</div><span class="topic-badge badge-progress">Dalam Proses</span></div><div class="topic-name">Kira Cepat</div><div class="topic-meta">Permainan matematik</div><div class="topic-bar"><div class="topic-bar-fill" style="width:60%;background:var(--yellow);"></div>
-            <button class="quiz-btn">📝 Mula Kuiz</button>
-          </div></div>
-      </div>
-    </section>
-
-    <!-- ================= SIJIL ================= -->
-    <section class="page" id="sijil">
-      <div class="hero" style="min-height:150px;">
-        <div class="hero-text">
-          <h1 style="font-size:28px;">Sijil 🏅</h1>
-          <p>Kumpul sijil sebagai bukti kejayaan pembelajaran anda!</p>
-        </div>
-        <div class="hero-avatar" style="font-size:80px;">🏆</div>
-      </div>
-      <div class="card" style="text-align:center;padding:50px;">
-        <div style="font-size:50px;">🥇</div>
-        <p style="font-weight:800;color:var(--text-soft);">Belum ada sijil lagi. Teruskan belajar untuk dapatkan sijil pertama anda!</p>
-      </div>
-    </section>
-
-    <!-- ================= IBU BAPA ================= -->
-    <section class="page" id="ibubapa">
-      <div class="hero" style="min-height:150px;">
-        <div class="hero-text">
-          <h1 style="font-size:28px;">Ibu Bapa 👤</h1>
-          <p>Pantau kemajuan pembelajaran anak anda di sini.</p>
-        </div>
-        <div class="hero-avatar" style="font-size:80px;">👨‍👩‍👧</div>
-      </div>
-
-      <div class="grid2" style="margin-bottom:20px;">
-        <div class="card">
-          <div class="card-title"><span class="dot" style="background:var(--purple-light);">📊</span> Pecahan Bintang Mengikut Subjek</div>
-          <div id="subjectBreakdown" class="subject-breakdown-grid"></div>
-        </div>
-
-        <div class="card">
-          <div class="card-title"><span class="dot" style="background:var(--green-light);">📈</span> Kemajuan Mingguan</div>
-          <div id="weeklyChart" class="weekly-chart"></div>
-          <div class="weekly-caption" id="weeklyCaption"></div>
-        </div>
-      </div>
-
-      <div class="card" style="margin-bottom:20px;">
-        <div class="card-title"><span class="dot" style="background:var(--blue-light);">📋</span> Rekod Kuiz Terperinci</div>
-        <div id="parentQuizLog"></div>
-      </div>
-
-      <div class="card" style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;">
-        <div>
-          <div style="font-weight:800;font-size:15px;margin-bottom:4px;">⚠️ Set Semula Skor</div>
-          <div style="font-size:13px;color:var(--text-soft);font-weight:700;">Ini akan memadam semua rekod skor kuiz dan bintang yang telah dikumpul. Tindakan ini tidak boleh dibatalkan.</div>
-        </div>
-        <button class="reset-btn" onclick="confirmResetScores()">🗑️ Set Semula Skor</button>
-      </div>
-    </section>
-
-
-
-    <!-- ================= TETAPAN ================= -->
-    <section class="page" id="tetapan">
-      <div class="hero" style="min-height:150px;">
-        <div class="hero-text">
-          <h1 style="font-size:28px;">Tetapan ⚙️</h1>
-          <p>Sesuaikan aplikasi mengikut keperluan anda.</p>
-        </div>
-        <div class="hero-avatar" style="font-size:80px;">🛠️</div>
-      </div>
-      <div class="card"><p style="font-weight:700;color:var(--text-soft);">Pilihan tetapan akan dipaparkan di sini.</p></div>
-    </section>
-
-  </main>
-</div>
-
-<!-- QUIZ MODAL -->
-<div class="quiz-overlay" id="quizOverlay">
-  <div class="quiz-modal">
-    <button class="quiz-close" onclick="closeQuiz()">✕</button>
-    <div id="quizBody"></div>
-  </div>
-</div>
-
-<script>
-  // Sidebar nav
-  document.querySelectorAll('.nav-item').forEach(btn=>{
-    btn.addEventListener('click',()=>goPage(btn.dataset.page));
-  });
-  function goPage(id){
-    document.querySelectorAll('.nav-item').forEach(b=>b.classList.toggle('active', b.dataset.page===id));
-    document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active', p.id===id));
-    window.scrollTo({top:0,behavior:'smooth'});
-  }
-
-  // ============= SOUND EFFECTS (Web Audio API) =============
-  let audioCtx = null;
-  function getAudioCtx(){
-    if(!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    return audioCtx;
-  }
-  function playTone(freq, start, duration, type='sine', gainPeak=0.18){
-    const ctx = getAudioCtx();
-    const osc = ctx.createOscillator();
-    const gain = ctx.createGain();
-    osc.type = type;
-    osc.frequency.value = freq;
-    osc.connect(gain);
-    gain.connect(ctx.destination);
-    const t0 = ctx.currentTime + start;
-    gain.gain.setValueAtTime(0, t0);
-    gain.gain.linearRampToValueAtTime(gainPeak, t0 + 0.02);
-    gain.gain.exponentialRampToValueAtTime(0.001, t0 + duration);
-    osc.start(t0);
-    osc.stop(t0 + duration + 0.02);
-  }
-  function playCorrectSound(){
-    try{
-      playTone(523.25, 0,    0.16, 'sine'); // C5
-      playTone(659.25, 0.12, 0.16, 'sine'); // E5
-      playTone(783.99, 0.24, 0.22, 'sine'); // G5
-    }catch(e){}
-  }
-  function playWrongSound(){
-    try{
-      playTone(220, 0,    0.18, 'triangle', 0.14);
-      playTone(180, 0.14, 0.22, 'triangle', 0.14);
-    }catch(e){}
-  }
-  function playCelebrationSound(){
-    try{
-      [523.25,587.33,659.25,783.99,880].forEach((f,i)=>playTone(f, i*0.09, 0.2, 'sine'));
-    }catch(e){}
-  }
-
-  // ============= SCORE STORAGE (localStorage) =============
-  const SCORE_KEY = 'cilikPintarQuizScores';
-  function loadScores(){
-    try{ return JSON.parse(localStorage.getItem(SCORE_KEY)) || {}; }
-    catch(e){ return {}; }
-  }
-  const HISTORY_KEY = 'cilikPintarQuizHistory';
-  function logHistory(topicId, score, total){
-    let history = [];
-    try{ history = JSON.parse(localStorage.getItem(HISTORY_KEY)) || []; }catch(e){ history = []; }
-    history.push({ id: topicId, score, total, date: new Date().toISOString() });
-    if(history.length > 200) history = history.slice(history.length - 200);
-    localStorage.setItem(HISTORY_KEY, JSON.stringify(history));
-  }
-  function loadHistory(){
-    try{ return JSON.parse(localStorage.getItem(HISTORY_KEY)) || []; }
-    catch(e){ return []; }
-  }
-
-  function saveScore(topicId, score, total){
-    const scores = loadScores();
-    const existing = scores[topicId];
-    // keep the best attempt
-    if(!existing || score > existing.score || (score === existing.score && total > existing.total)){
-      scores[topicId] = { score, total, date: new Date().toISOString() };
-    }
-    scores[topicId].attempts = (existing?.attempts || 0) + 1;
-    localStorage.setItem(SCORE_KEY, JSON.stringify(scores));
-    logHistory(topicId, score, total);
-    return scores[topicId];
-  }
-
-  const WEEK_DAYS_MS = ["Isn","Sel","Rab","Kha","Jum","Sab","Aha"];
-  function renderWeeklyChart(){
-    const chartEl = document.getElementById('weeklyChart');
-    const capEl = document.getElementById('weeklyCaption');
-    if(!chartEl) return;
-    const history = loadHistory();
-
-    // build last 7 days (oldest -> today)
-    const days = [];
-    for(let i=6;i>=0;i--){
-      const d = new Date();
-      d.setDate(d.getDate()-i);
-      d.setHours(0,0,0,0);
-      days.push(d);
-    }
-    const starsPerDay = days.map(()=>0);
-    history.forEach(h=>{
-      const hd = new Date(h.date);
-      hd.setHours(0,0,0,0);
-      days.forEach((d,idx)=>{
-        if(hd.getTime() === d.getTime()){
-          starsPerDay[idx] += Math.round((h.score/h.total)*3);
-        }
-      });
-    });
-    const maxVal = Math.max(3, ...starsPerDay);
-    chartEl.innerHTML = days.map((d,idx)=>{
-      const val = starsPerDay[idx];
-      const pctH = Math.round((val/maxVal)*100);
-      const isToday = idx === 6;
-      const dayLabel = WEEK_DAYS_MS[(d.getDay()+6)%7]; // convert JS Sun=0 to Isn-first index
-      return `
-        <div class="wk-col">
-          <div class="wk-val">${val>0? '⭐'+val : ''}</div>
-          <div class="wk-bar-track"><div class="wk-bar-fill" style="height:${val>0?pctH:2}%;${isToday?'background:linear-gradient(180deg,var(--yellow),var(--orange));':''}"></div></div>
-          <div class="wk-day" style="${isToday?'color:var(--purple-dark);':''}">${dayLabel}</div>
-        </div>`;
-    }).join('');
-    const totalWeek = starsPerDay.reduce((a,b)=>a+b,0);
-    capEl.textContent = totalWeek > 0
-      ? `Jumlah ${totalWeek} bintang diperoleh dalam 7 hari terakhir.`
-      : `Belum ada kuiz dijawab dalam 7 hari terakhir.`;
-  }
-
-  function confirmResetScores(){
-    const ok = confirm('Adakah anda pasti mahu memadam semua rekod skor kuiz dan bintang? Tindakan ini tidak boleh dibatalkan.');
-    if(!ok) return;
-    localStorage.removeItem(SCORE_KEY);
-    localStorage.removeItem(HISTORY_KEY);
-    localStorage.removeItem(CONFETTI_FLAG_KEY);
-    renderSavedScoreBadges();
-    updateRewardsCard();
-    renderSubjectBreakdown();
-    renderParentQuizLog();
-    renderWeeklyChart();
-    alert('Semua skor telah disetkan semula. 🔄');
-  }
-  function getTotalStars(){
-    const scores = loadScores();
-    let stars = 0;
-    Object.values(scores).forEach(s => { stars += Math.round((s.score/s.total)*3); });
-    return stars;
-  }
-  function renderSavedScoreBadges(){
-    const scores = loadScores();
-    document.querySelectorAll('.topic-card[onclick]').forEach(card=>{
-      const match = card.getAttribute('onclick').match(/openQuiz\('([^']+)'\)/);
-      if(!match) return;
-      const id = match[1];
-      const s = scores[id];
-      let badge = card.querySelector('.score-badge');
-      if(s){
-        const pct = Math.round((s.score/s.total)*100);
-        const label = `⭐ ${s.score}/${s.total} (${pct}%)`;
-        if(!badge){
-          badge = document.createElement('div');
-          badge.className = 'score-badge';
-          card.appendChild(badge);
-        }
-        badge.textContent = label;
-      }
-    });
-  }
-
-  // Bintang asas daripada aktiviti bukan-kuiz (mis. streak harian, aktiviti lain)
-  const BASE_STARS = 45;
-
-  function updateRewardsCard(){
-    const quizStars = getTotalStars();
-    const total = BASE_STARS + quizStars;
-    // sasaran peti harta karun bertambah setiap 50 bintang
-    const goal = Math.ceil(total / 50) * 50 || 50;
-    const remaining = Math.max(0, goal - total);
-    const pct = Math.min(100, Math.round((total/goal)*100));
-
-    const numEl = document.getElementById('totalStarsNum');
-    const capEl = document.getElementById('rewardCaption');
-    const barEl = document.getElementById('rewardBarFill');
-    const barCapEl = document.getElementById('rewardBarCaption');
-    if(!numEl) return;
-
-    numEl.textContent = total;
-    barEl.style.width = pct + '%';
-    barCapEl.textContent = `${total} / ${goal}`;
-    if(remaining === 0){
-      capEl.textContent = '🎉 Peti harta karun terbuka! Teruskan kumpul lagi!';
-    } else {
-      capEl.textContent = `Kumpul ${remaining} bintang lagi untuk buka peti harta karun!`;
-    }
-    maybeCelebrateChest(goal, remaining);
-
-    // jika ada kuiz yang telah dijawab, tunjukkan pecahan kecil
-    const quizCountEl = document.getElementById('quizStarsNote');
-    if(quizCountEl){
-      quizCountEl.textContent = quizStars > 0
-        ? `⭐ ${quizStars} bintang diperoleh daripada kuiz`
-        : '';
-    }
-  }
-
-  // ============= SUBJECT MAPPING =============
-  const SUBJECT_MAP = {
-    "mengenal-huruf-a-z":"bm", "suku-kata-dan-ejaan":"bm", "membaca-ayat-mudah":"bm",
-    "tatabahasa-asas":"bm", "peribahasa-dan-simpulan-bahasa":"bm", "karangan-mudah":"bm",
-    "alphabet-a-z":"bi", "simple-vocabulary":"bi", "reading-simple-sentences":"bi",
-    "basic-grammar":"bi", "nursery-rhymes":"bi", "everyday-conversation":"bi",
-    "nombor-1-hingga-10":"matematik", "tambah-dan-tolak-asas":"matematik", "bentuk-dan-saiz":"matematik",
-    "pendaraban-asas":"matematik", "mengenal-masa-dan-waktu":"matematik", "mengenal-wang":"matematik",
-    "mengenal-huruf-jawi":"jawi", "menulis-suku-kata-jawi":"jawi", "membaca-perkataan-jawi":"jawi",
-    "perkataan-harian-dalam-jawi":"jawi", "ayat-mudah-jawi":"jawi", "latihan-dan-kuiz-jawi":"jawi",
-    "teka-kata":"aktiviti", "warna-warni":"aktiviti", "kira-cepat":"aktiviti",
-  };
-  const SUBJECT_INFO = {
-    bm:        {label:"Bahasa Melayu",   icon:"🇲🇾", color:"var(--pink-light)"},
-    bi:        {label:"Bahasa Inggeris", icon:"🇬🇧", color:"var(--blue-light)"},
-    matematik: {label:"Matematik",       icon:"🔢", color:"var(--green-light)"},
-    jawi:      {label:"Jawi",            icon:"✒️", color:"var(--purple-light)"},
-    aktiviti:  {label:"Aktiviti",        icon:"🎮", color:"var(--yellow-light)"},
-  };
-
-  function getStarsBySubject(){
-    const scores = loadScores();
-    const bySubject = { bm:{stars:0,max:0,attempts:0}, bi:{stars:0,max:0,attempts:0},
-                         matematik:{stars:0,max:0,attempts:0}, jawi:{stars:0,max:0,attempts:0},
-                         aktiviti:{stars:0,max:0,attempts:0} };
-    Object.keys(scores).forEach(id=>{
-      const subj = SUBJECT_MAP[id];
-      if(!subj || !bySubject[subj]) return;
-      const s = scores[id];
-      bySubject[subj].stars += Math.round((s.score/s.total)*3);
-      bySubject[subj].max += 3;
-      bySubject[subj].attempts += 1;
-    });
-    return bySubject;
-  }
-
-  function renderSubjectBreakdown(){
-    const el = document.getElementById('subjectBreakdown');
-    if(!el) return;
-    const bySubject = getStarsBySubject();
-    el.innerHTML = Object.keys(SUBJECT_INFO).map(key=>{
-      const info = SUBJECT_INFO[key];
-      const data = bySubject[key];
-      const pct = data.max > 0 ? Math.round((data.stars/data.max)*100) : 0;
-      return `
-        <div class="subj-stat-card" style="background:${info.color};">
-          <div class="ic">${info.icon}</div>
-          <div class="lbl">${info.label}</div>
-          <div class="stars">⭐ ${data.stars}</div>
-          <div class="mini-bar"><div class="mini-bar-fill" style="width:${pct}%;background:linear-gradient(90deg,var(--purple),var(--blue));"></div></div>
-          <div class="meta">${data.attempts} topik dicuba</div>
-        </div>`;
-    }).join('');
-  }
-
-  function renderParentQuizLog(){
-    const el = document.getElementById('parentQuizLog');
-    if(!el) return;
-    const scores = loadScores();
-    const ids = Object.keys(scores);
-    if(ids.length === 0){
-      el.innerHTML = `<div class="qlog-empty">Belum ada kuiz dijawab lagi. Galakkan anak anda mula belajar!</div>`;
-      return;
-    }
-    ids.sort((a,b)=> new Date(scores[b].date) - new Date(scores[a].date));
-    el.innerHTML = ids.map(id=>{
-      const s = scores[id];
-      const subj = SUBJECT_MAP[id] || 'aktiviti';
-      const info = SUBJECT_INFO[subj];
-      const quizTitle = (quizData[id] && quizData[id].title) || id;
-      const pct = Math.round((s.score/s.total)*100);
-      const scoreColor = pct === 100 ? 'var(--green-light)' : pct >= 60 ? 'var(--yellow-light)' : 'var(--pink-light)';
-      const dateStr = new Date(s.date).toLocaleDateString('ms-MY', {day:'numeric', month:'short', year:'numeric'});
-      return `
-        <div class="qlog-row">
-          <div class="qlog-ic">${info.icon}</div>
-          <div class="qlog-info">
-            <div class="n">${quizTitle}</div>
-            <div class="s">${info.label} • ${dateStr} • ${s.attempts || 1}x percubaan</div>
-          </div>
-          <div class="qlog-score" style="background:${scoreColor};">${s.score}/${s.total}</div>
-        </div>`;
-    }).join('');
-  }
-
-  // ============= CONFETTI =============
-  const CONFETTI_FLAG_KEY = 'cilikPintarLastConfettiGoal';
-  function fireConfetti(){
-    const colors = ['#7C6FE8','#FFB020','#2FBF8F','#3E8EF7','#FF6FA5','#FF8A3D'];
-    const count = 60;
-    for(let i=0;i<count;i++){
-      const piece = document.createElement('div');
-      piece.className = 'confetti-piece';
-      const size = 6 + Math.random()*6;
-      piece.style.left = Math.random()*100 + 'vw';
-      piece.style.width = size + 'px';
-      piece.style.height = (size*0.4 + 4) + 'px';
-      piece.style.background = colors[Math.floor(Math.random()*colors.length)];
-      piece.style.animationDuration = (2.2 + Math.random()*1.6) + 's';
-      piece.style.animationDelay = (Math.random()*0.4) + 's';
-      document.body.appendChild(piece);
-      setTimeout(()=>piece.remove(), 4200);
-    }
-  }
-  function maybeCelebrateChest(goal, remaining){
-    if(remaining !== 0) return;
-    const lastGoal = parseInt(localStorage.getItem(CONFETTI_FLAG_KEY) || '0', 10);
-    if(goal > lastGoal){
-      localStorage.setItem(CONFETTI_FLAG_KEY, String(goal));
-      fireConfetti();
-      playCelebrationSound();
-    }
-  }
-
-  // ============= QUIZ ENGINE =============
-  const quizData = {
-    "mengenal-huruf-a-z": {emoji:"🔤", title:"Mengenal Huruf A-Z", qs:[
-      {q:"Huruf apa ini? <div style='font-size:48px;margin:10px 0;'>A</div>", opts:["A","B","O","E"], a:0},
-      {q:"🍎 Epal bermula dengan huruf apa?", opts:["B","A","C","D"], a:1},
-      {q:"Huruf manakah datang selepas 'B'?", opts:["A","D","C","E"], a:2},
-    ]},
-    "suku-kata-dan-ejaan": {emoji:"📝", title:"Suku Kata & Ejaan", qs:[
-      {q:"Berapa suku kata dalam 'bola'?", opts:["1","2","3","4"], a:1},
-      {q:"Pilih ejaan yang betul untuk 🐱", opts:["kuching","kucing","kucin","kuceng"], a:1},
-      {q:"'ma-ta' ialah perkataan...", opts:["mata","mati","muka","mula"], a:0},
-    ]},
-    "membaca-ayat-mudah": {emoji:"📖", title:"Membaca Ayat Mudah", qs:[
-      {q:"'Saya suka makan nasi.' Siapa yang suka makan?", opts:["Ibu","Ayah","Saya","Kucing"], a:2},
-      {q:"'Kucing itu comel.' Apa yang comel?", opts:["Anjing","Kucing","Ayam","Itik"], a:1},
-      {q:"Ayat yang betul ialah...", opts:["Makan saya nasi","Saya makan nasi","Nasi saya makan","Saya nasi makan"], a:1},
-    ]},
-    "tatabahasa-asas": {emoji:"✏️", title:"Tatabahasa Asas", qs:[
-      {q:"'Kucing sedang ___.' Isi tempat kosong.", opts:["tidur","meja","biru","lima"], a:0},
-      {q:"Kata nama bagi haiwan ini 🐶 ialah...", opts:["Lari","Anjing","Comel","Besar"], a:1},
-      {q:"'Saya ___ ke sekolah.' Pilih kata kerja.", opts:["cantik","pergi","merah","tiga"], a:1},
-    ]},
-    "peribahasa-dan-simpulan-bahasa": {emoji:"📚", title:"Peribahasa & Simpulan Bahasa", qs:[
-      {q:"'Kaki ayam' bermaksud...", opts:["Berjalan tanpa kasut","Ayam betina","Kaki yang panjang","Ayam berlari"], a:0},
-      {q:"'Buah tangan' bermaksud...", opts:["Tangan buah","Hadiah/oleh-oleh","Buah di tangan","Jari"], a:1},
-      {q:"'Ringan tulang' bermaksud orang yang...", opts:["Kuat bekerja","Lemah","Berat","Malas"], a:0},
-    ]},
-    "karangan-mudah": {emoji:"🖊️", title:"Karangan Mudah", qs:[
-      {q:"Karangan biasanya bermula dengan...", opts:["Penutup","Pengenalan","Nombor","Gambar"], a:1},
-      {q:"Tajuk yang sesuai untuk cerita tentang haiwan ialah...", opts:["Rumah Saya","Haiwan Kesayangan Saya","Baju Baru","Kereta Ayah"], a:1},
-      {q:"Ayat penutup karangan biasanya...", opts:["Memulakan cerita baru","Merumus cerita","Tidak penting","Diletak di tengah"], a:1},
-    ]},
-    "alphabet-a-z": {emoji:"🔠", title:"Alphabet A-Z", qs:[
-      {q:"What letter is this? <div style='font-size:48px;margin:10px 0;'>B</div>", opts:["A","B","C","D"], a:1},
-      {q:"🐝 Bee starts with which letter?", opts:["A","B","C","D"], a:1},
-      {q:"Which letter comes after 'C'?", opts:["B","D","E","A"], a:1},
-    ]},
-    "simple-vocabulary": {emoji:"🗣️", title:"Simple Vocabulary", qs:[
-      {q:"What do we call this? 🐶", opts:["Cat","Dog","Bird","Fish"], a:1},
-      {q:"What colour is the sun? ☀️", opts:["Blue","Green","Yellow","Black"], a:2},
-      {q:"What is this? 🍌", opts:["Apple","Banana","Orange","Grape"], a:1},
-    ]},
-    "reading-simple-sentences": {emoji:"📖", title:"Reading Simple Sentences", qs:[
-      {q:"'I like my cat.' What does the child like?", opts:["Dog","Cat","Bird","Toy"], a:1},
-      {q:"'The sun is hot.' What is hot?", opts:["The moon","The sun","The rain","The wind"], a:1},
-      {q:"Choose the correct sentence:", opts:["Run I fast","I run fast","Fast run I","I fast run"], a:1},
-    ]},
-    "basic-grammar": {emoji:"✏️", title:"Basic Grammar", qs:[
-      {q:"'She ___ happy.' Choose the correct word.", opts:["is","are","am","be"], a:0},
-      {q:"Which word is a colour?", opts:["Jump","Red","Table","Fast"], a:1},
-      {q:"'I ___ to school every day.' Fill in the blank.", opts:["go","goes","going","gone"], a:0},
-    ]},
-    "nursery-rhymes": {emoji:"🎵", title:"Nursery Rhymes", qs:[
-      {q:"'Twinkle twinkle little ___.'", opts:["star","car","dog","cat"], a:0},
-      {q:"'Old MacDonald had a ___.'", opts:["car","farm","ball","hat"], a:1},
-      {q:"'Baa baa black ___.'", opts:["cat","sheep","cow","dog"], a:1},
-    ]},
-    "everyday-conversation": {emoji:"💬", title:"Everyday Conversation", qs:[
-      {q:"How do you greet someone in the morning?", opts:["Good night","Good morning","Goodbye","Sorry"], a:1},
-      {q:"What do you say after receiving a gift?", opts:["Sorry","Goodbye","Thank you","Please stop"], a:2},
-      {q:"What do you say when you want something politely?", opts:["Please","No","Never","Stop"], a:0},
-    ]},
-    "nombor-1-hingga-10": {emoji:"🔢", title:"Nombor 1 hingga 10", qs:[
-      {q:"🍎🍎🍎 Berapa banyak epal?", opts:["2","3","4","5"], a:1},
-      {q:"Nombor selepas 5 ialah...", opts:["4","6","7","8"], a:1},
-      {q:"Pilih nombor '7'.", opts:["5","7","9","3"], a:1},
-    ]},
-    "tambah-dan-tolak-asas": {emoji:"➕", title:"Tambah & Tolak Asas", qs:[
-      {q:"2 + 3 = ?", opts:["4","5","6","7"], a:1},
-      {q:"5 − 2 = ?", opts:["1","2","3","4"], a:2},
-      {q:"🍬🍬🍬🍬 + 🍬 = ?", opts:["4","5","6","3"], a:1},
-    ]},
-    "bentuk-dan-saiz": {emoji:"🔷", title:"Bentuk & Saiz", qs:[
-      {q:"Bentuk ini 🔵 dipanggil...", opts:["Segi tiga","Bulatan","Segi empat","Bintang"], a:1},
-      {q:"Bentuk ini 🔺 dipanggil...", opts:["Segi tiga","Bulatan","Segi empat","Bintang"], a:0},
-      {q:"Manakah objek yang lebih besar?", opts:["🐘 Gajah","🐜 Semut","🐭 Tikus","🐦 Burung"], a:0},
-    ]},
-    "pendaraban-asas": {emoji:"✖️", title:"Pendaraban Asas", qs:[
-      {q:"2 × 2 = ?", opts:["2","3","4","5"], a:2},
-      {q:"3 × 1 = ?", opts:["1","3","4","0"], a:1},
-      {q:"2 × 3 = ?", opts:["5","6","7","8"], a:1},
-    ]},
-    "mengenal-masa-dan-waktu": {emoji:"🕐", title:"Mengenal Masa & Waktu", qs:[
-      {q:"Kita tidur pada waktu...", opts:["Pagi","Malam","Tengahari","Petang"], a:1},
-      {q:"Berapa jam dalam sehari?", opts:["12","24","7","10"], a:1},
-      {q:"Kita makan sarapan pada waktu...", opts:["Malam","Pagi","Tengah malam","Petang lewat"], a:1},
-    ]},
-    "mengenal-wang": {emoji:"💰", title:"Mengenal Wang", qs:[
-      {q:"Duit syiling RM1 + RM1 = ?", opts:["RM1","RM2","RM3","RM0"], a:1},
-      {q:"Manakah wang kertas?", opts:["Syiling 10 sen","Not RM10","Duit palsu","Kunci"], a:1},
-      {q:"Jika ada RM5 dan beli barang RM2, baki ialah?", opts:["RM2","RM3","RM4","RM5"], a:1},
-    ]},
-    "mengenal-huruf-jawi": {emoji:"﷽", title:"Mengenal Huruf Jawi", qs:[
-      {q:"Huruf Jawi ini 'ا' menyamai huruf rumi...", opts:["A","B","C","D"], a:0},
-      {q:"Huruf Jawi ini 'ب' menyamai huruf rumi...", opts:["A","B","C","D"], a:1},
-      {q:"Berapa banyak huruf asas dalam tulisan Jawi?", opts:["10","20","Lebih 30","5"], a:2},
-    ]},
-    "menulis-suku-kata-jawi": {emoji:"✍️", title:"Menulis Suku Kata Jawi", qs:[
-      {q:"Suku kata Jawi ditulis dari arah mana?", opts:["Kiri ke kanan","Kanan ke kiri","Atas ke bawah","Bawah ke atas"], a:1},
-      {q:"'با' dalam Jawi berbunyi seperti...", opts:["ba","da","ka","ma"], a:0},
-      {q:"Menulis Jawi memerlukan kita mengenal...", opts:["Nombor","Warna","Huruf Jawi","Bentuk"], a:2},
-    ]},
-    "membaca-perkataan-jawi": {emoji:"📄", title:"Membaca Perkataan Jawi", qs:[
-      {q:"Perkataan 'ماما' dalam Jawi bermaksud...", opts:["Papa","Mama","Kakak","Adik"], a:1},
-      {q:"Tulisan Jawi banyak digunakan dalam bahasa...", opts:["Melayu","Cina","Tamil","Jepun"], a:0},
-      {q:"Untuk membaca Jawi dengan baik, kita perlu...", opts:["Berlari","Berlatih kerap","Tidur","Bermain"], a:1},
-    ]},
-    "perkataan-harian-dalam-jawi": {emoji:"🕌", title:"Perkataan Harian dalam Jawi", qs:[
-      {q:"Perkataan 'air' dalam Jawi ditulis sebagai...", opts:["اير","ابو","اكن","امق"], a:0},
-      {q:"Kita menulis Jawi untuk perkataan harian seperti...", opts:["Rumah, air, buku","Robot, kereta","Bintang jauh","Angka besar"], a:0},
-      {q:"Belajar Jawi membantu kita mengenal...", opts:["Warisan bangsa","Sains","Sukan","Muzik"], a:0},
-    ]},
-    "ayat-mudah-jawi": {emoji:"📜", title:"Ayat Mudah Jawi", qs:[
-      {q:"Ayat Jawi mudah biasanya pendek dan...", opts:["Susah difaham","Mudah difaham","Panjang","Berwarna"], a:1},
-      {q:"'ساي' dalam Jawi menyamai perkataan rumi...", opts:["Kamu","Saya","Dia","Kita"], a:1},
-      {q:"Latihan ayat Jawi membantu kita...", opts:["Melukis","Menyanyi","Menulis & membaca Jawi","Berenang"], a:2},
-    ]},
-    "latihan-dan-kuiz-jawi": {emoji:"🎯", title:"Latihan & Kuiz Jawi", qs:[
-      {q:"Latihan Jawi yang kerap membantu kita menjadi...", opts:["Lemah","Mahir","Lupa","Malas"], a:1},
-      {q:"Kuiz Jawi biasanya menguji kemahiran...", opts:["Melukis","Membaca & menulis Jawi","Bermain bola","Memasak"], a:1},
-      {q:"Selepas kuiz, kita patut...", opts:["Berhenti belajar","Semak jawapan & belajar lagi","Buang buku","Tidur"], a:1},
-    ]},
-    "teka-kata": {emoji:"🧩", title:"Teka Kata", qs:[
-      {q:"Haiwan ini suka menyalak: 🐕", opts:["Kucing","Anjing","Ayam","Ikan"], a:1},
-      {q:"Buah ini berwarna kuning: 🍌", opts:["Epal","Pisang","Tembikai","Anggur"], a:1},
-      {q:"Kenderaan ini terbang di udara: ✈️", opts:["Kapal","Kereta","Kapal terbang","Basikal"], a:2},
-    ]},
-    "warna-warni": {emoji:"🎨", title:"Warna-Warni", qs:[
-      {q:"Warna apa langit pada waktu siang? ☀️", opts:["Hijau","Biru","Merah","Hitam"], a:1},
-      {q:"Warna apa daun pokok? 🌳", opts:["Hijau","Kuning","Ungu","Putih"], a:0},
-      {q:"Campuran warna biru + kuning menjadi...", opts:["Hijau","Merah","Putih","Hitam"], a:0},
-    ]},
-    "kira-cepat": {emoji:"🧮", title:"Kira Cepat", qs:[
-      {q:"4 + 4 = ?", opts:["6","7","8","9"], a:2},
-      {q:"10 − 3 = ?", opts:["6","7","8","5"], a:1},
-      {q:"3 + 5 = ?", opts:["7","8","9","6"], a:1},
+      {q:"9 − 5 = ?", opts:["3","4","5","6"], a:1},
+      {q:"6 + 2 = ?", opts:["7","8","9","6"], a:1},
     ]},
   };
 
