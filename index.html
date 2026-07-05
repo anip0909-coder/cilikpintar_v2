@@ -442,6 +442,11 @@
   .quiz-result h3{font-family:'Baloo 2',cursive;font-size:24px;margin:0 0 8px;}
   .quiz-result p{color:var(--text-soft);font-weight:700;margin:0 0 20px;}
   .quiz-stars{font-size:34px;margin-bottom:16px;letter-spacing:4px;}
+  .score-badge{
+    margin-top:10px;display:inline-flex;align-items:center;gap:4px;
+    background:var(--yellow-light);color:#8a5b00;font-weight:800;font-size:11.5px;
+    padding:5px 10px;border-radius:10px;
+  }
   .topic-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;}
   .topic-ic{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:21px;}
   .topic-badge{
@@ -594,12 +599,12 @@
         <div class="card">
           <div class="card-title"><span class="dot" style="background:var(--pink-light);">🎁</span> Ganjaran Saya</div>
           <div class="reward-row">
-            <div class="star-badge"><span class="n">45</span><span class="l">bintang</span></div>
+            <div class="star-badge"><span class="n" id="totalStarsNum">45</span><span class="l">bintang</span></div>
             <div class="chest-emoji">🧰</div>
           </div>
-          <div class="reward-caption">Kumpul 5 bintang lagi untuk buka peti harta karun!</div>
-          <div class="bar-track"><div class="bar-fill" style="width:90%;background:linear-gradient(90deg,var(--yellow),var(--orange));"></div></div>
-          <div class="bar-caption"><span></span><span>45 / 50</span></div>
+          <div class="reward-caption" id="rewardCaption">Kumpul 5 bintang lagi untuk buka peti harta karun!</div>
+          <div class="bar-track"><div class="bar-fill" id="rewardBarFill" style="width:90%;background:linear-gradient(90deg,var(--yellow),var(--orange));"></div></div>
+          <div class="bar-caption"><span></span><span id="rewardBarCaption">45 / 50</span></div>
         </div>
       </div>
 
@@ -957,6 +962,90 @@
     window.scrollTo({top:0,behavior:'smooth'});
   }
 
+  // ============= SOUND EFFECTS (Web Audio API) =============
+  let audioCtx = null;
+  function getAudioCtx(){
+    if(!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    return audioCtx;
+  }
+  function playTone(freq, start, duration, type='sine', gainPeak=0.18){
+    const ctx = getAudioCtx();
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.type = type;
+    osc.frequency.value = freq;
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    const t0 = ctx.currentTime + start;
+    gain.gain.setValueAtTime(0, t0);
+    gain.gain.linearRampToValueAtTime(gainPeak, t0 + 0.02);
+    gain.gain.exponentialRampToValueAtTime(0.001, t0 + duration);
+    osc.start(t0);
+    osc.stop(t0 + duration + 0.02);
+  }
+  function playCorrectSound(){
+    try{
+      playTone(523.25, 0,    0.16, 'sine'); // C5
+      playTone(659.25, 0.12, 0.16, 'sine'); // E5
+      playTone(783.99, 0.24, 0.22, 'sine'); // G5
+    }catch(e){}
+  }
+  function playWrongSound(){
+    try{
+      playTone(220, 0,    0.18, 'triangle', 0.14);
+      playTone(180, 0.14, 0.22, 'triangle', 0.14);
+    }catch(e){}
+  }
+  function playCelebrationSound(){
+    try{
+      [523.25,587.33,659.25,783.99,880].forEach((f,i)=>playTone(f, i*0.09, 0.2, 'sine'));
+    }catch(e){}
+  }
+
+  // ============= SCORE STORAGE (localStorage) =============
+  const SCORE_KEY = 'cilikPintarQuizScores';
+  function loadScores(){
+    try{ return JSON.parse(localStorage.getItem(SCORE_KEY)) || {}; }
+    catch(e){ return {}; }
+  }
+  function saveScore(topicId, score, total){
+    const scores = loadScores();
+    const existing = scores[topicId];
+    // keep the best attempt
+    if(!existing || score > existing.score || (score === existing.score && total > existing.total)){
+      scores[topicId] = { score, total, date: new Date().toISOString() };
+    }
+    scores[topicId].attempts = (existing?.attempts || 0) + 1;
+    localStorage.setItem(SCORE_KEY, JSON.stringify(scores));
+    return scores[topicId];
+  }
+  function getTotalStars(){
+    const scores = loadScores();
+    let stars = 0;
+    Object.values(scores).forEach(s => { stars += Math.round((s.score/s.total)*3); });
+    return stars;
+  }
+  function renderSavedScoreBadges(){
+    const scores = loadScores();
+    document.querySelectorAll('.topic-card[onclick]').forEach(card=>{
+      const match = card.getAttribute('onclick').match(/openQuiz\('([^']+)'\)/);
+      if(!match) return;
+      const id = match[1];
+      const s = scores[id];
+      let badge = card.querySelector('.score-badge');
+      if(s){
+        const pct = Math.round((s.score/s.total)*100);
+        const label = `⭐ ${s.score}/${s.total} (${pct}%)`;
+        if(!badge){
+          badge = document.createElement('div');
+          badge.className = 'score-badge';
+          card.appendChild(badge);
+        }
+        badge.textContent = label;
+      }
+    });
+  }
+
   // ============= QUIZ ENGINE =============
   const quizData = {
     "mengenal-huruf-a-z": {emoji:"🔤", title:"Mengenal Huruf A-Z", qs:[
@@ -1097,6 +1186,7 @@
   };
 
   let currentQuiz = null;
+  let currentQuizId = null;
   let currentIndex = 0;
   let currentScore = 0;
 
@@ -1104,6 +1194,7 @@
     const quiz = quizData[id];
     if(!quiz) return;
     currentQuiz = quiz;
+    currentQuizId = id;
     currentIndex = 0;
     currentScore = 0;
     document.getElementById('quizOverlay').classList.add('open');
@@ -1144,11 +1235,13 @@
       feedback.textContent = '🎉 Betul! Bagus!';
       feedback.className = 'quiz-feedback good';
       currentScore++;
+      playCorrectSound();
     } else {
       opts[i].classList.add('wrong');
       opts[q.a].classList.add('correct');
       feedback.textContent = '💡 Cuba lagi lain kali!';
       feedback.className = 'quiz-feedback bad';
+      playWrongSound();
     }
     const nextBtn = document.createElement('button');
     nextBtn.className = 'quiz-next';
@@ -1170,21 +1263,31 @@
     const total = currentQuiz.qs.length;
     const pct = Math.round((currentScore/total)*100);
     let emoji = '🌟', msg = 'Cubalah sekali lagi, anda pasti boleh!';
-    if(pct === 100){ emoji='🏆'; msg='Sempurna! Anda memang bijak!'; }
-    else if(pct >= 60){ emoji='🎉'; msg='Bagus sekali! Teruskan usaha!'; }
+    if(pct === 100){ emoji='🏆'; msg='Sempurna! Anda memang bijak!'; playCelebrationSound(); }
+    else if(pct >= 60){ emoji='🎉'; msg='Bagus sekali! Teruskan usaha!'; playCelebrationSound(); }
     const stars = '⭐'.repeat(Math.max(1, Math.round((currentScore/total)*3)));
+
+    const saved = saveScore(currentQuizId, currentScore, total);
+    const isNewBest = saved.score === currentScore && saved.total === total;
+    const bestLine = isNewBest
+      ? `<p style="color:#1a8f68;font-weight:800;">✨ Rekod terbaik baharu disimpan!</p>`
+      : `<p style="color:var(--text-soft);font-weight:700;font-size:13px;">Skor terbaik anda: ${saved.score}/${saved.total}</p>`;
+
     document.getElementById('quizBody').innerHTML = `
       <div class="quiz-result">
         <div class="big-emoji">${emoji}</div>
         <h3>${msg}</h3>
         <p>Anda jawab ${currentScore} daripada ${total} soalan dengan betul.</p>
         <div class="quiz-stars">${stars}</div>
+        ${bestLine}
         <button class="quiz-next" onclick="closeQuiz()">Selesai</button>
       </div>
     `;
+    renderSavedScoreBadges();
   }
 
   // Subject tabs inside Pembelajaran
+  renderSavedScoreBadges();
   document.querySelectorAll('.subject-tab').forEach(tab=>{
     tab.addEventListener('click',()=>{
       document.querySelectorAll('.subject-tab').forEach(t=>t.classList.remove('active'));
