@@ -489,6 +489,42 @@
     .subject-breakdown-grid{grid-template-columns:1fr 1fr;}
   }
 
+  /* ---- MEDAL / LENCANA ---- */
+  .medal-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;}
+  .medal-card{
+    border-radius:18px;padding:22px 14px;text-align:center;
+    border:2px solid var(--border);background:var(--bg);
+    transition:.2s;
+  }
+  .medal-card.unlocked{
+    border-color:var(--yellow);
+    background:linear-gradient(160deg,#FFF9EA,#FFEFC7);
+    box-shadow:0 8px 20px rgba(255,176,32,0.25);
+  }
+  .medal-icon{
+    width:64px;height:64px;border-radius:50%;margin:0 auto 12px;
+    display:flex;align-items:center;justify-content:center;font-size:30px;
+    background:var(--border);filter:grayscale(1) opacity(0.6);
+  }
+  .medal-card.unlocked .medal-icon{
+    background:linear-gradient(145deg,#FFE066,#F5A623);
+    filter:none;
+    box-shadow:0 4px 12px rgba(245,166,35,0.5);
+    animation:medalPop .4s ease;
+  }
+  @keyframes medalPop{ 0%{transform:scale(0.6);} 60%{transform:scale(1.12);} 100%{transform:scale(1);} }
+  .medal-label{font-weight:800;font-size:13.5px;margin-bottom:6px;}
+  .medal-status{font-size:11.5px;font-weight:700;color:var(--text-soft);}
+  .medal-card.unlocked .medal-status{color:#8a5b00;}
+  .medal-progress{font-size:10.5px;color:var(--text-soft);font-weight:700;margin-top:4px;}
+
+  @media(max-width:900px){
+    .medal-grid{grid-template-columns:repeat(3,1fr);}
+  }
+  @media(max-width:600px){
+    .medal-grid{grid-template-columns:1fr 1fr;}
+  }
+
   /* ---- WEEKLY CHART ---- */
   .weekly-chart{
     display:flex;justify-content:space-between;align-items:flex-end;
@@ -1010,9 +1046,11 @@
         </div>
         <div class="hero-avatar" style="font-size:80px;">🏆</div>
       </div>
-      <div class="card" style="text-align:center;padding:50px;">
-        <div style="font-size:50px;">🥇</div>
-        <p style="font-weight:800;color:var(--text-soft);">Belum ada sijil lagi. Teruskan belajar untuk dapatkan sijil pertama anda!</p>
+
+      <div class="card">
+        <div class="card-title"><span class="dot" style="background:var(--yellow-light);">🎖️</span> Lencana Subjek</div>
+        <p style="font-weight:700;color:var(--text-soft);font-size:13.5px;margin:-6px 0 18px;">Selesaikan semua topik dalam satu subjek dengan skor lulus untuk membuka lencana!</p>
+        <div id="medalGrid" class="medal-grid"></div>
       </div>
     </section>
 
@@ -1211,6 +1249,7 @@
     localStorage.removeItem(SCORE_KEY);
     localStorage.removeItem(HISTORY_KEY);
     localStorage.removeItem(CONFETTI_FLAG_KEY);
+    localStorage.removeItem(MEDAL_UNLOCKED_KEY);
     renderSavedScoreBadges();
     updateRewardsCard();
     renderSubjectBreakdown();
@@ -1218,6 +1257,7 @@
     renderWeeklyChart();
     updateWeeklyProgressCard();
     updateTopicCardStatuses();
+    renderMedalGrid();
     alert('Semua skor telah disetkan semula. 🔄');
   }
   function getTotalStars(){
@@ -1486,6 +1526,64 @@
         meta.textContent = '5 soalan • Belum mula';
       }
     });
+  }
+
+  // ============= LENCANA SUBJEK (MEDAL) =============
+  const MEDAL_ICONS = {
+    bm: "🥇", bi: "🥈", matematik: "🥉", jawi: "🏅", aktiviti: "🎗️"
+  };
+  const MEDAL_UNLOCKED_KEY = 'cilikPintarMedalsUnlocked';
+
+  function getSubjectTopicIds(subjectKey){
+    return Object.keys(SUBJECT_MAP).filter(id => SUBJECT_MAP[id] === subjectKey);
+  }
+
+  function getSubjectCompletion(subjectKey){
+    const ids = getSubjectTopicIds(subjectKey);
+    if(ids.length === 0) return { done:0, total:0, complete:false };
+    let done = 0;
+    ids.forEach(id => { if(getTopicStatus(id) === 'selesai') done++; });
+    return { done, total: ids.length, complete: done === ids.length };
+  }
+
+  function loadUnlockedMedals(){
+    try{ return JSON.parse(localStorage.getItem(MEDAL_UNLOCKED_KEY)) || {}; }
+    catch(e){ return {}; }
+  }
+  function saveUnlockedMedals(m){
+    localStorage.setItem(MEDAL_UNLOCKED_KEY, JSON.stringify(m));
+  }
+
+  function renderMedalGrid(){
+    const grid = document.getElementById('medalGrid');
+    if(!grid) return;
+    const unlocked = loadUnlockedMedals();
+    let newlyUnlocked = false;
+
+    grid.innerHTML = Object.keys(SUBJECT_INFO).map(key=>{
+      const info = SUBJECT_INFO[key];
+      const comp = getSubjectCompletion(key);
+      const isUnlocked = comp.complete;
+
+      if(isUnlocked && !unlocked[key]){
+        unlocked[key] = true;
+        newlyUnlocked = true;
+      }
+
+      return `
+        <div class="medal-card ${isUnlocked ? 'unlocked' : ''}">
+          <div class="medal-icon">${isUnlocked ? MEDAL_ICONS[key] : '🔒'}</div>
+          <div class="medal-label">${info.label}</div>
+          <div class="medal-status">${isUnlocked ? 'Dibuka! 🎉' : 'Belum dibuka'}</div>
+          <div class="medal-progress">${comp.done} / ${comp.total} topik selesai</div>
+        </div>`;
+    }).join('');
+
+    if(newlyUnlocked){
+      saveUnlockedMedals(unlocked);
+      fireConfetti();
+      playCelebrationSound();
+    }
   }
 
   // ============= SVG ICON LIBRARY (gambar sebenar, bukan emoji) =============
@@ -1870,6 +1968,7 @@
     renderWeeklyChart();
     updateWeeklyProgressCard();
     updateTopicCardStatuses();
+    renderMedalGrid();
   }
 
   // Subject tabs inside Pembelajaran
@@ -1880,6 +1979,7 @@
   renderWeeklyChart();
   updateWeeklyProgressCard();
   updateTopicCardStatuses();
+  renderMedalGrid();
   document.querySelectorAll('.subject-tab').forEach(tab=>{
     tab.addEventListener('click',()=>{
       document.querySelectorAll('.subject-tab').forEach(t=>t.classList.remove('active'));
