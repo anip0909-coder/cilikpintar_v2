@@ -417,6 +417,20 @@
   .quiz-progress-track{background:var(--bg);border-radius:20px;height:10px;overflow:hidden;margin:16px 0 26px;}
   .quiz-progress-fill{height:100%;border-radius:20px;background:linear-gradient(90deg,var(--purple),var(--blue));transition:width .3s ease;}
   .quiz-question{font-family:'Baloo 2',cursive;font-size:19px;font-weight:700;margin-bottom:20px;text-align:center;line-height:1.4;}
+  .quiz-img-box{
+    width:130px;height:130px;margin:0 auto 16px;
+    background:var(--bg);border-radius:20px;
+    display:flex;align-items:center;justify-content:center;
+    padding:14px;box-shadow:inset 0 0 0 1px var(--border);
+  }
+  .quiz-img-box svg{width:100%;height:100%;}
+  .quiz-image{
+    width:120px;height:120px;margin:6px auto 14px;
+    background:var(--bg);border-radius:20px;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:inset 0 0 0 1px var(--border);
+  }
+  .quiz-image svg{width:82px;height:82px;}
   .quiz-options{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
   .quiz-opt{
     background:var(--bg);border:3px solid transparent;border-radius:16px;
@@ -588,16 +602,16 @@
             <div class="ring">
               <svg width="118" height="118" viewBox="0 0 118 118">
                 <circle cx="59" cy="59" r="50" fill="none" stroke="#EFEBFF" stroke-width="12"/>
-                <circle cx="59" cy="59" r="50" fill="none" stroke="#7C6FE8" stroke-width="12"
-                  stroke-linecap="round" stroke-dasharray="314" stroke-dashoffset="78.5"/>
+                <circle id="progressRingFill" cx="59" cy="59" r="50" fill="none" stroke="#7C6FE8" stroke-width="12"
+                  stroke-linecap="round" stroke-dasharray="314" stroke-dashoffset="314" style="transition:stroke-dashoffset .5s ease;"/>
               </svg>
-              <div class="ring-label"><span class="pct">75%</span><span class="sub">Selesai</span></div>
+              <div class="ring-label"><span class="pct" id="progressPct">0%</span><span class="sub">Selesai</span></div>
             </div>
             <div class="progress-info">
-              <p>Tahniah! Anda hampir selesai dengan misi minggu ini.</p>
-              <div class="bar-track"><div class="bar-fill" style="width:75%;"></div></div>
-              <div class="bar-caption"><span></span><span>15 / 20</span></div>
-              <div class="star-note">⭐ Kumpul 5 bintang lagi untuk ganjaran!</div>
+              <p id="progressMsg">Mula belajar untuk melihat kemajuan anda di sini!</p>
+              <div class="bar-track"><div class="bar-fill" id="progressBarFill" style="width:0%;"></div></div>
+              <div class="bar-caption"><span></span><span id="progressBarCaption">0 / 34</span></div>
+              <div class="star-note" id="progressStarNote">⭐ Mula kuiz pertama anda hari ini!</div>
             </div>
           </div>
         </div>
@@ -627,17 +641,17 @@
 
           <div class="act-row">
             <div class="act-ic" style="background:var(--pink-light);">🔤</div>
-            <div class="act-info"><div class="n">Mengenal Huruf A-Z</div><div class="s">Selesai • 10 mata</div></div>
+            <div class="act-info"><div class="n">Mengenal Huruf A-Z</div><div class="s">5 soalan • Selesai</div></div>
             <div class="act-when">Hari ini <span class="check">✅</span></div>
           </div>
           <div class="act-row">
             <div class="act-ic" style="background:var(--blue-light);">🔢</div>
-            <div class="act-info"><div class="n">Nombor 1 hingga 10</div><div class="s">Selesai • 10 mata</div></div>
+            <div class="act-info"><div class="n">Nombor 1 hingga 10</div><div class="s">5 soalan • Selesai</div></div>
             <div class="act-when">Semalam <span class="check">✅</span></div>
           </div>
           <div class="act-row">
             <div class="act-ic" style="background:var(--yellow-light);">🎨</div>
-            <div class="act-info"><div class="n">Warna-Warni</div><div class="s">Selesai • 10 mata</div></div>
+            <div class="act-info"><div class="n">Warna-Warni</div><div class="s">5 soalan • Selesai</div></div>
             <div class="act-when">2 hari lepas <span class="check">✅</span></div>
           </div>
           <button class="see-all" onclick="goPage('aktiviti')">Lihat semua aktiviti ›</button>
@@ -711,7 +725,7 @@
           <div class="topic-card" onclick="openQuiz('bm-mengenal-a-z')">
             <div class="topic-top"><div class="topic-ic" style="background:var(--pink-light);">🔤</div><span class="topic-badge badge-selesai">Selesai</span></div>
             <div class="topic-name">Mengenal A-Z</div>
-            <div class="topic-meta">5 soalan • 10 mata</div>
+            <div class="topic-meta">5 soalan • Selesai</div>
             <div class="topic-bar"><div class="topic-bar-fill" style="width:100%;background:var(--green);"></div></div>
             <button class="quiz-btn">📝 Mula Kuiz</button>
           </div>
@@ -759,35 +773,35 @@
           <div class="topic-card" onclick="openQuiz('alphabet-a-z')">
             <div class="topic-top"><div class="topic-ic" style="background:var(--blue-light);">🔠</div><span class="topic-badge badge-selesai">Selesai</span></div>
             <div class="topic-name">Alphabet A-Z</div>
-            <div class="topic-meta">8 pelajaran • 10 mata</div>
+            <div class="topic-meta">5 soalan • Selesai</div>
             <div class="topic-bar"><div class="topic-bar-fill" style="width:100%;background:var(--green);"></div></div>
             <button class="quiz-btn">📝 Mula Kuiz</button>
           </div>
           <div class="topic-card" onclick="openQuiz('simple-vocabulary')">
             <div class="topic-top"><div class="topic-ic" style="background:var(--green-light);">🗣️</div><span class="topic-badge badge-progress">Dalam Proses</span></div>
             <div class="topic-name">Simple Vocabulary</div>
-            <div class="topic-meta">15 pelajaran • 6 / 15 selesai</div>
+            <div class="topic-meta">5 soalan • Dalam proses</div>
             <div class="topic-bar"><div class="topic-bar-fill" style="width:40%;background:var(--yellow);"></div></div>
             <button class="quiz-btn">📝 Mula Kuiz</button>
           </div>
           <div class="topic-card" onclick="openQuiz('reading-simple-sentences')">
             <div class="topic-top"><div class="topic-ic" style="background:var(--purple-light);">📖</div><span class="topic-badge badge-baru">Baharu</span></div>
             <div class="topic-name">Reading Simple Sentences</div>
-            <div class="topic-meta">10 pelajaran • Belum mula</div>
+            <div class="topic-meta">5 soalan • Belum mula</div>
             <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div></div>
             <button class="quiz-btn">📝 Mula Kuiz</button>
           </div>
           <div class="topic-card" onclick="openQuiz('basic-grammar')">
             <div class="topic-top"><div class="topic-ic" style="background:var(--yellow-light);">✏️</div><span class="topic-badge badge-baru">Baharu</span></div>
             <div class="topic-name">Basic Grammar</div>
-            <div class="topic-meta">9 pelajaran • Belum mula</div>
+            <div class="topic-meta">5 soalan • Belum mula</div>
             <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div></div>
             <button class="quiz-btn">📝 Mula Kuiz</button>
           </div>
           <div class="topic-card" onclick="openQuiz('nursery-rhymes')">
             <div class="topic-top"><div class="topic-ic" style="background:var(--pink-light);">🎵</div><span class="topic-badge badge-baru">Baharu</span></div>
             <div class="topic-name">Nursery Rhymes</div>
-            <div class="topic-meta">5 pelajaran • Belum mula</div>
+            <div class="topic-meta">5 soalan • Belum mula</div>
             <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div></div>
             <button class="quiz-btn">📝 Mula Kuiz</button>
           </div>
@@ -842,42 +856,42 @@
           <div class="topic-card" onclick="openQuiz('nombor-1-hingga-10')">
             <div class="topic-top"><div class="topic-ic" style="background:var(--blue-light);">🔢</div><span class="topic-badge badge-selesai">Selesai</span></div>
             <div class="topic-name">Nombor 1 hingga 10</div>
-            <div class="topic-meta">8 pelajaran • 10 mata</div>
+            <div class="topic-meta">5 soalan • Selesai</div>
             <div class="topic-bar"><div class="topic-bar-fill" style="width:100%;background:var(--green);"></div></div>
             <button class="quiz-btn">📝 Mula Kuiz</button>
           </div>
           <div class="topic-card" onclick="openQuiz('tambah-dan-tolak-asas')">
             <div class="topic-top"><div class="topic-ic" style="background:var(--green-light);">➕</div><span class="topic-badge badge-progress">Dalam Proses</span></div>
             <div class="topic-name">Tambah & Tolak Asas</div>
-            <div class="topic-meta">14 pelajaran • 7 / 14 selesai</div>
+            <div class="topic-meta">5 soalan • Dalam proses</div>
             <div class="topic-bar"><div class="topic-bar-fill" style="width:50%;background:var(--yellow);"></div></div>
             <button class="quiz-btn">📝 Mula Kuiz</button>
           </div>
           <div class="topic-card" onclick="openQuiz('bentuk-dan-saiz')">
             <div class="topic-top"><div class="topic-ic" style="background:var(--purple-light);">🔷</div><span class="topic-badge badge-baru">Baharu</span></div>
             <div class="topic-name">Bentuk & Saiz</div>
-            <div class="topic-meta">6 pelajaran • Belum mula</div>
+            <div class="topic-meta">5 soalan • Belum mula</div>
             <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div></div>
             <button class="quiz-btn">📝 Mula Kuiz</button>
           </div>
           <div class="topic-card" onclick="openQuiz('pendaraban-asas')">
             <div class="topic-top"><div class="topic-ic" style="background:var(--yellow-light);">✖️</div><span class="topic-badge badge-baru">Baharu</span></div>
             <div class="topic-name">Pendaraban Asas</div>
-            <div class="topic-meta">10 pelajaran • Belum mula</div>
+            <div class="topic-meta">5 soalan • Belum mula</div>
             <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div></div>
             <button class="quiz-btn">📝 Mula Kuiz</button>
           </div>
           <div class="topic-card" onclick="openQuiz('mengenal-masa-dan-waktu')">
             <div class="topic-top"><div class="topic-ic" style="background:var(--pink-light);">🕐</div><span class="topic-badge badge-baru">Baharu</span></div>
             <div class="topic-name">Mengenal Masa & Waktu</div>
-            <div class="topic-meta">7 pelajaran • Belum mula</div>
+            <div class="topic-meta">5 soalan • Belum mula</div>
             <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div></div>
             <button class="quiz-btn">📝 Mula Kuiz</button>
           </div>
           <div class="topic-card" onclick="openQuiz('mengenal-wang')">
             <div class="topic-top"><div class="topic-ic" style="background:var(--blue-light);">💰</div><span class="topic-badge badge-baru">Baharu</span></div>
             <div class="topic-name">Mengenal Wang</div>
-            <div class="topic-meta">6 pelajaran • Belum mula</div>
+            <div class="topic-meta">5 soalan • Belum mula</div>
             <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div></div>
             <button class="quiz-btn">📝 Mula Kuiz</button>
           </div>
@@ -897,35 +911,35 @@
           <div class="topic-card" onclick="openQuiz('mengenal-huruf-jawi')">
             <div class="topic-top"><div class="topic-ic" style="background:var(--purple-light);">﷽</div><span class="topic-badge badge-selesai">Selesai</span></div>
             <div class="topic-name">Mengenal Huruf Jawi</div>
-            <div class="topic-meta">10 pelajaran • 10 mata</div>
+            <div class="topic-meta">5 soalan • Selesai</div>
             <div class="topic-bar"><div class="topic-bar-fill" style="width:100%;background:var(--green);"></div></div>
             <button class="quiz-btn">📝 Mula Kuiz</button>
           </div>
           <div class="topic-card" onclick="openQuiz('menulis-suku-kata-jawi')">
             <div class="topic-top"><div class="topic-ic" style="background:var(--pink-light);">✍️</div><span class="topic-badge badge-progress">Dalam Proses</span></div>
             <div class="topic-name">Menulis Suku Kata Jawi</div>
-            <div class="topic-meta">12 pelajaran • 4 / 12 selesai</div>
+            <div class="topic-meta">5 soalan • Dalam proses</div>
             <div class="topic-bar"><div class="topic-bar-fill" style="width:33%;background:var(--yellow);"></div></div>
             <button class="quiz-btn">📝 Mula Kuiz</button>
           </div>
           <div class="topic-card" onclick="openQuiz('membaca-perkataan-jawi')">
             <div class="topic-top"><div class="topic-ic" style="background:var(--blue-light);">📄</div><span class="topic-badge badge-baru">Baharu</span></div>
             <div class="topic-name">Membaca Perkataan Jawi</div>
-            <div class="topic-meta">9 pelajaran • Belum mula</div>
+            <div class="topic-meta">5 soalan • Belum mula</div>
             <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div></div>
             <button class="quiz-btn">📝 Mula Kuiz</button>
           </div>
           <div class="topic-card" onclick="openQuiz('perkataan-harian-dalam-jawi')">
             <div class="topic-top"><div class="topic-ic" style="background:var(--yellow-light);">🕌</div><span class="topic-badge badge-baru">Baharu</span></div>
             <div class="topic-name">Perkataan Harian dalam Jawi</div>
-            <div class="topic-meta">8 pelajaran • Belum mula</div>
+            <div class="topic-meta">5 soalan • Belum mula</div>
             <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div></div>
             <button class="quiz-btn">📝 Mula Kuiz</button>
           </div>
           <div class="topic-card" onclick="openQuiz('ayat-mudah-jawi')">
             <div class="topic-top"><div class="topic-ic" style="background:var(--green-light);">📜</div><span class="topic-badge badge-baru">Baharu</span></div>
             <div class="topic-name">Ayat Mudah Jawi</div>
-            <div class="topic-meta">7 pelajaran • Belum mula</div>
+            <div class="topic-meta">5 soalan • Belum mula</div>
             <div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div></div>
             <button class="quiz-btn">📝 Mula Kuiz</button>
           </div>
@@ -980,7 +994,7 @@
       <div class="topic-grid">
         <div class="topic-card" onclick="openQuiz('teka-kata')"><div class="topic-top"><div class="topic-ic" style="background:var(--pink-light);">🧩</div><span class="topic-badge badge-baru">Baharu</span></div><div class="topic-name">Teka Kata</div><div class="topic-meta">5 soalan • Permainan bahasa</div><div class="topic-bar"><div class="topic-bar-fill" style="width:0%;"></div></div>
             <button class="quiz-btn">📝 Mula Kuiz</button></div>
-        <div class="topic-card" onclick="openQuiz('warna-warni')"><div class="topic-top"><div class="topic-ic" style="background:var(--blue-light);">🎨</div><span class="topic-badge badge-selesai">Selesai</span></div><div class="topic-name">Warna-Warni</div><div class="topic-meta">Selesai • 10 mata</div><div class="topic-bar"><div class="topic-bar-fill" style="width:100%;background:var(--green);"></div></div>
+        <div class="topic-card" onclick="openQuiz('warna-warni')"><div class="topic-top"><div class="topic-ic" style="background:var(--blue-light);">🎨</div><span class="topic-badge badge-selesai">Selesai</span></div><div class="topic-name">Warna-Warni</div><div class="topic-meta">5 soalan • Selesai</div><div class="topic-bar"><div class="topic-bar-fill" style="width:100%;background:var(--green);"></div></div>
             <button class="quiz-btn">📝 Mula Kuiz</button></div>
         <div class="topic-card" onclick="openQuiz('kira-cepat')"><div class="topic-top"><div class="topic-ic" style="background:var(--green-light);">🧮</div><span class="topic-badge badge-progress">Dalam Proses</span></div><div class="topic-name">Kira Cepat</div><div class="topic-meta">5 soalan • Permainan matematik</div><div class="topic-bar"><div class="topic-bar-fill" style="width:60%;background:var(--yellow);"></div></div>
             <button class="quiz-btn">📝 Mula Kuiz</button></div>
@@ -1202,6 +1216,8 @@
     renderSubjectBreakdown();
     renderParentQuizLog();
     renderWeeklyChart();
+    updateWeeklyProgressCard();
+    updateTopicCardStatuses();
     alert('Semua skor telah disetkan semula. 🔄');
   }
   function getTotalStars(){
@@ -1383,42 +1399,161 @@
     }
   }
 
+
+  const PASS_THRESHOLD = 0.6; // 60% jawapan betul dikira "Selesai"
+
+  function getTopicStatus(topicId){
+    const scores = loadScores();
+    const s = scores[topicId];
+    if(!s) return 'baru';
+    const pct = s.score / s.total;
+    return pct >= PASS_THRESHOLD ? 'selesai' : 'progress';
+  }
+
+  function updateWeeklyProgressCard(){
+    const allIds = Object.keys(quizData);
+    const total = allIds.length;
+    let doneCount = 0;
+    allIds.forEach(id=>{ if(getTopicStatus(id) === 'selesai') doneCount++; });
+    const pct = total > 0 ? Math.round((doneCount/total)*100) : 0;
+
+    const ring = document.getElementById('progressRingFill');
+    const pctEl = document.getElementById('progressPct');
+    const msgEl = document.getElementById('progressMsg');
+    const barFillEl = document.getElementById('progressBarFill');
+    const barCapEl = document.getElementById('progressBarCaption');
+    const noteEl = document.getElementById('progressStarNote');
+    if(!ring) return;
+
+    const circumference = 314; // 2 * pi * 50, dibundarkan
+    const offset = circumference * (1 - pct/100);
+    ring.style.strokeDashoffset = offset;
+    pctEl.textContent = pct + '%';
+    barFillEl.style.width = pct + '%';
+    barCapEl.textContent = `${doneCount} / ${total}`;
+
+    if(doneCount === 0){
+      msgEl.textContent = 'Mula belajar untuk melihat kemajuan anda di sini!';
+      noteEl.textContent = '⭐ Mula kuiz pertama anda hari ini!';
+    } else if(pct < 40){
+      msgEl.textContent = 'Permulaan yang baik! Teruskan belajar.';
+      noteEl.textContent = `⭐ ${total - doneCount} topik lagi untuk dikuasai!`;
+    } else if(pct < 80){
+      msgEl.textContent = 'Tahniah! Anda hampir selesai dengan misi pembelajaran.';
+      noteEl.textContent = `⭐ ${total - doneCount} topik lagi untuk dikuasai!`;
+    } else if(pct < 100){
+      msgEl.textContent = 'Hebat! Hampir semua topik dikuasai!';
+      noteEl.textContent = `⭐ ${total - doneCount} topik lagi untuk selesaikan semua!`;
+    } else {
+      msgEl.textContent = '🎉 Semua topik pembelajaran telah dikuasai!';
+      noteEl.textContent = '🏆 Anda seorang Cilik Pintar sejati!';
+    }
+  }
+
+  function updateTopicCardStatuses(){
+    document.querySelectorAll('.topic-card[onclick]').forEach(card=>{
+      const match = card.getAttribute('onclick').match(/openQuiz\('([^']+)'\)/);
+      if(!match) return;
+      const id = match[1];
+      const status = getTopicStatus(id);
+      const scores = loadScores();
+      const s = scores[id];
+
+      const badge = card.querySelector('.topic-badge');
+      const barFill = card.querySelector('.topic-bar-fill');
+      const meta = card.querySelector('.topic-meta');
+      if(!badge || !barFill || !meta) return;
+
+      badge.classList.remove('badge-selesai','badge-progress','badge-baru');
+      if(status === 'selesai'){
+        badge.classList.add('badge-selesai');
+        badge.textContent = 'Selesai';
+        barFill.style.width = '100%';
+        barFill.style.background = 'var(--green)';
+        meta.textContent = `5 soalan • Selesai (${s.score}/${s.total})`;
+      } else if(status === 'progress'){
+        badge.classList.add('badge-progress');
+        badge.textContent = 'Dalam Proses';
+        const pct = Math.round((s.score/s.total)*100);
+        barFill.style.width = pct + '%';
+        barFill.style.background = 'var(--yellow)';
+        meta.textContent = `5 soalan • Cubaan terakhir ${s.score}/${s.total}`;
+      } else {
+        badge.classList.add('badge-baru');
+        badge.textContent = 'Baharu';
+        barFill.style.width = '0%';
+        barFill.style.background = '';
+        meta.textContent = '5 soalan • Belum mula';
+      }
+    });
+  }
+
+  // ============= SVG ICON LIBRARY (gambar sebenar, bukan emoji) =============
+  const ICONS = {
+    kucing: `<svg viewBox="0 0 100 100"><defs><radialGradient id="gKucing" cx="40%" cy="35%" r="70%"><stop offset="0%" stop-color="#FFD9AE"/><stop offset="100%" stop-color="#F0A868"/></radialGradient><linearGradient id="gKucingEar" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#F0A868"/><stop offset="100%" stop-color="#D98C4E"/></linearGradient></defs><ellipse cx="50" cy="90" rx="26" ry="5" fill="#000" opacity="0.08"/><path d="M20 40 L28 12 L42 33 Z" fill="url(#gKucingEar)"/><path d="M80 40 L72 12 L58 33 Z" fill="url(#gKucingEar)"/><path d="M24 38 L30 20 L39 34 Z" fill="#FFCBA0"/><path d="M76 38 L70 20 L61 34 Z" fill="#FFCBA0"/><ellipse cx="50" cy="58" rx="32" ry="28" fill="url(#gKucing)"/><ellipse cx="38" cy="80" rx="6" ry="3" fill="#F0A868"/><ellipse cx="62" cy="80" rx="6" ry="3" fill="#F0A868"/><path d="M32 52 Q34 48 38 52 Q34 56 32 52 Z" fill="#20213B"/><path d="M68 52 Q66 48 62 52 Q66 56 68 52 Z" fill="#20213B"/><ellipse cx="35" cy="55" rx="3.2" ry="4.2" fill="#20213B"/><ellipse cx="65" cy="55" rx="3.2" ry="4.2" fill="#20213B"/><circle cx="34" cy="53.5" r="1" fill="#fff"/><circle cx="64" cy="53.5" r="1" fill="#fff"/><path d="M47 64 Q50 67 53 64 Q52 68 50 68.5 Q48 68 47 64 Z" fill="#FF7FA0"/><path d="M50 68 Q48 72 44 71 M50 68 Q52 72 56 71" stroke="#8a5b00" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M8 58 Q22 60 34 60 M8 66 Q22 65 34 63 M66 60 Q78 60 92 58 M66 63 Q78 65 92 66" stroke="#20213B" stroke-width="1.3" stroke-linecap="round" opacity="0.75"/></svg>`,
+    anjing: `<svg viewBox="0 0 100 100"><defs><radialGradient id="gAnjing" cx="40%" cy="35%" r="70%"><stop offset="0%" stop-color="#E3BE8E"/><stop offset="100%" stop-color="#C0925B"/></radialGradient><linearGradient id="gAnjingEar" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#8A6644"/><stop offset="100%" stop-color="#6B4E31"/></linearGradient></defs><ellipse cx="50" cy="90" rx="26" ry="5" fill="#000" opacity="0.08"/><path d="M20 28 Q10 48 24 62 Q19 44 30 32 Z" fill="url(#gAnjingEar)"/><path d="M80 28 Q90 48 76 62 Q81 44 70 32 Z" fill="url(#gAnjingEar)"/><ellipse cx="50" cy="58" rx="32" ry="28" fill="url(#gAnjing)"/><path d="M35 40 Q50 30 65 40 Q66 34 50 32 Q34 34 35 40 Z" fill="#f4d9b4" opacity="0.7"/><ellipse cx="38" cy="55" rx="3.2" ry="4.2" fill="#20213B"/><ellipse cx="62" cy="55" rx="3.2" ry="4.2" fill="#20213B"/><circle cx="37" cy="53.5" r="1" fill="#fff"/><circle cx="61" cy="53.5" r="1" fill="#fff"/><ellipse cx="50" cy="66" rx="7" ry="5" fill="#2c2320"/><path d="M50 71 Q50 78 58 79 Q64 79 66 74" stroke="#FF8AAE" stroke-width="4.5" fill="none" stroke-linecap="round"/><path d="M43 74 Q46 78 50 76" stroke="#6B4E31" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>`,
+    ikan: `<svg viewBox="0 0 100 100"><defs><linearGradient id="gIkan" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#6FB0FF"/><stop offset="100%" stop-color="#2E6FE0"/></linearGradient></defs><ellipse cx="45" cy="76" rx="26" ry="4" fill="#000" opacity="0.08"/><path d="M74 50 L94 34 L94 66 Z" fill="#2E6FE0"/><ellipse cx="42" cy="50" rx="32" ry="21" fill="url(#gIkan)"/><path d="M30 40 Q42 34 54 40" stroke="#9FCBFF" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.8"/><path d="M26 58 Q40 66 56 60" stroke="#1c4fb0" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.6"/><circle cx="26" cy="45" r="4.5" fill="#fff"/><circle cx="27" cy="45" r="2.6" fill="#20213B"/><path d="M42 30 L46 20 L52 30 Z" fill="#2E6FE0"/></svg>`,
+    nasi: `<svg viewBox="0 0 100 100"><defs><linearGradient id="gBowl" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#EDF1FA"/><stop offset="100%" stop-color="#C7CEE3"/></linearGradient></defs><ellipse cx="50" cy="86" rx="28" ry="4" fill="#000" opacity="0.08"/><path d="M16 54 Q16 84 50 84 Q84 84 84 54 Z" fill="url(#gBowl)" stroke="#B7BEDA" stroke-width="1.5"/><path d="M16 54 L84 54 L79 62 L21 62 Z" fill="#9AA3C7"/><g fill="#fff" stroke="#DADFEE" stroke-width="1.2"><ellipse cx="36" cy="45" rx="9" ry="7"/><ellipse cx="55" cy="38" rx="9" ry="7"/><ellipse cx="66" cy="48" rx="9" ry="7"/><ellipse cx="47" cy="30" rx="8" ry="6"/></g></svg>`,
+    kereta: `<svg viewBox="0 0 100 100"><defs><linearGradient id="gCar" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FF8FB8"/><stop offset="100%" stop-color="#E85792"/></linearGradient></defs><ellipse cx="50" cy="88" rx="34" ry="5" fill="#000" opacity="0.1"/><rect x="10" y="52" width="80" height="20" rx="8" fill="url(#gCar)"/><path d="M20 52 Q28 30 45 30 L62 30 Q77 30 80 52 Z" fill="#FF6FA5"/><path d="M32 51 Q38 38 46 36 L46 51 Z" fill="#BFE3FF" opacity="0.85"/><path d="M54 36 Q62 38 68 51 L54 51 Z" fill="#BFE3FF" opacity="0.85"/><rect x="14" y="58" width="10" height="4" rx="2" fill="#FFE082"/><circle cx="28" cy="76" r="10" fill="#20213B"/><circle cx="72" cy="76" r="10" fill="#20213B"/><circle cx="28" cy="76" r="4" fill="#9099BB"/><circle cx="72" cy="76" r="4" fill="#9099BB"/></svg>`,
+    bunga: `<svg viewBox="0 0 100 100"><defs><radialGradient id="gPetal" cx="35%" cy="30%" r="80%"><stop offset="0%" stop-color="#FFA9C6"/><stop offset="100%" stop-color="#F26FA0"/></radialGradient></defs><rect x="46" y="60" width="7" height="30" rx="3" fill="#3FA97A"/><path d="M49 74 Q62 74 62 64" stroke="#3FA97A" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M49 80 Q36 80 36 70" stroke="#3FA97A" stroke-width="5" fill="none" stroke-linecap="round"/><g fill="url(#gPetal)"><ellipse cx="50" cy="26" rx="12" ry="16"/><ellipse cx="50" cy="60" rx="12" ry="16"/><ellipse cx="33" cy="43" rx="16" ry="12"/><ellipse cx="67" cy="43" rx="16" ry="12"/></g><circle cx="50" cy="43" r="12" fill="#FFCB3D"/><circle cx="46" cy="39" r="2.4" fill="#fff" opacity="0.7"/></svg>`,
+    pisang: `<svg viewBox="0 0 100 100"><defs><linearGradient id="gBanana" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FFE066"/><stop offset="100%" stop-color="#F2C230"/></linearGradient></defs><ellipse cx="45" cy="86" rx="26" ry="4" fill="#000" opacity="0.08"/><path d="M27 78 Q18 40 46 18 Q58 10 66 18 Q54 22 44 34 Q26 54 33 78 Z" fill="url(#gBanana)"/><path d="M30 74 Q42 30 62 20" stroke="#D9A419" stroke-width="1.6" fill="none" opacity="0.6"/><path d="M27 78 Q34 84 44 80" stroke="#8A6420" stroke-width="2.4" fill="none" stroke-linecap="round"/><path d="M62 18 Q68 13 72 18 Q67 22 62 22 Z" fill="#6B4E31"/></svg>`,
+    bas: `<svg viewBox="0 0 100 100"><defs><linearGradient id="gBus" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FFC94A"/><stop offset="100%" stop-color="#F5A623"/></linearGradient></defs><ellipse cx="50" cy="88" rx="34" ry="4" fill="#000" opacity="0.1"/><rect x="8" y="24" width="84" height="48" rx="10" fill="url(#gBus)"/><rect x="8" y="46" width="84" height="9" fill="#FF6FA5"/><rect x="16" y="31" width="15" height="13" rx="2" fill="#BFE3FF"/><rect x="38" y="31" width="15" height="13" rx="2" fill="#BFE3FF"/><rect x="60" y="31" width="15" height="13" rx="2" fill="#BFE3FF"/><rect x="16" y="58" width="20" height="9" rx="2" fill="#fff" opacity="0.6"/><circle cx="28" cy="78" r="9" fill="#20213B"/><circle cx="72" cy="78" r="9" fill="#20213B"/><circle cx="28" cy="78" r="3.5" fill="#9099BB"/><circle cx="72" cy="78" r="3.5" fill="#9099BB"/></svg>`,
+    rumah: `<svg viewBox="0 0 100 100"><defs><linearGradient id="gRoof" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#6F8FFF"/><stop offset="100%" stop-color="#4468E0"/></linearGradient><linearGradient id="gWall" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FDF6EC"/><stop offset="100%" stop-color="#EFE3CC"/></linearGradient></defs><ellipse cx="50" cy="88" rx="34" ry="4" fill="#000" opacity="0.08"/><path d="M50 14 L90 46 L80 46 L80 84 L20 84 L20 46 L10 46 Z" fill="url(#gRoof)"/><rect x="22" y="46" width="56" height="38" fill="url(#gWall)"/><rect x="43" y="58" width="16" height="26" fill="#B0754A"/><circle cx="55" cy="71" r="1.8" fill="#5c3d22"/><rect x="27" y="50" width="12" height="12" rx="1.5" fill="#BFE3FF" stroke="#8FB8E8" stroke-width="1"/><rect x="61" y="50" width="12" height="12" rx="1.5" fill="#BFE3FF" stroke="#8FB8E8" stroke-width="1"/><rect x="46" y="24" width="8" height="14" fill="#B0754A"/></svg>`,
+    ayam: `<svg viewBox="0 0 100 100"><defs><radialGradient id="gHen" cx="35%" cy="30%" r="75%"><stop offset="0%" stop-color="#fff"/><stop offset="100%" stop-color="#EDEFF6"/></radialGradient></defs><ellipse cx="48" cy="90" rx="22" ry="4" fill="#000" opacity="0.08"/><ellipse cx="48" cy="62" rx="27" ry="23" fill="url(#gHen)" stroke="#DDE1EE" stroke-width="1.5"/><circle cx="67" cy="40" r="14" fill="url(#gHen)" stroke="#DDE1EE" stroke-width="1.5"/><path d="M60 28 Q64 18 68 28 Q72 18 77 28" fill="none" stroke="#FF5C5C" stroke-width="4.5" stroke-linecap="round"/><path d="M79 40 L91 44 L79 49 Z" fill="#FFB020"/><ellipse cx="71" cy="38" rx="2.3" ry="2.6" fill="#20213B"/><circle cx="70.2" cy="37" r="0.7" fill="#fff"/><path d="M34 84 L34 94 M56 84 L56 94" stroke="#FFB020" stroke-width="4" stroke-linecap="round"/><path d="M30 90 L38 90 M52 90 L60 90" stroke="#FFB020" stroke-width="4" stroke-linecap="round"/></svg>`,
+    basikal: `<svg viewBox="0 0 100 100"><ellipse cx="50" cy="92" rx="34" ry="4" fill="#000" opacity="0.08"/><circle cx="25" cy="70" r="17" fill="none" stroke="#2A2E45" stroke-width="4.5"/><circle cx="75" cy="70" r="17" fill="none" stroke="#2A2E45" stroke-width="4.5"/><circle cx="25" cy="70" r="3" fill="#2A2E45"/><circle cx="75" cy="70" r="3" fill="#2A2E45"/><path d="M25 70 L47 38 L66 38 L75 70 M47 38 L58 70 M40 27 L60 27" stroke="#2FBF8F" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M60 38 L47 70" stroke="#2FBF8F" stroke-width="4.5" stroke-linecap="round"/><path d="M40 27 L36 38" stroke="#2FBF8F" stroke-width="4.5" stroke-linecap="round"/><ellipse cx="60" cy="35" rx="6" ry="3" fill="#20213B"/></svg>`,
+    epal: `<svg viewBox="0 0 100 100"><defs><radialGradient id="gApple" cx="35%" cy="30%" r="75%"><stop offset="0%" stop-color="#FF8F8F"/><stop offset="100%" stop-color="#E24444"/></radialGradient></defs><ellipse cx="50" cy="88" rx="24" ry="4" fill="#000" opacity="0.08"/><path d="M50 34 Q28 30 22 52 Q16 74 38 84 Q50 90 62 84 Q84 74 78 52 Q72 30 50 34 Z" fill="url(#gApple)"/><ellipse cx="38" cy="48" rx="7" ry="10" fill="#FFB0B0" opacity="0.55"/><path d="M50 34 L49 20" stroke="#6B4E31" stroke-width="3.5" stroke-linecap="round"/><path d="M49 24 Q59 15 67 23 Q58 27 50 24 Z" fill="#3FA97A"/></svg>`,
+    buku: `<svg viewBox="0 0 100 100"><defs><linearGradient id="gBookL" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#4E8FFF"/><stop offset="100%" stop-color="#2E6FE0"/></linearGradient><linearGradient id="gBookR" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#8F7DF2"/><stop offset="100%" stop-color="#6B58D9"/></linearGradient></defs><ellipse cx="50" cy="88" rx="34" ry="4" fill="#000" opacity="0.08"/><path d="M13 22 Q30 13 50 22 L50 80 Q30 71 13 80 Z" fill="url(#gBookL)"/><path d="M87 22 Q70 13 50 22 L50 80 Q70 71 87 80 Z" fill="url(#gBookR)"/><path d="M19 30 L44 36 M19 42 L44 46 M19 54 L44 57" stroke="#E7F1FF" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/><path d="M56 36 L81 30 M56 46 L81 42 M56 57 L81 54" stroke="#E7F1FF" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/><path d="M50 22 L50 80" stroke="#20213B" stroke-width="1.5" opacity="0.3"/></svg>`,
+    matahari: `<svg viewBox="0 0 100 100"><defs><radialGradient id="gSun" cx="40%" cy="35%" r="70%"><stop offset="0%" stop-color="#FFE066"/><stop offset="100%" stop-color="#F5A623"/></radialGradient></defs><g stroke="#F5A623" stroke-width="5.5" stroke-linecap="round" opacity="0.9"><path d="M50 8 L50 20"/><path d="M50 80 L50 92"/><path d="M8 50 L20 50"/><path d="M80 50 L92 50"/><path d="M20 20 L28 28"/><path d="M72 72 L80 80"/><path d="M80 20 L72 28"/><path d="M28 72 L20 80"/></g><circle cx="50" cy="50" r="24" fill="url(#gSun)"/><circle cx="42" cy="42" r="7" fill="#fff" opacity="0.35"/></svg>`,
+    pokok: `<svg viewBox="0 0 100 100"><defs><radialGradient id="gLeaf" cx="35%" cy="30%" r="75%"><stop offset="0%" stop-color="#5FCB98"/><stop offset="100%" stop-color="#2E9E6D"/></radialGradient></defs><ellipse cx="50" cy="92" rx="24" ry="4" fill="#000" opacity="0.08"/><rect x="45" y="60" width="10" height="30" fill="#8A6644" rx="2"/><rect x="45" y="60" width="4" height="30" fill="#6B4E31" opacity="0.6"/><circle cx="50" cy="38" r="27" fill="url(#gLeaf)"/><circle cx="30" cy="52" r="17" fill="url(#gLeaf)"/><circle cx="70" cy="52" r="17" fill="url(#gLeaf)"/><circle cx="40" cy="28" r="6" fill="#fff" opacity="0.18"/></svg>`,
+    pintu: `<svg viewBox="0 0 100 100"><defs><linearGradient id="gDoor" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#D9A66C"/><stop offset="100%" stop-color="#B0754A"/></linearGradient></defs><ellipse cx="50" cy="92" rx="24" ry="4" fill="#000" opacity="0.08"/><rect x="24" y="10" width="52" height="82" rx="5" fill="url(#gDoor)"/><rect x="31" y="17" width="38" height="30" rx="3" fill="#EFD8B8" stroke="#B0754A" stroke-width="1.5"/><rect x="31" y="52" width="38" height="30" rx="3" fill="#EFD8B8" stroke="#B0754A" stroke-width="1.5"/><circle cx="65" cy="53" r="3.8" fill="#FFCB3D" stroke="#B0754A" stroke-width="1"/></svg>`,
+    burung: `<svg viewBox="0 0 100 100"><defs><linearGradient id="gBird" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#6FB0FF"/><stop offset="100%" stop-color="#2E6FE0"/></linearGradient></defs><ellipse cx="45" cy="80" rx="24" ry="4" fill="#000" opacity="0.08"/><path d="M28 60 Q12 52 8 64 Q20 66 32 70 Z" fill="#FFCB3D"/><ellipse cx="46" cy="55" rx="28" ry="21" fill="url(#gBird)"/><circle cx="72" cy="42" r="14" fill="url(#gBird)"/><path d="M84 42 L96 46 L84 51 Z" fill="#FFB020"/><circle cx="76" cy="39" r="2.4" fill="#20213B"/><circle cx="75.3" cy="38.2" r="0.8" fill="#fff"/><path d="M30 66 Q42 74 55 68" stroke="#1c4fb0" stroke-width="3" fill="none" opacity="0.5"/></svg>`,
+    air: `<svg viewBox="0 0 100 100"><defs><linearGradient id="gWater" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#6FB0FF"/><stop offset="100%" stop-color="#2E6FE0"/></linearGradient></defs><ellipse cx="50" cy="90" rx="20" ry="3.5" fill="#000" opacity="0.08"/><path d="M50 10 Q76 46 76 63 Q76 86 50 86 Q24 86 24 63 Q24 46 50 10 Z" fill="url(#gWater)"/><ellipse cx="41" cy="62" rx="7" ry="11" fill="#BFE3FF" opacity="0.7"/><circle cx="60" cy="72" r="4" fill="#BFE3FF" opacity="0.5"/></svg>`,
+    api: `<svg viewBox="0 0 100 100"><defs><linearGradient id="gFireOut" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FFB020"/><stop offset="100%" stop-color="#E8641A"/></linearGradient><linearGradient id="gFireIn" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FFEA6B"/><stop offset="100%" stop-color="#FFB020"/></linearGradient></defs><ellipse cx="50" cy="92" rx="22" ry="3.5" fill="#000" opacity="0.08"/><path d="M50 8 Q68 34 61 52 Q76 47 73 65 Q71 88 50 92 Q29 88 27 65 Q24 47 39 52 Q32 34 50 8 Z" fill="url(#gFireOut)"/><path d="M50 38 Q59 53 55 64 Q61 61 61 70 Q59 82 50 84 Q41 82 39 70 Q39 61 45 64 Q41 53 50 38 Z" fill="url(#gFireIn)"/></svg>`,
+    budak: `<svg viewBox="0 0 100 100"><defs><radialGradient id="gFace" cx="35%" cy="30%" r="75%"><stop offset="0%" stop-color="#FFD2A0"/><stop offset="100%" stop-color="#E8A66C"/></radialGradient></defs><ellipse cx="50" cy="92" rx="24" ry="3.5" fill="#000" opacity="0.08"/><path d="M28 88 Q28 56 50 56 Q72 56 72 88 Z" fill="#4E8FFF"/><path d="M32 88 Q32 60 50 60 Q68 60 68 88 Z" fill="#6FA6FF" opacity="0.5"/><circle cx="50" cy="35" r="19" fill="url(#gFace)"/><path d="M30 27 Q50 6 70 27 Q71 17 50 15 Q29 17 30 27 Z" fill="#3B2E26"/><path d="M30 27 Q26 34 30 40" stroke="#3B2E26" stroke-width="6" fill="none" stroke-linecap="round"/><path d="M70 27 Q74 34 70 40" stroke="#3B2E26" stroke-width="6" fill="none" stroke-linecap="round"/><ellipse cx="43" cy="35" rx="2.6" ry="3.2" fill="#20213B"/><ellipse cx="57" cy="35" rx="2.6" ry="3.2" fill="#20213B"/><path d="M44 44 Q50 48 56 44" stroke="#8a5b00" stroke-width="2" fill="none" stroke-linecap="round"/></svg>`,
+    roti: `<svg viewBox="0 0 100 100"><defs><linearGradient id="gBread" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#F0C588"/><stop offset="100%" stop-color="#D9A055"/></linearGradient></defs><ellipse cx="50" cy="84" rx="38" ry="4" fill="#000" opacity="0.08"/><path d="M12 58 Q12 26 50 24 Q88 26 88 58 Q88 78 50 78 Q12 78 12 58 Z" fill="url(#gBread)"/><path d="M22 40 Q26 56 22 68 M42 30 Q46 56 42 70 M58 30 Q62 56 58 70 M78 40 Q74 56 78 68" stroke="#B67C36" stroke-width="2.6" fill="none" stroke-linecap="round" opacity="0.8"/><ellipse cx="35" cy="34" rx="10" ry="5" fill="#fff" opacity="0.25"/></svg>`,
+    bulan: `<svg viewBox="0 0 100 100"><defs><linearGradient id="gMoon" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FFE98A"/><stop offset="100%" stop-color="#F2C230"/></linearGradient></defs><path d="M64 10 Q28 10 28 50 Q28 90 64 90 Q38 74 38 50 Q38 26 64 10 Z" fill="url(#gMoon)"/><circle cx="76" cy="26" r="3.2" fill="#FFE98A"/><circle cx="84" cy="44" r="2.2" fill="#FFE98A"/><circle cx="72" cy="62" r="1.6" fill="#FFE98A"/></svg>`,
+  };
+  function iconBox(name){
+    if(!name || !ICONS[name]) return '';
+    return `<div class="quiz-img-box">${ICONS[name]}</div>`;
+  }
+
   // ============= QUIZ ENGINE =============
   const quizData = {
     "bm-mengenal-a-z": {emoji:"🔤", title:"Mengenal A-Z", qs:[
       {q:"Huruf apa ini? <div style='font-size:48px;margin:10px 0;'>A</div>", opts:["A","B","O","E"], a:0},
-      {q:"🍎 Epal bermula dengan huruf apa?", opts:["B","A","C","D"], a:1},
+      {q:"Lihat gambar ini. Ia bermula dengan huruf apa?", img:"epal", opts:["B","A","C","D"], a:1},
       {q:"Huruf manakah datang selepas 'B'?", opts:["A","D","C","E"], a:2},
       {q:"Huruf apa ini? <div style='font-size:48px;margin:10px 0;'>M</div>", opts:["N","M","W","H"], a:1},
-      {q:"🐘 Gajah bermula dengan huruf apa?", opts:["G","E","A","O"], a:0},
+      {q:"Lihat gambar ini. Ia bermula dengan huruf apa?", img:"kereta", opts:["G","E","K","O"], a:2},
     ]},
     "bm-padankan-suku-kata": {emoji:"🧩", title:"Padankan Suku Kata", qs:[
-      {q:"🐱 Padankan gambar ini dengan suku kata pertama.", opts:["ku","sa","ma","bu"], a:0},
-      {q:"🐟 Padankan gambar ini dengan suku kata pertama.", opts:["da","i-kan » i","ba","ta"], a:1},
-      {q:"🍚 Padankan gambar ini dengan suku kata pertama.", opts:["na","ma","sa","ka"], a:0},
-      {q:"🚗 Padankan gambar ini dengan suku kata pertama.", opts:["ke","ba","re","te"], a:2},
-      {q:"🌸 Padankan gambar ini dengan suku kata pertama.", opts:["pa","bu","sa","ma"], a:1},
+      {q:"Padankan gambar ini dengan suku kata pertama.", img:"kucing", opts:["ku","sa","ma","bu"], a:0},
+      {q:"Padankan gambar ini dengan suku kata pertama.", img:"ikan", opts:["da","i","ba","ta"], a:1},
+      {q:"Padankan gambar ini dengan suku kata pertama.", img:"nasi", opts:["na","ma","sa","ka"], a:0},
+      {q:"Padankan gambar ini dengan suku kata pertama.", img:"kereta", opts:["ke","ba","re","te"], a:0},
+      {q:"Padankan gambar ini dengan suku kata pertama.", img:"bunga", opts:["pa","bu","sa","ma"], a:1},
     ]},
     "bm-membina-perkataan": {emoji:"🧱", title:"Membina Perkataan Mengikut Gambar", qs:[
-      {q:"🐱 Bina perkataan untuk gambar ini.", opts:["kucing","kacang","kuning","kacau"], a:0},
-      {q:"🐕 Bina perkataan untuk gambar ini.", opts:["anjing","angin","ayam","angkat"], a:0},
-      {q:"🍌 Bina perkataan untuk gambar ini.", opts:["pisang","pasang","pusing","piring"], a:0},
-      {q:"🚌 Bina perkataan untuk gambar ini.", opts:["bahasa","bas","basi","baju"], a:1},
-      {q:"🏠 Bina perkataan untuk gambar ini.", opts:["rumah","rumput","rumah tangga","ruang"], a:0},
+      {q:"Bina perkataan untuk gambar ini.", img:"kucing", opts:["kucing","kacang","kuning","kacau"], a:0},
+      {q:"Bina perkataan untuk gambar ini.", img:"anjing", opts:["anjing","angin","ayam","angkat"], a:0},
+      {q:"Bina perkataan untuk gambar ini.", img:"pisang", opts:["pisang","pasang","pusing","piring"], a:0},
+      {q:"Bina perkataan untuk gambar ini.", img:"bas", opts:["bahasa","bas","basi","baju"], a:1},
+      {q:"Bina perkataan untuk gambar ini.", img:"rumah", opts:["rumah","rumput","rumah tangga","ruang"], a:0},
     ]},
     "bm-isi-tempat-kosong": {emoji:"✏️", title:"Isi Tempat Kosong Ikut Gambar", qs:[
-      {q:"🐈 Ini seekor ku___.", opts:["ku-cing","ku-da","ku-ih","ku-ku"], a:0},
-      {q:"🐔 Ini seekor a___.", opts:["a-yam","a-nak","a-ir","a-pi"], a:0},
-      {q:"🚲 Ini sebuah ba___.", opts:["ba-si-kal","ba-ju","ba-tu","ba-lon"], a:0},
-      {q:"🍎 Ini sebiji e___.", opts:["e-pal","e-kor","e-mas","e-lok"], a:0},
-      {q:"📚 Ini sebuah bu___.", opts:["bu-ku","bu-ah","bu-nga","bu-ih"], a:0},
+      {q:"Ini seekor ku___.", img:"kucing", opts:["ku-cing","ku-da","ku-ih","ku-ku"], a:0},
+      {q:"Ini seekor a___.", img:"ayam", opts:["a-yam","a-nak","a-ir","a-pi"], a:0},
+      {q:"Ini sebuah ba___.", img:"basikal", opts:["ba-si-kal","ba-ju","ba-tu","ba-lon"], a:0},
+      {q:"Ini sebiji e___.", img:"epal", opts:["e-pal","e-kor","e-mas","e-lok"], a:0},
+      {q:"Ini sebuah bu___.", img:"buku", opts:["bu-ku","bu-ah","bu-nga","bu-ih"], a:0},
     ]},
     "bm-eja-perkataan": {emoji:"🔡", title:"Eja Perkataan Ikut Gambar", qs:[
-      {q:"🐱 Ejaan yang betul untuk gambar ini ialah...", opts:["kucing","kuceng","kucin","kusing"], a:0},
-      {q:"🌞 Ejaan yang betul untuk gambar ini ialah...", opts:["matahari","matahati","mataari","mata hari"], a:0},
-      {q:"🐟 Ejaan yang betul untuk gambar ini ialah...", opts:["ikan","ekan","iken","ikkan"], a:0},
-      {q:"🌳 Ejaan yang betul untuk gambar ini ialah...", opts:["pokok","pukuk","pokuk","pokok'"], a:0},
-      {q:"🚪 Ejaan yang betul untuk gambar ini ialah...", opts:["pintu","pintuk","pintoh","pinttu"], a:0},
+      {q:"Ejaan yang betul untuk gambar ini ialah...", img:"kucing", opts:["kucing","kuceng","kucin","kusing"], a:0},
+      {q:"Ejaan yang betul untuk gambar ini ialah...", img:"matahari", opts:["matahari","matahati","mataari","mata hari"], a:0},
+      {q:"Ejaan yang betul untuk gambar ini ialah...", img:"ikan", opts:["ikan","ekan","iken","ikkan"], a:0},
+      {q:"Ejaan yang betul untuk gambar ini ialah...", img:"pokok", opts:["pokok","pukuk","pokuk","pokok'"], a:0},
+      {q:"Ejaan yang betul untuk gambar ini ialah...", img:"pintu", opts:["pintu","pintuk","pintoh","pinttu"], a:0},
     ]},
 
     "alphabet-a-z": {emoji:"🔠", title:"Alphabet A-Z", qs:[
@@ -1464,32 +1599,32 @@
       {q:"What do you say before you leave?", opts:["Hello","Goodbye","Thank you","Please"], a:1},
     ]},
     "bi-padankan-perkataan": {emoji:"🧩", title:"Padankan Perkataan Ikut Gambar", qs:[
-      {q:"🐱 Match this picture with the correct word.", opts:["Dog","Cat","Bird","Cow"], a:1},
-      {q:"🍎 Match this picture with the correct word.", opts:["Apple","Orange","Grape","Mango"], a:0},
-      {q:"🚗 Match this picture with the correct word.", opts:["Bus","Car","Bike","Train"], a:1},
-      {q:"☀️ Match this picture with the correct word.", opts:["Moon","Star","Sun","Cloud"], a:2},
-      {q:"🐦 Match this picture with the correct word.", opts:["Fish","Bird","Frog","Cat"], a:1},
+      {q:"Match this picture with the correct word.", img:"kucing", opts:["Dog","Cat","Bird","Cow"], a:1},
+      {q:"Match this picture with the correct word.", img:"epal", opts:["Apple","Orange","Grape","Mango"], a:0},
+      {q:"Match this picture with the correct word.", img:"kereta", opts:["Bus","Car","Bike","Train"], a:1},
+      {q:"Match this picture with the correct word.", img:"matahari", opts:["Moon","Star","Sun","Cloud"], a:2},
+      {q:"Match this picture with the correct word.", img:"burung", opts:["Fish","Bird","Frog","Cat"], a:1},
     ]},
     "bi-membina-perkataan": {emoji:"🧱", title:"Membina Perkataan Mengikut Gambar", qs:[
-      {q:"🐶 Build the word for this picture.", opts:["dog","dig","dug","dot"], a:0},
-      {q:"🌞 Build the word for this picture.", opts:["sun","son","sin","sen"], a:0},
-      {q:"🐟 Build the word for this picture.", opts:["fash","fish","fesh","fosh"], a:1},
-      {q:"🏠 Build the word for this picture.", opts:["hose","house","horse","haus"], a:1},
-      {q:"🍚 Build the word for this picture.", opts:["rise","race","rice","rich"], a:2},
+      {q:"Build the word for this picture.", img:"anjing", opts:["dog","dig","dug","dot"], a:0},
+      {q:"Build the word for this picture.", img:"matahari", opts:["sun","son","sin","sen"], a:0},
+      {q:"Build the word for this picture.", img:"ikan", opts:["fash","fish","fesh","fosh"], a:1},
+      {q:"Build the word for this picture.", img:"rumah", opts:["hose","house","horse","haus"], a:1},
+      {q:"Build the word for this picture.", img:"nasi", opts:["rise","race","rice","rich"], a:2},
     ]},
     "bi-isi-tempat-kosong": {emoji:"✏️", title:"Isi Tempat Kosong Ikut Gambar", qs:[
-      {q:"🐱 This is a c__.", opts:["c-a-t","c-o-t","c-u-t","c-i-t"], a:0},
-      {q:"🐕 This is a d__.", opts:["d-i-g","d-o-g","d-u-g","d-a-g"], a:1},
-      {q:"☀️ This is the s__.", opts:["s-i-n","s-u-n","s-o-n","s-a-n"], a:1},
-      {q:"🍎 This is an a__.", opts:["a-p-p-l-e","a-p-e-l","a-p-l-e","a-p-p-e-l"], a:0},
-      {q:"🚗 This is a c__.", opts:["c-o-r","c-a-r","c-e-r","c-u-r"], a:1},
+      {q:"This is a c__.", img:"kucing", opts:["c-a-t","c-o-t","c-u-t","c-i-t"], a:0},
+      {q:"This is a d__.", img:"anjing", opts:["d-i-g","d-o-g","d-u-g","d-a-g"], a:1},
+      {q:"This is the s__.", img:"matahari", opts:["s-i-n","s-u-n","s-o-n","s-a-n"], a:1},
+      {q:"This is an a__.", img:"epal", opts:["a-p-p-l-e","a-p-e-l","a-p-l-e","a-p-p-e-l"], a:0},
+      {q:"This is a c__.", img:"kereta", opts:["c-o-r","c-a-r","c-e-r","c-u-r"], a:1},
     ]},
     "bi-eja-perkataan": {emoji:"🔡", title:"Eja Perkataan Ikut Gambar", qs:[
-      {q:"🐱 Choose the correct spelling for this picture.", opts:["cat","kat","catt","caat"], a:0},
-      {q:"🐕 Choose the correct spelling for this picture.", opts:["dogg","dog","dawg","doog"], a:1},
-      {q:"☀️ Choose the correct spelling for this picture.", opts:["san","sun","sonn","suun"], a:1},
-      {q:"🍎 Choose the correct spelling for this picture.", opts:["aple","appel","apple","appl"], a:2},
-      {q:"🏠 Choose the correct spelling for this picture.", opts:["hous","house","howse","haus"], a:1},
+      {q:"Choose the correct spelling for this picture.", img:"kucing", opts:["cat","kat","catt","caat"], a:0},
+      {q:"Choose the correct spelling for this picture.", img:"anjing", opts:["dogg","dog","dawg","doog"], a:1},
+      {q:"Choose the correct spelling for this picture.", img:"matahari", opts:["san","sun","sonn","suun"], a:1},
+      {q:"Choose the correct spelling for this picture.", img:"epal", opts:["aple","appel","apple","appl"], a:2},
+      {q:"Choose the correct spelling for this picture.", img:"rumah", opts:["hous","house","howse","haus"], a:1},
     ]},
 
     "nombor-1-hingga-10": {emoji:"🔢", title:"Nombor 1 hingga 10", qs:[
@@ -1578,32 +1713,32 @@
       {q:"Sikap terbaik semasa menjawab kuiz ialah...", opts:["Cepat tanpa fikir","Tenang & teliti","Tergesa-gesa","Menyalin jawapan"], a:1},
     ]},
     "jawi-padankan-perkataan": {emoji:"🧩", title:"Padankan Perkataan Ikut Gambar", qs:[
-      {q:"🐱 Padankan gambar ini dengan perkataan Jawi yang betul.", opts:["قوچيڠ","انجيڠ","ايکن","ايم"], a:0},
-      {q:"📚 Padankan gambar ini dengan perkataan Jawi yang betul.", opts:["روماه","بوکو","ايت","نصي"], a:1},
-      {q:"💧 Padankan gambar ini dengan perkataan Jawi yang betul.", opts:["اوده","اير","اڤي","اوبت"], a:1},
-      {q:"🏠 Padankan gambar ini dengan perkataan Jawi yang betul.", opts:["روماه","بوکو","کوچيڠ","ايکن"], a:0},
-      {q:"🍚 Padankan gambar ini dengan perkataan Jawi yang betul.", opts:["اير","نصي","بوکو","ايکن"], a:1},
+      {q:"Padankan gambar ini dengan perkataan Jawi yang betul.", img:"kucing", opts:["قوچيڠ","انجيڠ","ايکن","ايم"], a:0},
+      {q:"Padankan gambar ini dengan perkataan Jawi yang betul.", img:"buku", opts:["روماه","بوکو","ايت","نصي"], a:1},
+      {q:"Padankan gambar ini dengan perkataan Jawi yang betul.", img:"air", opts:["اوده","اير","اڤي","اوبت"], a:1},
+      {q:"Padankan gambar ini dengan perkataan Jawi yang betul.", img:"rumah", opts:["روماه","بوکو","کوچيڠ","ايکن"], a:0},
+      {q:"Padankan gambar ini dengan perkataan Jawi yang betul.", img:"nasi", opts:["اير","نصي","بوکو","ايکن"], a:1},
     ]},
     "jawi-membina-perkataan": {emoji:"🧱", title:"Membina Perkataan Mengikut Gambar", qs:[
-      {q:"🐟 Bina perkataan Jawi untuk gambar ini.", opts:["ايکن","ايم","اوبت","اوده"], a:0},
-      {q:"🔥 Bina perkataan Jawi untuk gambar ini.", opts:["اڤي","اير","اوده","ابو"], a:0},
-      {q:"👦 Bina perkataan Jawi untuk gambar ini.", opts:["اناک","ابو","ايبو","اداء"], a:0},
-      {q:"🍞 Bina perkataan Jawi untuk gambar ini.", opts:["روتي","نصي","بوکو","اير"], a:0},
-      {q:"🌙 Bina perkataan Jawi untuk gambar ini.", opts:["بولن","ماتاهاري","بينتڠ","اوان"], a:0},
+      {q:"Bina perkataan Jawi untuk gambar ini.", img:"ikan", opts:["ايکن","ايم","اوبت","اوده"], a:0},
+      {q:"Bina perkataan Jawi untuk gambar ini.", img:"api", opts:["اڤي","اير","اوده","ابو"], a:0},
+      {q:"Bina perkataan Jawi untuk gambar ini.", img:"budak", opts:["اناک","ابو","ايبو","اداء"], a:0},
+      {q:"Bina perkataan Jawi untuk gambar ini.", img:"roti", opts:["روتي","نصي","بوکو","اير"], a:0},
+      {q:"Bina perkataan Jawi untuk gambar ini.", img:"bulan", opts:["بولن","ماتاهاري","بينتڠ","اوان"], a:0},
     ]},
     "jawi-isi-tempat-kosong": {emoji:"✏️", title:"Isi Tempat Kosong Ikut Gambar", qs:[
-      {q:"🐈 Ini seekor قو___.", opts:["چيڠ","دا","ايه","ره"], a:0},
-      {q:"📖 Ini sebuah بو___.", opts:["کو","ته","دي","سي"], a:0},
-      {q:"🏠 Ini sebuah رو___.", opts:["ماه","تن","سق","کيت"], a:0},
-      {q:"👤 Ini seorang ا___.", opts:["ناک","ير","تس","ما"], a:0},
-      {q:"💧 Ini disebut ا___.", opts:["ير","نک","تس","ڤي"], a:0},
+      {q:"Ini seekor قو___.", img:"kucing", opts:["چيڠ","دا","ايه","ره"], a:0},
+      {q:"Ini sebuah بو___.", img:"buku", opts:["کو","ته","دي","سي"], a:0},
+      {q:"Ini sebuah رو___.", img:"rumah", opts:["ماه","تن","سق","کيت"], a:0},
+      {q:"Ini seorang ا___.", img:"budak", opts:["ناک","ير","تس","ما"], a:0},
+      {q:"Ini disebut ا___.", img:"air", opts:["ير","نک","تس","ڤي"], a:0},
     ]},
     "jawi-eja-perkataan": {emoji:"🔡", title:"Eja Perkataan Ikut Gambar", qs:[
-      {q:"🐱 Ejaan Jawi yang betul untuk gambar ini ialah...", opts:["قوچيڠ","قچيڠ","قوچن","قوچيک"], a:0},
-      {q:"📚 Ejaan Jawi yang betul untuk gambar ini ialah...", opts:["بوکو","بکو","بوکوء","بوقو"], a:0},
-      {q:"🏠 Ejaan Jawi yang betul untuk gambar ini ialah...", opts:["روماه","رومه","رماه","روما"], a:0},
-      {q:"💧 Ejaan Jawi yang betul untuk gambar ini ialah...", opts:["اير","ايير","اءير","ايره"], a:0},
-      {q:"🍚 Ejaan Jawi yang betul untuk gambar ini ialah...", opts:["نصي","ناسي","نسي","نصيء"], a:0},
+      {q:"Ejaan Jawi yang betul untuk gambar ini ialah...", img:"kucing", opts:["قوچيڠ","قچيڠ","قوچن","قوچيک"], a:0},
+      {q:"Ejaan Jawi yang betul untuk gambar ini ialah...", img:"buku", opts:["بوکو","بکو","بوکوء","بوقو"], a:0},
+      {q:"Ejaan Jawi yang betul untuk gambar ini ialah...", img:"rumah", opts:["روماه","رومه","رماه","روما"], a:0},
+      {q:"Ejaan Jawi yang betul untuk gambar ini ialah...", img:"air", opts:["اير","ايير","اءير","ايره"], a:0},
+      {q:"Ejaan Jawi yang betul untuk gambar ini ialah...", img:"nasi", opts:["نصي","ناسي","نسي","نصيء"], a:0},
     ]},
 
     "teka-kata": {emoji:"🧩", title:"Teka Kata", qs:[
@@ -1661,6 +1796,7 @@
         <div><p class="quiz-title">${currentQuiz.title}</p></div>
       </div>
       <div class="quiz-progress-track"><div class="quiz-progress-fill" style="width:${(currentIndex/total)*100}%;"></div></div>
+      ${iconBox(q.img)}
       <div class="quiz-question">Soalan ${currentIndex+1} / ${total}<br>${q.q}</div>
       <div class="quiz-options" id="quizOptions">
         ${q.opts.map((opt,i)=>`<button class="quiz-opt" data-i="${i}" onclick="answerQuiz(${i})">${opt}</button>`).join('')}
@@ -1732,6 +1868,8 @@
     renderSubjectBreakdown();
     renderParentQuizLog();
     renderWeeklyChart();
+    updateWeeklyProgressCard();
+    updateTopicCardStatuses();
   }
 
   // Subject tabs inside Pembelajaran
@@ -1740,6 +1878,8 @@
   renderSubjectBreakdown();
   renderParentQuizLog();
   renderWeeklyChart();
+  updateWeeklyProgressCard();
+  updateTopicCardStatuses();
   document.querySelectorAll('.subject-tab').forEach(tab=>{
     tab.addEventListener('click',()=>{
       document.querySelectorAll('.subject-tab').forEach(t=>t.classList.remove('active'));
